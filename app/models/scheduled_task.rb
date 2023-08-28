@@ -2,5 +2,7 @@ class ScheduledTask < ApplicationRecord
   belongs_to :user
   belongs_to :task
 
-  # validation sur les valeurs 
+  validates :task_id, presence: true
+
+  # validation sur les valeurs
 end

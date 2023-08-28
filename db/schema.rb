@@ -20,9 +20,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_130346) do
     t.boolean "done"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "task_performer_id", null: false
+    t.bigint "user_id"
     t.index ["task_id"], name: "index_scheduled_tasks_on_task_id"
-    t.index ["task_performer_id"], name: "index_scheduled_tasks_on_task_performer_id"
+    t.index ["user_id"], name: "index_scheduled_tasks_on_user_id"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -55,5 +55,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_130346) do
   end
 
   add_foreign_key "scheduled_tasks", "tasks"
-  add_foreign_key "scheduled_tasks", "users", column: "task_performer_id"
+  add_foreign_key "scheduled_tasks", "users"
 end
