@@ -10,9 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_28_122143) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_28_130346) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "scheduled_tasks", force: :cascade do |t|
+    t.bigint "task_id", null: false
+    t.date "recorded_date"
+    t.boolean "done"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "task_performer_id", null: false
+    t.index ["task_id"], name: "index_scheduled_tasks_on_task_id"
+    t.index ["task_performer_id"], name: "index_scheduled_tasks_on_task_performer_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "task_name"
+    t.string "description"
+    t.string "frequency_type"
+    t.integer "frequency_amount"
+    t.string "frequency_day"
+    t.string "frequency_day_of_month"
+    t.integer "points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +45,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_122143) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.date "birth_date"
+    t.string "phone_number"
+    t.string "gender"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "scheduled_tasks", "tasks"
+  add_foreign_key "scheduled_tasks", "users", column: "task_performer_id"
 end
