@@ -1,11 +1,18 @@
 <h1><%= @task.task_name %></h1>
 
-<%= simple_form_for(task) do |f| %>
-  <%= f.input :task_name %>
-  <%= f.input :description %>
-  <%= f.input :frequency_type %>
-  <%= f.submit %>
-<% end %>
+<ul>
+  <li><%= @task.task_name %></li>
+  <li><%= @task.description %></li>
+  <li><%= @task.frequency_type %></li>
+</ul>
+
+
+<%# <%= simple_form_for(@task) do |f| %>
+  <%# <%= f.input :task_name %>
+  <%# <%= f.input :description %>
+  <%# <%= f.input :frequency_type %>
+  <%# <%= f.submit %>
+<%# <% end %> 
 
 <%= link_to "Back to Tasks", tasks_path %>
 <%= button_to "Destroy this task", @task, method: :delete %>
