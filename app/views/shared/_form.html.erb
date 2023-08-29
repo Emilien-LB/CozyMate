@@ -1,7 +1,7 @@
 <%= simple_form_for(@task) do |f| %>
   <%= f.input :task_name %>
   <%= f.input :description %>
-  <%= f.input :frequency_type %>
+  <%= f.collection_select :frequency_type, ['daily', 'weekly', 'monthly'], :to_s, :humanize %>
   <%= f.input :points %>
   <%= f.submit %>
 <% end %>
