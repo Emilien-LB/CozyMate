@@ -8,6 +8,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :tasks
-  resources :scheduled_tasks, only: [:index]
-  
+  resources :scheduled_tasks, only: [:index, :update, :edit]
 end
