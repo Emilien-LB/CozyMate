@@ -1,0 +1,17 @@
+<h1>Tasks</h1>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <strong><%= task.task_name %></strong>
+      <p><%= task.description %></p>
+      <p>Frequency : <%= task.frequency_type %></p>
+    </li>
+  <% end %>
+</ul>
+
+  <%# <% if task.frequency_type == 'daily' %>
+    <%# <% elsif task.frequency_type == 'weekly' %>
+    <%# <% elsif task.frequency_type == 'monthly' %>
+    <%# <% else %>
+  <%# <% end %>
