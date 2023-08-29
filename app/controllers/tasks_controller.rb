@@ -18,8 +18,9 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
+    @task.save
     if @task.save
-      redirect_to @task, notice: "Task was successfully created."
+      redirect_to tasks_path, notice: "Task was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -41,7 +42,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:task_name, :description, :frequency_type, :frequency_amount, :frequency_day, :frequency_day_of_month, :points )
+    params.require(:task).permit(:task_name, :description, :frequency_type, :points)
   end
 
   def set_task
