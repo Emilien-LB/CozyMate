@@ -38,9 +38,10 @@ task1 = Task.create!(
   task_name: "Feed Riri",
   description: "Give 100g of croquettas buenas and no more even if Riri might be persuasive",
   frequency_type: "daily",
-  frequency_amount: 2,
+  frequency_amount: 1,
   points: 10
 )
+
 
 task2 = Task.create!(
   task_name: "Water the plants",
@@ -67,7 +68,7 @@ task4 = Task.create!(
   description: "Turn trash duty into a dance party! Crank up the tunes and move to the beat as you guide the garbage bags to their destination.",
   frequency_type: "weekly",
   frequency_amount: 1,
-  frequency_day: "Thursday",
+  frequency_day: "Monday",
   points: 25
 )
 
@@ -76,7 +77,7 @@ task5 = Task.create!(
   description: "Wednesdays are your throne's time to shine! Give your toilet the royal treatment it deserves and keep it flush with pride.",
   frequency_type: "weekly",
   frequency_amount: 1,
-  frequency_day: "Wednesday",
+  frequency_day: "Monday",
   points: 40
 )
 
@@ -85,7 +86,7 @@ task6 = Task.create!(
   description: "Start your week by showing your reflection some love. Wipe those mirrors till they're gleaming, and your smile shines brighter than ever!",
   frequency_type: "weekly",
   frequency_amount: 1,
-  frequency_day: "Sunday",
+  frequency_day: "Monday",
   points: 50
 )
 
@@ -117,5 +118,83 @@ task9 = Task.create!(
   frequency_day_of_month: 5,
   points: 60
 )
+
+puts "Creating Daily Scheduled Tasks..."
+
+21.times do |i|
+  @date = Date.today + i.days
+  ScheduledTask.create!(
+    task_id: task1.id,
+    to_be_done_date: @date
+  )
+end
+
+21.times do |i|
+  @date = Date.today + i.days
+  ScheduledTask.create!(
+    task_id: task2.id,
+    to_be_done_date: @date
+  )
+end
+
+21.times do |i|
+  @date = Date.today + i.days
+  ScheduledTask.create!(
+    task_id: task3.id,
+    to_be_done_date: @date
+  )
+end
+
+puts "Creating Weekly Scheduled Tasks..."
+
+3.times do |i|
+  @date = Date.today + (i * 7).days
+  ScheduledTask.create!(
+    task_id: task4.id,
+    to_be_done_date: @date
+  )
+end
+
+3.times do |i|
+  @date = Date.today + (i * 7).days
+  ScheduledTask.create!(
+    task_id: task5.id,
+    to_be_done_date: @date
+  )
+end
+
+3.times do |i|
+  @date = Date.today + (i * 7).days
+  ScheduledTask.create!(
+    task_id: task6.id,
+    to_be_done_date: @date
+  )
+end
+
+puts "Creating Monthly Scheduled Tasks..."
+
+1.times do |i|
+  @date = Date.today
+  ScheduledTask.create!(
+    task_id: task7.id,
+    to_be_done_date: @date
+  )
+end
+
+1.times do |i|
+  @date = Date.today
+  ScheduledTask.create!(
+    task_id: task8.id,
+    to_be_done_date: @date
+  )
+end
+
+1.times do |i|
+  @date = Date.today
+  ScheduledTask.create!(
+    task_id: task9.id,
+    to_be_done_date: @date
+  )
+end
 
 puts "Congrats, seeds done !"
