@@ -9,7 +9,7 @@
           <div>
             <%= task.task_name %>
             <%= task.points %>
-            <%= button_to "Destroy this task", @task, method: :delete %>
+            <%= link_to "Delete", task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
             <%= link_to "Edit", edit_task_path(task) %>
           </div>
         <% end %>
@@ -23,7 +23,7 @@
           <div>
             <%= task.task_name %>
             <%= task.points %>
-            <%= button_to "Destroy this task", @task, method: :delete %>
+            <%= link_to "Delete", task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
             <%= link_to "Edit", edit_task_path(task) %>
           </div>
           <% end %>
@@ -37,7 +37,7 @@
           <div>
             <%= task.task_name %>
             <%= task.points %>
-            <%= button_to "Destroy this task", @task, method: :delete %>
+            <%= link_to "Delete", task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
             <%= link_to "Edit", edit_task_path(task) %>
           </div>
           <% end %>

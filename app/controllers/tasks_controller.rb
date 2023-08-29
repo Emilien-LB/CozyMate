@@ -1,11 +1,12 @@
 class TasksController < ApplicationController
 
+  before_action :set_task, only: [:show, :edit, :update, :destroy]
+
   def index
     @tasks = Task.all
   end
 
   def show
-    @task = Task.find(params[:id])
   end
 
   def new
@@ -13,7 +14,6 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.find(params[:id])
   end
 
   def create
@@ -26,7 +26,6 @@ class TasksController < ApplicationController
   end
 
   def update
-    @task = Task.find(params[:id])
     if @task.update(task_params)
       redirect_to tasks_path, notice: "Task was successfully updated.", status: :see_other
     else
@@ -36,7 +35,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    redirect_to task_path, notice: "Task was successfully destroyed.", status: :see_other
+    redirect_to tasks_path, notice: "Task was successfully destroyed.", status: :see_other
   end
 
   private
@@ -45,7 +44,7 @@ class TasksController < ApplicationController
     params.require(:task).permit(:task_name, :description, :frequency_type, :frequency_amount, :frequency_day, :frequency_day_of_month, :points )
   end
 
-  def set_restaurant
+  def set_task
     @task = Task.find(params[:id])
   end
 
