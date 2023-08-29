@@ -15,4 +15,14 @@
   <%# <%= f.submit %>
 <%# <% end %>
 
+<h2>Historique de la tâche</h2>
+
+<ul>
+  <% @scheduled_tasks_done.each do |scheduled_task| %>
+    <li>
+      Fait par <%= scheduled_task.user.first_name %> le <%= scheduled_task.updated_at.to_date %>
+    </li>
+  <% end %>
+</ul>
+
 <%= link_to "Back to Tasks", tasks_path %>

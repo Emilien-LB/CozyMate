@@ -7,7 +7,9 @@ class TasksController < ApplicationController
   end
 
   def show
-  end
+    @task = Task.find(params[:id])
+    @scheduled_tasks_done = ScheduledTask.where(task_id: @task.id, done: true).includes(:user).order(updated_at: :desc)
+   end
 
   def new
     @task = Task.new
