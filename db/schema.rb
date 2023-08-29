@@ -48,9 +48,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_142400) do
     t.boolean "done"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
+    t.bigint "task_performer_id", null: false
     t.index ["task_id"], name: "index_scheduled_tasks_on_task_id"
-    t.index ["user_id"], name: "index_scheduled_tasks_on_user_id"
+    t.index ["task_performer_id"], name: "index_scheduled_tasks_on_task_performer_id"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -85,5 +85,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_28_142400) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "scheduled_tasks", "tasks"
-  add_foreign_key "scheduled_tasks", "users"
+  add_foreign_key "scheduled_tasks", "users", column: "task_performer_id"
 end
