@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :tasks
   resources :scheduled_tasks, only: [:index]
+  
 end

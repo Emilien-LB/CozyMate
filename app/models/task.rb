@@ -1,5 +1,5 @@
 class Task < ApplicationRecord
-  has_many :scheduled_tasks
+  has_many :scheduled_tasks, dependent: :destroy
   has_many :users, through: :scheduled_tasks
 
   WEEKDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
