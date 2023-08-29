@@ -2,24 +2,20 @@
 
 <div class="container">
   <% @scheduled_tasks.each do |scheduled_task| %>
-    <% if scheduled_task.to_be_done_date == Date.today && Task.find(scheduled_task.task_id).frequency_type == "daily" && scheduled_task.done == false %>
-      <div class="checkbox-card">
-        <%= Task.find(scheduled_task.task_id).task_name %>
-          <p><%= Task.find(scheduled_task.task_id).frequency_type.titleize %></p>
-          <button><%= link_to "Validate", scheduled_task_path(scheduled_task), data: {turbo_method: :patch, turbo_confirm: "Are you sure you want to validate?" }%></button>
-      </div>
-    <% elsif scheduled_task.to_be_done_date.cweek == Date.today.cweek && Task.find(scheduled_task.task_id).frequency_type == "weekly" && scheduled_task.done == false %>
-      <div class="checkbox-card">
-        <%= Task.find(scheduled_task.task_id).task_name %>
-          <p><%= Task.find(scheduled_task.task_id).frequency_type.titleize %></p>
-          <button><%= link_to "Validate", scheduled_task_path(scheduled_task), data: {turbo_method: :patch, turbo_confirm: "Are you sure you want to validate?" }%></button>
-      </div>
-    <% elsif scheduled_task.to_be_done_date.month == Date.today.month && Task.find(scheduled_task.task_id).frequency_type == "monthly" && scheduled_task.done == false %>
-      <div class="checkbox-card">
-        <%= Task.find(scheduled_task.task_id).task_name %>
-          <p><%= Task.find(scheduled_task.task_id).frequency_type.titleize %></p>
-          <button><%= link_to "Validate", scheduled_task_path(scheduled_task), data: {turbo_method: :patch, turbo_confirm: "Are you sure you want to validate?" }%></button>
-      </div>
-    <% end %>
+    <div class="checkbox-card" data-controller="winning-points">
+      <% if scheduled_task.to_be_done_date == Date.today && Task.find(scheduled_task.task_id).frequency_type == "daily" && scheduled_task.done == false %>
+          <%= Task.find(scheduled_task.task_id).task_name %>
+            <p><%= Task.find(scheduled_task.task_id).frequency_type.titleize %></p>
+            <%= button_to "Validate", scheduled_task_path(scheduled_task), data: {turbo_method: :patch, turbo_confirm: "Are you sure you want to validate?", action: "click->winning-points#alertPoints" }%>
+      <% elsif scheduled_task.to_be_done_date.cweek == Date.today.cweek && Task.find(scheduled_task.task_id).frequency_type == "weekly" && scheduled_task.done == false %>
+          <%= Task.find(scheduled_task.task_id).task_name %>
+            <p><%= Task.find(scheduled_task.task_id).frequency_type.titleize %></p>
+            <%= button_to "Validate", scheduled_task_path(scheduled_task), data: {turbo_method: :patch, turbo_confirm: "Are you sure you want to validate?", action: "click->winning-points#alertPoints"  }%>
+      <% elsif scheduled_task.to_be_done_date.month == Date.today.month && Task.find(scheduled_task.task_id).frequency_type == "monthly" && scheduled_task.done == false %>
+          <%= Task.find(scheduled_task.task_id).task_name %>
+            <p><%= Task.find(scheduled_task.task_id).frequency_type.titleize %></p>
+            <%= button_to "Validate", scheduled_task_path(scheduled_task), data: {turbo_method: :patch, turbo_confirm: "Are you sure you want to validate?", action: "click->winning-points#alertPoints"  }%>
+      <% end %>
+  </div>
   <%end%>
 </div>
