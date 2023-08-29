@@ -4,6 +4,7 @@
   <li><%= @task.task_name %></li>
   <li><%= @task.description %></li>
   <li><%= @task.frequency_type %></li>
+  <li><%= @task.points %></li>
 </ul>
 
 
@@ -12,7 +13,6 @@
   <%# <%= f.input :description %>
   <%# <%= f.input :frequency_type %>
   <%# <%= f.submit %>
-<%# <% end %> 
+<%# <% end %>
 
 <%= link_to "Back to Tasks", tasks_path %>
-<%= button_to "Destroy this task", @task, method: :delete %>

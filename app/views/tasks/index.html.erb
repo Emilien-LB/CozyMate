@@ -1,29 +1,47 @@
-<h1>Tasks</h1>
+<h1 class="text-center">Tasks</h1>
 
-<h2>Daily</h2>
-  <% @tasks.each do |task| %>
-    <% if task.frequency_type == 'daily' %>
-      <%= task.task_name %>
-    <% end %>
-  <% end %>
+<div class="container text-center">
+  <div class="daily d-flex flex-column justify-content-center">
+    <div>
+      <h2>Daily</h2>
+      <% @tasks.each do |task| %>
+        <% if task.frequency_type == 'daily' %>
+          <div>
+            <%= task.task_name %>
+            <%= task.points %>
+            <%= button_to "Destroy this task", @task, method: :delete %>
+            <%= link_to "Edit", edit_task_path(task) %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
 
-<h2>Weekly</h2>
+    <div>
+      <h2>Weekly</h2>
+      <% @tasks.each do |task| %>
+        <% if task.frequency_type == 'weekly' %>
+          <div>
+            <%= task.task_name %>
+            <%= task.points %>
+            <%= button_to "Destroy this task", @task, method: :delete %>
+            <%= link_to "Edit", edit_task_path(task) %>
+          </div>
+          <% end %>
+      <% end %>
+    </div>
 
-<h2>Monthly</h2>
-
-
-<%# <ul> %>
-  <%# <% @tasks.each do |task| %>
-    <%# <li> %>
-      <%# <strong><%= task.task_name %>
-      <%# <p><%= task.description %>
-      <%# <p>Frequency : <%= task.frequency_type %>
-    <%# </li> %>
-  <%# <% end %>
-<%# </ul> %>
-
-  <%# <% if task.frequency_type == 'daily' %>
-    <%# <% elsif task.frequency_type == 'weekly' %>
-    <%# <% elsif task.frequency_type == 'monthly' %>
-    <%# <% else %>
-  <%# <% end %>
+    <div>
+      <h2>Monthly</h2>
+      <% @tasks.each do |task| %>
+        <% if task.frequency_type == 'monthly' %>
+          <div>
+            <%= task.task_name %>
+            <%= task.points %>
+            <%= button_to "Destroy this task", @task, method: :delete %>
+            <%= link_to "Edit", edit_task_path(task) %>
+          </div>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
