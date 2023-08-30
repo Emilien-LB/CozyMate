@@ -6,13 +6,26 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,300&family=Roboto+Condensed:ital,wght@1,300&display=swap');
+    </style>
+
     <%= javascript_importmap_tags %>
   </head>
 
-  <body><%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
+  <body>
 
+    <% unless current_page?(root_path) || current_page?(user_session_path) %>
+      <%= render "shared/navbar" %>
+    <% end %>
+
+    <%= render "shared/flashes" %>
     <%= yield %>
   </body>
 </html>

@@ -1,48 +1,63 @@
 <h1 class="text-center">Tasks</h1>
 
+<div class="flexbox search-bar">
+  <%= form_with url: tasks_path, method: :get do %>
+    <%= text_field_tag :query, params[:query], placeholder: "Search ..." %>
+    <button type="submit" class="search-button">
+      <i class="fas fa-search"></i>
+    </button>
+  <% end %>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchForm = document.getElementById('search-form');
+    const searchInput = searchForm.querySelector('input[type="text"]');
+
+    searchInput.addEventListener('input', function() {
+      if (searchInput.value === '') {
+        searchForm.submit();
+      }
+    });
+  });
+</script>
+
+
 <div class="container text-center">
   <div class="daily d-flex flex-column justify-content-center">
-    <div>
-      <h2>Daily</h2>
-      <% @tasks.each do |task| %>
-        <% if task.frequency_type == 'daily' %>
-          <div>
-            <%= task.task_name %>
-            <%= task.points %>
-            <%= link_to "Delete", task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-            <%= link_to "Edit", edit_task_path(task) %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-
-    <div>
-      <h2>Weekly</h2>
-      <% @tasks.each do |task| %>
-        <% if task.frequency_type == 'weekly' %>
-          <div>
-            <%= task.task_name %>
-            <%= task.points %>
-            <%= link_to "Delete", task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-            <%= link_to "Edit", edit_task_path(task) %>
-          </div>
-          <% end %>
-      <% end %>
-    </div>
-
-    <div>
-      <h2>Monthly</h2>
-      <% @tasks.each do |task| %>
-        <% if task.frequency_type == 'monthly' %>
-          <div>
-            <%= task.task_name %>
-            <%= task.points %>
-            <%= link_to "Delete", task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-            <%= link_to "Edit", edit_task_path(task) %>
-          </div>
-          <% end %>
-      <% end %>
-    </div>
-    <%= link_to "Add", new_task_path %>
+    <h2>Daily</h2>
+    <% @tasks.where(frequency_type: 'daily').each do |task| %>
+      <div>
+        <%= task.task_name %>
+        <%= task.points %>
+        <%= link_to "Delete", task_path(task), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        <%= link_to "Edit", edit_task_path(task) %>
+      </div>
+    <% end %>
   </div>
+
+  <div class="daily d-flex flex-column justify-content-center">
+    <h2>Weekly</h2>
+    <% @tasks.where(frequency_type: 'weekly').each do |task| %>
+      <div>
+        <%= task.task_name %>
+        <%= task.points %>
+        <%= link_to "Delete", task_path(task), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        <%= link_to "Edit", edit_task_path(task) %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="daily d-flex flex-column justify-content-center">
+    <h2>Monthly</h2>
+    <% @tasks.where(frequency_type: 'monthly').each do |task| %>
+      <div>
+        <%= task.task_name %>
+        <%= task.points %>
+        <%= link_to "Delete", task_path(task), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        <%= link_to "Edit", edit_task_path(task) %>
+      </div>
+    <% end %>
+  </div>
+  <%= link_to "Add", new_task_path %>
 </div>
