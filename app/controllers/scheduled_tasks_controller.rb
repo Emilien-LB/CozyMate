@@ -2,7 +2,8 @@ class ScheduledTasksController < ApplicationController
 before_action :set_scheduled_task, only: [:update]
 
   def index
-    @scheduled_tasks = ScheduledTask.all
+    @scheduled_tasks = ScheduledTask.where(to_be_done_date: Date.today())
+    
   end
 
   def update
