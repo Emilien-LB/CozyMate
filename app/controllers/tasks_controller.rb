@@ -3,7 +3,12 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tasks = Task.all
+    if params[:query].present?
+      sql_query = "task_name ILIKE :query OR points::text ILIKE :query"
+      @tasks = Task.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @tasks = Task.all
+    end
   end
 
   def show
@@ -50,5 +55,4 @@ class TasksController < ApplicationController
   def set_task
     @task = Task.find(params[:id])
   end
-
 end
