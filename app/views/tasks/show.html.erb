@@ -15,12 +15,12 @@
   <%# <%= f.submit %>
 <%# <% end %>
 
-<h2>Historique de la tâche</h2>
+<h2>Historic of task</h2>
 
 <ul>
   <% @scheduled_tasks_done.each do |scheduled_task| %>
     <li>
-      Fait par <%= scheduled_task.user.first_name %> le <%= scheduled_task.updated_at.to_date %>
+      Done by <%= scheduled_task.user.first_name %> the <%= scheduled_task.recorded_date %> - <%= Task.find(scheduled_task.task_id).frequency_type %>
     </li>
   <% end %>
 </ul>

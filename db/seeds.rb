@@ -145,6 +145,43 @@ end
   )
 end
 
+puts "Creating old Daily Scheduled Tasks that are done..."
+
+user_instances = [user1, user2, user3]
+
+60.times do |i|
+  @date = Date.today - (i+1).days
+  ScheduledTask.create!(
+    task_id: task1.id,
+    to_be_done_date: @date,
+    user_id: user_instances.sample.id,
+    recorded_date: @date,
+    done: true
+  )
+end
+
+60.times do |i|
+  @date = Date.today - (i+1).days
+  ScheduledTask.create!(
+    task_id: task2.id,
+    to_be_done_date: @date,
+    user_id: user_instances.sample.id,
+    recorded_date: @date,
+    done: true
+  )
+end
+
+60.times do |i|
+  @date = Date.today - (i+1).days
+  ScheduledTask.create!(
+    task_id: task3.id,
+    to_be_done_date: @date,
+    user_id: user_instances.sample.id,
+    recorded_date: @date,
+    done: true
+  )
+end
+
 puts "Creating Weekly Scheduled Tasks..."
 
 3.times do |i|
@@ -171,30 +208,101 @@ end
   )
 end
 
+puts "Creating old Weekly Scheduled Tasks that are done..."
+
+8.times do |i|
+  @date = Date.today - (i + 1) * 7.days
+  ScheduledTask.create!(
+    task_id: task4.id,
+    to_be_done_date: @date,
+    user_id: user_instances.sample.id,
+    recorded_date: @date,
+    done: true
+  )
+end
+
+8.times do |i|
+  @date = Date.today - (i + 1) * 7.days
+  ScheduledTask.create!(
+    task_id: task5.id,
+    to_be_done_date: @date,
+    user_id: user_instances.sample.id,
+    recorded_date: @date,
+    done: true
+  )
+end
+
+8.times do |i|
+  @date = Date.today - (i + 1) * 7.days
+  ScheduledTask.create!(
+    task_id: task6.id,
+    to_be_done_date: @date,
+    user_id: user_instances.sample.id,
+    recorded_date: @date,
+    done: true
+  )
+end
+
 puts "Creating Monthly Scheduled Tasks..."
 
-1.times do |i|
-  @date = Date.today
+3.times do |i|
+  @date = Date.today + i.month
   ScheduledTask.create!(
     task_id: task7.id,
     to_be_done_date: @date
   )
 end
 
-1.times do |i|
-  @date = Date.today
+3.times do |i|
+  @date = Date.today + i.month
   ScheduledTask.create!(
     task_id: task8.id,
     to_be_done_date: @date
   )
 end
 
-1.times do |i|
-  @date = Date.today
+3.times do |i|
+  @date = Date.today + i.month
   ScheduledTask.create!(
     task_id: task9.id,
     to_be_done_date: @date
   )
 end
+
+puts "Creating old Monthly Scheduled Tasks that are done..."
+
+2.times do |i|
+  @date = Date.today - (i+1).month
+  ScheduledTask.create!(
+    task_id: task7.id,
+    to_be_done_date: @date,
+    user_id: user_instances.sample.id,
+    recorded_date: @date,
+    done: true
+  )
+end
+
+2.times do |i|
+  @date = Date.today - i.month
+  ScheduledTask.create!(
+    task_id: task8.id,
+    to_be_done_date: @date,
+    user_id: user_instances.sample.id,
+    recorded_date: @date,
+    done: true
+  )
+end
+
+2.times do |i|
+  @date = Date.today - i.month
+  ScheduledTask.create!(
+    task_id: task9.id,
+    to_be_done_date: @date,
+    user_id: user_instances.sample.id,
+    recorded_date: @date,
+    done: true
+  )
+end
+
 
 puts "Congrats, seeds done !"
