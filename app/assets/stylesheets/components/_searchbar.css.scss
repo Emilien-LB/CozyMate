@@ -19,9 +19,13 @@
   padding: 6px;
   font-size: 14px;
   border: none;
-  outline: none;
+  outline: transparent;
   background-color: transparent;
   color: #545454; /* Gris assorti */
+}
+
+.flexbox.search-bar input[type="text"]:focus {
+  outline: transparent;
 }
 
 /* Remplacer le texte "Search" par une icône de loupe */

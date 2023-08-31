@@ -1,9 +1,12 @@
 // General Body Styling
 body {
   background: #FFF7EC;
-  height: 100vh;
-  overflow: hidden;
+  // height: 100vh;
+  overflow: auto;
+  padding-bottom: 56px;
+  scroll-behavior: smooth;
 }
+
 
 // Icon Bar Styling
 .iconbar {
@@ -32,8 +35,8 @@ body {
   padding: 0.4em;
   border-radius: 1em;
 
-  // Hover effect
-  &:hover {
+  // Active effect
+  &.active {
     background-color: #9ac9e5;
   }
 
@@ -45,6 +48,9 @@ body {
 
 // Mobile-specific Styling
 @media only screen and (max-device-width: 480px) {
+  body {
+    padding-bottom: 56px;  // Ajouté pour compenser la hauteur de la navbar
+  }
   .iconbar {
     height: 56px;
     width: 100%;
@@ -53,4 +59,3 @@ body {
     font-size: 1.6em;
   }
 }
-
