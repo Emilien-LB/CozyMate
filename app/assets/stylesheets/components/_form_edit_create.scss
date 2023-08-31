@@ -1,23 +1,25 @@
 .container-form {
-  display: flex;
-  justify-content: center;
+  padding-inline: 20px;
+
 }
 
 h1 {
   text-align: center;
-}
+  -webkit-text-stroke: 1.5px black;
+  color: #8D5BA5;
+  font-family:  'Roboto Condensed', 'sans-serif';
+  font-size: 36px;
+  }
 
 .custom-input {
   display: flex;
   text-align: center;
-  width: 199px;
   height: 33px;
   border-radius: 10px;
   background: rgba(255, 209, 204, 0.20)
 }
 
 .custom-input_descrption {
-  width: 199px;
   height: 86px;
   justify-content: center;
   align-items: center;
@@ -26,24 +28,44 @@ h1 {
   background: rgba(255, 209, 204, 0.20)
 }
 
-.button-validates {
-  width: 112px;
+.button-validates,
+.button-cancel {
+  min-width: 130px;
   height: 27px;
-  background: #8D5BA5
+  text-decoration: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  line-height: normal;
+  justify-content: center;
+  padding-block: 4px;
+  background: rgba(141, 91, 165, 1);
+  color: white;
+  border-radius: 10px;
+}
+.button-cancel {
+  background: rgba(141, 91, 165, .5);
 }
 
 .tag-item {
   .task_frequency_type {
     display: flex;
+    justify-content: space-between;
+
   }
-  
+
+  .form-check {
+    padding-left: 0%;
+  }
   legend {
     display: none;
   }
 
   .form-check-label {
-    color: #ECEAFF !important;
+    color: #888 !important;
   }
+
 
 }
 
@@ -58,18 +80,17 @@ h1 {
   font-size: 0.7rem;
   border-radius: 50rem;
   padding: 0.1rem 0.5rem;
-  background-color: #ECEAFF;
-  color: #7E73FF;
-  border: 1px solid #7E73FF;
-  margin-right: 0.6rem;
+  background-color: rgba(255, 209, 204, 0.20);
+  color: rgba(255, 209, 204, 0.20);
+  border: 1px solid rgba(255, 209, 204, 0.50);
   margin-bottom: 0.4rem;
-  width: 76px;
+  min-width: 75px;
   height: 22px;
   text-align: center;
 }
 
 .tag-selector:checked + label {
-  background-color: #7E73FF;
+  background-color: rgba(255, 209, 204, 1);
   color: white;
 }
 input, select, textarea{

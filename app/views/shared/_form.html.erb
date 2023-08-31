@@ -9,6 +9,9 @@
     </div>
     <%= f.input :points, input_html: { class: "custom-input" } %>
     <%= f.input :description, as: :text, input_html: { class: "custom-input_descrption" } %>
-    <%= f.submit 'Validates', class: "button-validates" %>
+    <div class="d-flex justify-content-between">
+      <%= link_to "Cancel", tasks_path, class: "button-cancel" %>
+      <%= f.submit 'Validates', class: "button-validates" %>
+    </div>
   <% end %>
 </div>
