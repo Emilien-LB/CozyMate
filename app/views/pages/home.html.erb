@@ -1,2 +1,17 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="home-container">
+  <div class="home-logo">
+    <img src="home-logo-petit.png">
+  </div>
+  <div class="home-title">
+    <h1>CozyMate</h1>
+  </div>
+  <div class="home-title2">
+    <h2>Organize, Share, Win</h2>
+    <h2>Turn Daily Life into a Game!</h2>
+  </div>
+  <div class="home-button">
+    <%= link_to scheduled_tasks_path, class: "btn btn-success", style: "text-decoration: none" do%>
+    <span class="typography"><%= "Welcome" %></span>
+    <% end %>
+  </div>
+</div>
