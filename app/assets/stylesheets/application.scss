@@ -12,3 +12,7 @@
 @import "pages/index";
 @import "components/navbar";
 @import "components/searchbar";
+
+body {
+  scroll-behavior: smooth;
+}
