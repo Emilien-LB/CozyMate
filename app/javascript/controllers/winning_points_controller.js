@@ -11,8 +11,8 @@ export default class extends Controller {
     // Show a confirmation dialog using SweetAlert
     Swal.fire({
       title: "Are you sure?",
-      text: "This will validate your task.",
-      icon: "warning",
+      text: "This will validate task ",
+      icon: "question",
       showCancelButton: true,
       confirmButtonText: "Yes, validate it!",
       cancelButtonText: "Cancel"
