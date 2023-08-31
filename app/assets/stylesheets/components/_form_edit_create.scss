@@ -1,17 +1,15 @@
 .container-form {
   display: flex;
   justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 h1 {
   text-align: center;
-
 }
 
 .custom-input {
   display: flex;
+  text-align: center;
   width: 199px;
   height: 33px;
   border-radius: 10px;
@@ -32,4 +30,48 @@ h1 {
   width: 112px;
   height: 27px;
   background: #8D5BA5
+}
+
+.tag-item {
+  .task_frequency_type {
+    display: flex;
+  }
+  
+  legend {
+    display: none;
+  }
+
+  .form-check-label {
+    color: #ECEAFF !important;
+  }
+
+}
+
+.tag-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.7rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  background-color: #ECEAFF;
+  color: #7E73FF;
+  border: 1px solid #7E73FF;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+  width: 76px;
+  height: 22px;
+  text-align: center;
+}
+
+.tag-selector:checked + label {
+  background-color: #7E73FF;
+  color: white;
+}
+input, select, textarea{
+  color: #ffF;
 }
