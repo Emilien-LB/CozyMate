@@ -1,7 +1,7 @@
 <h1 class="text-center">Tasks</h1>
 
 <div class="flexbox search-bar">
-  <%= form_with url: tasks_path, method: :get do %>
+  <%= form_with url: tasks_path, method: :get, id: 'search-form' do %>
     <%= text_field_tag :query, params[:query], placeholder: "Search ..." %>
     <button type="submit" class="search-button">
       <i class="fas fa-search"></i>
@@ -10,16 +10,25 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const searchForm = document.getElementById('search-form');
+ document.addEventListener('DOMContentLoaded', function() {
+  const searchForm = document.getElementById('search-form');
+
+  if (searchForm) {  // Vérification si searchForm est null
     const searchInput = searchForm.querySelector('input[type="text"]');
 
-    searchInput.addEventListener('input', function() {
-      if (searchInput.value === '') {
-        searchForm.submit();
-      }
-    });
-  });
+    if (searchInput) {  // Vérification si searchInput est null
+      searchInput.addEventListener('input', function() {
+        if (searchInput.value === '') {
+          searchForm.submit();
+        }
+      });
+    } else {
+      console.error("L'élément input[type=\"text\"] n'a pas été trouvé dans le formulaire.");
+    }
+  } else {
+    console.error("Le formulaire avec l'ID 'search-form' n'a pas été trouvé.");
+  }
+});
 </script>
 
 
