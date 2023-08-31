@@ -1,7 +1,9 @@
-<%= simple_form_for(@task) do |f| %>
-  <%= f.input :task_name %>
-  <%= f.input :description %>
-  <%= f.collection_select :frequency_type, ['daily', 'weekly', 'monthly'], :to_s, :humanize %>
-  <%= f.input :points %>
-  <%= f.submit %>
-<% end %>
+<div class="container-form">
+  <%= simple_form_for(@task) do |f|%>
+    <%= f.input :task_name, input_html: { class: "custom-input" } %>
+    <%= f.input :description, input_html: { class: "custom-input_descrption" } %>
+    <%= f.collection_select :frequency_type, ['daily', 'weekly', 'monthly'], :to_s, :humanize %>
+    <%= f.input :points, input_html: { class: "custom-input" } %>
+    <%= f.submit 'Validates', class: "button-validates" %>
+  <% end %>
+</div>
