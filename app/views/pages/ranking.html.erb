@@ -1,9 +1,11 @@
 <h1>Roommates' Ranking</h1>
 
-<ol>
-  <% @users.each do |user| %>
-    <li>
-      <%= "#{user.first_name}" %> : <%= user.total_points %> points
-    </li>
-  <% end %>
-</ol>
+<div class="ranking">
+  <ol>
+    <% @users.each do |user| %>
+      <li>
+        <%= "#{user.first_name}" %> : <%= user.total_points %> <i class="fa-regular fa-star" style="color: #000000;"></i>
+      </li>
+    <% end %>
+  </ol>
+</div>
