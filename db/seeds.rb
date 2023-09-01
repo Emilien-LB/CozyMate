@@ -18,6 +18,10 @@ user1 = User.create!(
   email: 'vic@gmail.com',
   password: 'secret')
 
+  file = File.open("app/assets/images/pictures/Vicky.jpg")
+  user1.photo.attach(io: file, filename: "Vicky.png", content_type: "image/png")
+  user1.save
+
 user2 = User.create!(
   first_name: 'Anais',
   last_name: 'Brd',
@@ -25,12 +29,20 @@ user2 = User.create!(
   email: 'ana@gmail.com',
   password: 'secret')
 
+  file = File.open("app/assets/images/pictures/Nanus.jpg")
+  user2.photo.attach(io: file, filename: "Nanus.png", content_type: "image/png")
+  user2.save
+
 user3 = User.create!(
   first_name: 'Milou',
   last_name: 'Lbg',
   birth_date: '27/07/2002',
   email: 'milou@gmail.com',
   password: 'secret')
+
+  file = File.open("app/assets/images/pictures/Milou.jpg")
+  user3.photo.attach(io: file, filename: "Milou.png", content_type: "image/png")
+  user3.save
 
 puts "Creating daily tasks..."
 
