@@ -1,0 +1,66 @@
+.scheduled-tasks-wrapper {
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+}
+.logo-scheduled-tasks {
+  display: flex;
+  margin: 10px;
+}
+
+.logo-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.logo-scheduled-tasks img{
+  width: 62;
+  height: 68px;
+  background: url('home-logo-petit.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  mix-blend-mode: darken;
+}
+.hello {
+  align-self: end;
+}
+.welcome {
+  font-family: $headers-font;
+  font-style: italic;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 30px
+}
+.scheduled-tasks-card {
+  background-color: $blue;
+  margin: 10px;
+  border-radius: 10px;
+  max-height: 65%;
+  overflow: auto;
+}
+
+.checkbox-card{
+  display: flex;
+  justify-content: center;
+}
+
+.scheduled-task-container {
+  background-color: $beige;
+  margin: 5px;
+  padding: 10px 25px 10px 40px;
+  height:fit-content;
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid $olive;
+  display: flex
+  }
+
+.task-name-points {
+  display: flex;
+  align-self: center;
+  width: 100%;
+  justify-content: space-between
+}
+.scheduled-task-name {
+  padding-left: 10px;
+}

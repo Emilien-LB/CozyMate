@@ -11,7 +11,7 @@ export default class extends Controller {
     // Show a confirmation dialog using SweetAlert
     Swal.fire({
       title: "Are you sure?",
-      text: "This will validate task ",
+      text: "This will validate the task",
       icon: "question",
       showCancelButton: true,
       confirmButtonText: "Yes, validate it!",
@@ -44,7 +44,7 @@ export default class extends Controller {
     // Show success message using SweetAlert
     Swal.fire({
       title: "Points Validated!",
-      text: "Congrats ! You win points.",
+      text: "Congrats, you just win points! Check your ranking!",
       icon: "success"
     });
 
