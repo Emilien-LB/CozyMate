@@ -1,39 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CozyMate - Organize, Share, Win - Turn Daily Life into a Game !</title>
-
+    <!-- Basic Meta Tags -->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Open Graph -->
+    <!-- Title of the Page -->
+    <title>CozyMate - Organize, Share, Win - Turn Daily Life into a Game !</title>
+
+    <!-- Author Information -->
+    <meta name="author" content="Anaïs Bernard, Emilien Leborgne, Victoria Krommenacker">
+
+    <!-- Open Graph Meta Tags for Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="<%= meta_title %>">
     <meta property="og:description" content="<%= meta_description %>">
     <meta property="og:image" content="<%= meta_image %>">
     <meta property="og:url" content="<%= request.original_url %>">
-    <meta name="author" content="Anaïs Bernard, Emilien Leborgne, Victoria Krommenacker">
 
+    <!-- External Libraries and Stylesheets -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
+    <!-- Application Styles and JS -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <%= favicon_link_tag 'LogoCozyMate.ico' %>
     <%= javascript_importmap_tags %>
 
+    <!-- Mobile Web App Capability -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= render 'shared/ios_pwa_links' %>
+
+    <!-- Favicon and Web Manifest -->
+    <%= favicon_link_tag 'LogoCozyMate.ico' %>
+    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
   </head>
 
   <body>
+    <!-- Navigation Bar, displayed unless on the root or login page -->
     <% unless current_page?(root_path) || current_page?(user_session_path) %>
       <%= render "shared/navbar" %>
     <% end %>
 
+    <!-- Flash Messages -->
     <%= render "shared/flashes" %>
+
+    <!-- Main Content -->
     <%= yield %>
   </body>
 </html>
+
