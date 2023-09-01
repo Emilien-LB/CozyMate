@@ -13,7 +13,6 @@
   color: $pink;
   -webkit-text-stroke: 1px black;
   font-weight: bold;
-
 }
 
 .frequency-title {
@@ -24,13 +23,13 @@
 }
 
 .task-details {
-  background-color: #F1F1E3;
+  background-color: $light-green;
   margin: 5px;
   padding: 10px;
   height:fit-content;
   width: auto;
   border-radius: 20px;
-  border: 1px solid #C1C2B6;
+  border: 1px solid $olive;
 }
 
 span {
