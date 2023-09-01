@@ -1,0 +1,37 @@
+.add-icon {
+  -webkit-text-stroke: 1px black;
+  font-size: 2.5em !important;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding-bottom: 90px;
+  padding-right: 20px
+}
+
+.tasks-title {
+  font-size: 36px;
+  color: $pink;
+  -webkit-text-stroke: 1px black;
+  font-weight: bold;
+}
+
+.frequency-title {
+  font-size: 20px;
+  color: $pink;
+  -webkit-text-stroke: 1px black;
+  font-weight: bold;
+}
+
+.task-details {
+  background-color: $light-green;
+  margin: 5px;
+  padding: 10px;
+  height:fit-content;
+  width: auto;
+  border-radius: 20px;
+  border: 1px solid $olive;
+}
+
+span {
+  color: black
+}
