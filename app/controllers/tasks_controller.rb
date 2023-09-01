@@ -27,6 +27,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.save
     if @task.save
+      ScheduledTask.generate_scheduled_tasks(@task, task_params[:frequency_type])
       redirect_to tasks_path, notice: "Task was successfully created."
     else
       render :new, status: :unprocessable_entity
@@ -34,17 +35,11 @@ class TasksController < ApplicationController
   end
 
   def update
-# faire la méthode si la fréquency task à changer
-  # créer une variable pour stocker old_frequency
   old_frequency = @task.frequency_type
   p old_frequency
   p task_params[:frequency_type]
   if @task.frequency_type != task_params[:frequency_type]
     ScheduledTask.where(task: @task, done: false).destroy_all
-  # if frequency_task =! de l'avant old_frequency
-          # destroy all schedules tasks not done
-              #  @task.scheduled_tasks where(task = @task).destroy
-          # call generate scheduledta
     ScheduledTask.generate_scheduled_tasks(@task, task_params[:frequency_type])
   end
     if @task.update(task_params)
