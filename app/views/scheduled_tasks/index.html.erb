@@ -1,6 +1,8 @@
-<h1> TO DO Today </h1>
-<div class="container">
-  <% @scheduled_tasks.each do |scheduled_task| %>
-    <%= render "scheduled_task", scheduled_task: scheduled_task %>
-  <% end %>
+
+
+<div class="container text-center">
+  <h1> TO DO Today </h1>
+    <% @scheduled_tasks.each do |scheduled_task| %>
+      <%= render "scheduled_task", scheduled_task: scheduled_task %>
+    <% end %>
 </div>
