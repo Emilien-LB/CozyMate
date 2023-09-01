@@ -41,3 +41,9 @@ span {
   color: black;
   font-size: 16px
 }
+
+.tasks-container {
+  max-height: 65%;
+  overflow: auto;
+  padding-bottom: 100px
+}

@@ -1,8 +1,20 @@
 
-
-<div class="container text-center scheduled-tasks-card">
-  <h1> TO DO Today </h1>
-    <% @scheduled_tasks.each do |scheduled_task| %>
-      <%= render "scheduled_task", scheduled_task: scheduled_task %>
-    <% end %>
+<div class="scheduled-tasks-wrapper d-flex flex-column">
+  <%# HEADER %>
+  <div clss="logo-container">
+    <div class="logo-scheduled-tasks">
+      <img src="home-logo-petit.png" alt="Home Logo">
+    <div class="hello">
+      <p> Hello <%= current_user.first_name %> !</p>
+    </div>
+    </div>
+  </div>
+  <p class="welcome text-center"> Welcome at Tropicooloc !</p>
+  <%# scheduled-tasks %>
+  <div class="text-center scheduled-tasks-card">
+    <h1> TO DO Today </h1>
+      <% @scheduled_tasks.each do |scheduled_task| %>
+        <%= render "scheduled_task", scheduled_task: scheduled_task %>
+      <% end %>
+  </div>
 </div>
