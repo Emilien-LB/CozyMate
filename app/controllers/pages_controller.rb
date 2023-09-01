@@ -6,6 +6,6 @@ class PagesController < ApplicationController
   end
 
   def ranking
-    @users = User.all.to_a.sort_by { |user| -user.total_points }
+    @users = User.all.to_a.sort_by { |user| -user.total_points }.first(3)
   end
 end

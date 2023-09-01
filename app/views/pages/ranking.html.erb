@@ -1,11 +1,20 @@
-<h1>Roommates' Ranking</h1>
+<h1>Ranking</h1>
 
-<div class="ranking">
-  <ol>
-    <% @users.each do |user| %>
-      <li>
-        <%= "#{user.first_name}" %> : <%= user.total_points %> <i class="fa-regular fa-star" style="color: #000000;"></i>
-      </li>
-    <% end %>
-  </ol>
+<div class="ranking-first">
+  <div class="ranking">
+    <%= render "ranking_card", user: @users.first %>
+    <div class="trophy">
+      <i class="fa-solid fa-trophy" style="color: #ffcc69;"></i>
+    </div>
+  </div>
+</div>
+
+<div class="ranking-second">
+  <div class="ranking">
+    <%= render "ranking_card", user: @users.second%>
+  </div>
+
+  <div class="ranking">
+    <%= render "ranking_card", user: @users.last %>
+  </div>
 </div>

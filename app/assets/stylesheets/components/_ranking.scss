@@ -1,4 +1,34 @@
+h1 {
+  color: #FFCC69 !important;
+}
+
 .ranking {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  width: 76px;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+
+  .stats-points {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    width: 61px;
+    height: 31px;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background: rgba(255, 204, 105, 0.30);
+  }
+}
+
+.ranking-second {
+  display: flex;
+  justify-content: space-between;
+}
+
+.trophy {
+  margin-top: 15px;
+  font-size: 30px;
 }
