@@ -1,36 +1,55 @@
-// Typography and Common Styles
 .typography {
   color: #FFF;
   text-align: center;
   font-family: Roboto condensed;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
   line-height: normal;
 }
 
-// Home Page Styles
-.home-button {
+.home-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  width: 142px;
-  height: 32px;
+  justify-content: space-between;
+  height: 100vh;
+  overflow-y: hidden;
 }
 
-.home-title {
+.home-header {
+  margin-top: 17vh;
   display: flex;
-  justify-content: center;
-  width: 189px;
-  height: 73px;
+  align-items: flex-end;
+}
+
+.home-content {
+  height: 62%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.home-button {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.home-title h1 {
   color: rgba(72, 72, 72, 0.88);
   text-align: center;
-  font-family: Raleway;
-  font-size: 40px;
+  font-size: 60px;
   font-style: italic;
   font-weight: 300;
+  margin: 0;
 }
 
 .home-title2 {
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   color: #000;
   font-family: Barlow;
   font-size: 16px;
@@ -38,11 +57,47 @@
   font-weight: 300;
 }
 
-.home-logo img{
-  width: 163px;
-  height: 176px;
+.home-logo {
+  margin: 10px 0 0 5px;
+}
+
+.home-logo img {
+  width: 33vw;
   background: url('home-logo-petit.png');
   background-size: cover;
   background-repeat: no-repeat;
   mix-blend-mode: darken;
 }
+
+// @media only screen and (max-width: 768px) {
+//   .home-header {
+//     flex-direction: row;
+//     justify-content: flex-start;
+//     align-items: center;
+//   }
+
+//   .home-logo img {
+//     width: 144px;
+//     height: 144px;
+//   }
+
+//   .home-title h1 {
+//     font-size: 50px;
+//   }
+
+//   .home-title2 {
+//     text-align: left;
+//     // margin-top: 20px;  /* Pour créer un espace entre home-header et home-title2 */
+//     align-self: center;  /* Pour le centrage horizontal */
+//   }
+
+//   .home-button {
+//     // position: fixed;
+//     // bottom: 33.33vh;
+//     // right: 10px;
+//   }
+
+//   .home-content {
+//     padding: 20 20px;
+//   }
+// }
