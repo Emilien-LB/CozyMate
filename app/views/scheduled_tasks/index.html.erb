@@ -1,6 +1,6 @@
 
 
-<div class="container text-center">
+<div class="container text-center scheduled-tasks-card">
   <h1> TO DO Today </h1>
     <% @scheduled_tasks.each do |scheduled_task| %>
       <%= render "scheduled_task", scheduled_task: scheduled_task %>

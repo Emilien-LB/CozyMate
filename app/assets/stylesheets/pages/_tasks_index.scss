@@ -1,6 +1,6 @@
 .add-icon {
   -webkit-text-stroke: 1px black;
-  font-size: 2.5em !important;
+  font-size: 2.7em !important;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -16,22 +16,28 @@
 }
 
 .frequency-title {
-  font-size: 20px;
+  font-size: 25px;
   color: $pink;
   -webkit-text-stroke: 1px black;
   font-weight: bold;
+  margin-top: 20px
 }
 
 .task-details {
   background-color: $light-green;
   margin: 5px;
-  padding: 10px;
+  padding: 10px 25px 10px 40px;
   height:fit-content;
   width: auto;
   border-radius: 20px;
   border: 1px solid $olive;
 }
 
+.stars-edit-delete {
+  width: 40%
+}
+
 span {
-  color: black
+  color: black;
+  font-size: 16px
 }
