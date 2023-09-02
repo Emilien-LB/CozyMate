@@ -1,18 +1,29 @@
 
-<div class="scheduled-tasks-wrapper d-flex flex-column">
+<div class="scheduled-tasks-wrapper">
   <%# HEADER %>
-  <div clss="logo-container">
-    <div class="logo-scheduled-tasks">
-      <img src="home-logo-petit.png" alt="Home Logo">
-    <div class="hello">
-      <p> Hello <%= current_user.first_name %> !</p>
+  <div class="top-screen-elements">
+    <div class="banner-container">
+      <div class="logo-scheduled-tasks">
+        <img src="home-logo-petit.png" alt="Home Logo" class="logo">
+        <div class="hello">
+          <p> Hello <%= current_user.first_name %> !</p>
+        </div>
+        <%= cl_image_tag current_user.photo.key, height: 80, width: 80, crop: :fill, class:" rounded-circle current-user-picture"  %>
+      </div>
     </div>
+    <p class="welcome text-center"> Welcome at Tropicooloc !</p>
+    <div class="roommates">
+      <% @users.each do |user| %>
+        <% if user.id != current_user.id %>
+          <%= cl_image_tag user.photo.key, height: 40, width: 40, crop: :fill, class:" rounded-circle" %>
+        <% end %>
+      <%end%>
     </div>
-  </div>
-  <p class="welcome text-center"> Welcome at Tropicooloc !</p>
+</div>
+
   <%# scheduled-tasks %>
   <div class="text-center scheduled-tasks-card">
-    <h1> TO DO Today </h1>
+    <h1 class="scheduled-tasks-title"> TO DO Today </h1>
       <% @scheduled_tasks.each do |scheduled_task| %>
         <%= render "scheduled_task", scheduled_task: scheduled_task %>
       <% end %>
