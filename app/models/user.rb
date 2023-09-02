@@ -15,4 +15,12 @@ class User < ApplicationRecord
   def total_points
     self.scheduled_tasks.joins(:task).where(done: true).sum('tasks.points')
   end
+
+  def change
+    add_column :users, :total_points, :integer, default: 0
+  end
+
+  def self.top_ranked_users(limit = 3)
+    order(total_points: :desc).limit(limit)
+  end
 end

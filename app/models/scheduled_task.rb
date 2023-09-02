@@ -4,6 +4,12 @@ class ScheduledTask < ApplicationRecord
 
   validates :task_id, presence: true
 
+  after_commit :update_user_total_points, if: :done?
+
+  def update_user_total_points
+    user.update(total_points: user.total_points)
+  end
+
   def self.generate_scheduled_tasks( task, frequency_type)
     today = Date.today()
     nb_jour = 21
