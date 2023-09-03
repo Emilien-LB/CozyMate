@@ -1,6 +1,6 @@
 .container-form {
   padding-inline: 20px;
-
+  text-align: center;
 }
 
 h1 {
@@ -11,6 +11,10 @@ h1 {
   font-size: 36px;
   }
 
+  .form-control::placeholder {
+    color: rgba(136, 136, 136, 0.2)
+  }
+
 .custom-input {
   display: flex;
   text-align: center;
@@ -19,11 +23,11 @@ h1 {
   background: rgba(255, 209, 204, 0.20)
 }
 
-.custom-input_descrption {
+.custom-input_description {
   height: 86px;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: justify;
   border-radius: 10px;
   background: rgba(255, 209, 204, 0.20)
 }

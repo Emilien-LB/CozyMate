@@ -5,6 +5,7 @@ class Task < ApplicationRecord
   WEEKDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
   validates :frequency_type, inclusion: { in: %w(daily weekly monthly), allow_blank: true }
+  validates :task_name, :frequency_type, :description, :points, presence: true
   # validates :frequency_amount, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 31 }
   # validates :frequency_day, presence: true, if: -> { frequency_type == 'weekly' }, inclusion: { in: WEEKDAYS }
   # validates :frequency_day_of_month, presence: true, if: -> { frequency_type == 'monthly' }, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 31 }
