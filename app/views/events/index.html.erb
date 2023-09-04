@@ -1,0 +1,9 @@
+<%= month_calendar(events: @events, end_attribute: :end_time) do |date, events| %>
+  <%= date %>
+  <% events.each do |event| %>
+    <div class="event">
+      <p><%= link_to event.title, event_path(event) %></p>
+      <small><%= event.start_time.strftime('%I:%M %p') %> - <%= event.end_time.strftime('%I:%M %p') %></small>
+    </div>
+  <% end %>
+<% end %>

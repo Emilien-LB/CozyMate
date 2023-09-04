@@ -1,0 +1,6 @@
+<h1 class="text-center"><%= @event.title %></h1>
+
+<p><strong>Add by:</strong><%= @event.user.first_name %></p>
+
+<%= link_to "Delete", event_path(@event), method: :delete, data: { confirm: "Are you sure ?" } %>
+<%= link_to "Edit", edit_event_path(@event) %>
