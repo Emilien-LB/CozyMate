@@ -18,10 +18,9 @@
   </div>
 
   <div class="icons">
-    <%# <%= link_to root_path do %>
-    <%# Si on ajoute un calendar %>
-      <i class="fas fa-calendar"></i>
-    <%# <% end %>
+    <%= link_to events_path do %>
+      <i class="fas fa-calendar <%= 'active' if current_page?(events_path) %>"></i>
+    <% end %>
   </div>
 
   <div class="icons">

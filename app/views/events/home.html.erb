@@ -1,0 +1,9 @@
+<%= month_calendar(events: @events, end_attribute: :end_time) do |date, events_for_day| %>
+  <%= date %>
+  <%= @events.inspect %>
+  <% events_for_day.each do |event| %>
+    <div class="event">
+      <p><%= event.name %></p>
+    </div>
+  <% end %>
+<% end %>
