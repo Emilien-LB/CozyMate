@@ -42,6 +42,7 @@
     <!-- Navigation Bar, displayed unless on the root or login page -->
     <% unless current_page?(root_path) || current_page?(user_session_path) %>
       <%= render "shared/navbar" %>
+      <%= render "shared/logo" %>
     <% end %>
 
     <!-- Flash Messages -->
@@ -51,4 +52,3 @@
     <%= yield %>
   </body>
 </html>
-

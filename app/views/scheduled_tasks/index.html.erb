@@ -3,13 +3,10 @@
   <%# HEADER %>
   <div class="top-screen-elements">
     <div class="banner-container">
-      <div class="logo-scheduled-tasks">
-        <img src="home-logo-petit.png" alt="Home Logo" class="logo">
         <div class="hello">
           <p> Hello <%= current_user.first_name %> !</p>
         </div>
         <%= cl_image_tag current_user.photo.key, height: 80, width: 80, crop: :fill, class:" rounded-circle current-user-picture"  %>
-      </div>
     </div>
     <p class="welcome text-center"> Welcome at Tropicooloc !</p>
     <div class="roommates">
