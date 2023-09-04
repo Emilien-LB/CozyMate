@@ -2,13 +2,13 @@
 <div class="checkbox-card" data-controller="winning-points">
   <% if scheduled_task.to_be_done_date == Date.today && Task.find(scheduled_task.task_id).frequency_type == "daily" && scheduled_task.done == false %>
     <div class="scheduled-task-container">
-      <%= button_to scheduled_task_path(scheduled_task), method: :patch, data: { action: "click->winning-points#alertPoints"}, class: "btn btn-warning btn-opacity" do %>
+      <%= button_to scheduled_task_path(scheduled_task), method: :patch, data: {action: "click->winning-points#alertPoints"}, class: "btn btn-warning btn-opacity" do %>
         <i class="fa-solid fa-thumbs-up fa-beat" style="color: #a2cdb0;"></i>
       <%end%>
       <div class="task-name-points">
-        <span class="scheduled-task-name"> <%= Task.find(scheduled_task.task_id).task_name %> </span>
+        <span class="scheduled-task-name" data-winning-points-target="taskname"> <%= Task.find(scheduled_task.task_id).task_name %> </span>
         <div class="scheduled-task-points">
-          <span>+<%= Task.find(scheduled_task.task_id).points %></span>
+          <span data-winning-points-target="points">+<%= Task.find(scheduled_task.task_id).points %></span>
           <span><i class="fa-solid fa-star fa-bounce" style="color: #ffcc69;"></i></span>
         </div>
       </div>
@@ -19,9 +19,9 @@
         <i class="fa-solid fa-thumbs-up fa-beat" style="color: #a2cdb0;"></i>
       <%end%>
       <div class="task-name-points">
-        <span class="scheduled-task-name"> <%= Task.find(scheduled_task.task_id).task_name %> </span>
+        <span class="scheduled-task-name" data-winning-points-target="taskname"> <%= Task.find(scheduled_task.task_id).task_name %> </span>
         <div class="scheduled-task-points">
-          <span>+<%= Task.find(scheduled_task.task_id).points %></span>
+          <span data-winning-points-target="points">+<%= Task.find(scheduled_task.task_id).points %></span>
           <span><i class="fa-solid fa-star fa-bounce" style="color: #ffcc69;"></i></span>
         </div>
       </div>
@@ -32,9 +32,9 @@
         <i class="fa-solid fa-thumbs-up fa-beat" style="color: #a2cdb0;"></i>
       <%end%>
       <div class="task-name-points">
-        <span class="scheduled-task-name"> <%= Task.find(scheduled_task.task_id).task_name %> </span>
+        <span class="scheduled-task-name" data-winning-points-target="taskname"> <%= Task.find(scheduled_task.task_id).task_name %> </span>
         <div class="scheduled-task-points">
-          <span>+<%= Task.find(scheduled_task.task_id).points %></span>
+          <span data-winning-points-target="points">+<%= Task.find(scheduled_task.task_id).points %></span>
           <span><i class="fa-solid fa-star fa-bounce" style="color: #ffcc69;"></i></span>
         </div>
       </div>

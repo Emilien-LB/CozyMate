@@ -1,0 +1,41 @@
+.swal2-popup {
+  background: $beige !important;
+  border: 1px solid white !important;
+  color: black !important;
+  border-radius: 20px !important;
+}
+
+.swal2-styled.swal2-default-outline:focus {
+  box-shadow: none !important;
+}
+
+.swal2-confirm {
+  border-radius: 10px !important;
+}
+
+.swal2-cancel {
+  border-radius: 10px !important;
+}
+
+.swal2-title {
+  color: $blue !important;
+  font-size: 30px !important;
+  -webkit-text-stroke: 1px black !important;
+  font-weight: bold !important
+}
+
+.swal2-points {
+  font-size: 25px;
+}
+
+.swal2-task-name {
+  font-size: 25px;
+}
+
+.ranking-link {
+  text-decoration: none !important;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+
+}
