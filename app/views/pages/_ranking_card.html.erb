@@ -1,4 +1,8 @@
-    <%= cl_image_tag user.photo.key, height: 70, width: 70, crop: :fill, class:" rounded-circle" %>
+<div class="picture-points">
+  <div>
+    <%= cl_image_tag user.photo.key, height: 100, width: 100, crop: :fill, class:" rounded-5" %>
     <div class="stats-points">
       <%= user.total_points %> <i class="fa-regular fa-star" style="color: #000000;"></i>
     </div>
+  </div>
+</div>
