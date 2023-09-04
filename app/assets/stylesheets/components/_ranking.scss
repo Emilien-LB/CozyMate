@@ -17,6 +17,9 @@
   transform: rotate(-0.482deg);
 }
 
+.fa-star::before {
+  color: #ffcc69;
+}
 
 .title-ranking {
   margin-top: 1.5em;
@@ -96,6 +99,16 @@
 .third-inner-card {
   top: 2px;
   left: -20px;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  display: flex;
 }
 
 // .yellow-title {

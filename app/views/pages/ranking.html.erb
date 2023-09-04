@@ -17,13 +17,12 @@
     <div class="ranking">
       <%# <%= render "ranking_card", user: @users.first %>
 
-
       <%# _______________ FIRST CARD ____________________ %>
       <div class="picture-points">
         <div class="first-inner-card inner-card">
           <%= cl_image_tag @users.first.photo.key, height: 120, width: 120, crop: :fill, class:" rounded-circle" %>
           <div class="stats-points">
-            <%= @users.first.total_points %> <i class="fa-regular fa-star" style="color: #000000;"></i>
+            <%= @users.first.total_points(params["month(2i)"].to_i) %> <i class="fa-regular fa-star" style="color: #000000;"></i>
           </div>
         </div>
       </div>
@@ -39,7 +38,7 @@
         <div class="second-inner-card inner-card">
           <%= cl_image_tag @users.second.photo.key, height: 90, width: 90, crop: :fill, class:" rounded-circle" %>
           <div class="stats-points">
-            <%= @users.second.total_points %> <i class="fa-regular fa-star" style="color: #000000;"></i>
+            <%= @users.second.total_points(params["month(2i)"].to_i) %> <i class="fa-regular fa-star" style="color: #000000;"></i>
           </div>
         </div>
       </div>
@@ -54,7 +53,7 @@
         <div class="third-inner-card inner-card">
           <%= cl_image_tag @users.third.photo.key, height: 70, width: 70, crop: :fill, class:" rounded-circle" %>
           <div class="stats-points">
-            <%= @users.third.total_points %> <i class="fa-regular fa-star" style="color: #000000;"></i>
+            <%= @users.third.total_points(params["month(2i)"].to_i) %> <i class="fa-regular fa-star" style="color: #000000;"></i>
           </div>
         </div>
       </div>
@@ -68,9 +67,9 @@
     <%= form_with(url: ranking_path, method: :get, local: true) do |form| %>
       <div class="custom-form">
           <%= form.label :month, "Select a month:" %>
-          <%= form.date_select :month, { discard_day: true, end_year: Date.today.year, start_year: Date.today.year - 1 }, { class: 'form-control' } %>
+          <%= form.date_select :month, { discard_day: true, end_year: Date.today.year, start_year: Date.today.year - 1, value: params["month(2i)"].to_i }, { class: 'form-control' } %>
       </div>
-      <div class="text-center">
+      <div class="text-center"></div>
         <%= form.submit 'Filter', class: 'btn btn-info' %>
         </div>
     <% end %>
@@ -78,6 +77,11 @@
 </div>
     <%# _______________ FORM ____________________ %>
 
+<%# <%= simple_form_for(ranking_path) do |f| %>
+  <%# <%= f.input :month, "Select a month" %> 
+  <%# <%= f.input :month, as: :date { discard_day: true, end_year: Date.today.year, start_year: Date.today.year - 1, value: params["month(2i)"].to_i }, { class: 'form-control' } %> %>
+  <%# <%= f.submit 'Filter', class: 'btn btn-info' %>
+<%# <% end %>
 
 <%# <h1 class="yellow-title">Ranking</h1>
 
