@@ -14,7 +14,7 @@ class ScheduledTask < ApplicationRecord
     today = Date.today()
     nb_jour = 21
     # if frenquency_typ eagl weeklky
-    dates = if frequency_type == 'weekly'
+    dates = if frequency_type == 'Weekly'
         mondays = []
         nb = 0
         nb_jour.times do
@@ -23,7 +23,7 @@ class ScheduledTask < ApplicationRecord
           nb += 1
         end
         mondays
-      elsif frequency_type == 'daily'
+      elsif frequency_type == 'Daily'
         all_days =[]
         nb = 0
         nb_jour.times do

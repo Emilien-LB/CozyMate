@@ -4,7 +4,7 @@
     <%= f.label :frequency_type %>
     <div class="tag-item">
         <%= f.input :frequency_type,
-        as: :radio_buttons, collection: ['daily', 'weekly', 'monthly'],
+        as: :radio_buttons, collection: ['Daily', 'Weekly', 'Monthly'],
         input_html: { class: "tag-selector"}, multiple: false, legend: false %>
     </div>
     <%= f.input :points,placeholder:'points', input_html: { class: "custom-input" } %>
