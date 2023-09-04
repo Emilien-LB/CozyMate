@@ -1,13 +1,19 @@
 <div class="iconbar">
-  <div class="icons <%= 'active' if current_page?(scheduled_tasks_path) %>">
+  <div class="icons">
     <%= link_to scheduled_tasks_path do %>
-      <i class="fas fa-home"></i>
+      <i class="fas fa-home <%= 'active' if current_page?(scheduled_tasks_path) %>"></i>
     <% end %>
   </div>
 
-  <div class="icons <%= 'active' if current_page?(tasks_path) %>">
+  <div class="icons">
     <%= link_to tasks_path do %>
-      <i class="fas fa-tasks"></i>
+      <i class="fas fa-tasks <%= 'active' if current_page?(tasks_path) %>"></i>
+    <% end %>
+  </div>
+
+   <div class="icons">
+    <%= link_to new_task_path do %>
+      <i class="fas fa-circle-plus <%= 'active' if current_page?(new_task_path) %>"></i>
     <% end %>
   </div>
 
@@ -18,9 +24,9 @@
     <%# <% end %>
   </div>
 
-  <div class="icons <%= 'active' if current_page?(ranking_path) %>">
+  <div class="icons">
     <%= link_to ranking_path do %>
-      <i class="fas fa-trophy"></i>
+      <i class="fas fa-trophy <%= 'active' if current_page?(ranking_path) %>"></i>
     <% end %>
   </div>
 </div>
