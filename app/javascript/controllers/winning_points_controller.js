@@ -5,24 +5,29 @@ import Swal from "sweetalert2"
 export default class extends Controller {
 //   // connect() { console.log("coucou")
 //   // }
-  static targets = ["validate"]
+  static targets = ["validate", "taskname", "points"]
   alertPoints(event) {
     event.preventDefault()
     // Show a confirmation dialog using SweetAlert
     Swal.fire({
-      title: "Are you sure?",
-      text: "This will validate the task",
-      icon: "question",
+      title: "ARE YOU SURE ?",
+      html: `Do you want to validate <span class="swal2-task-name">${this.tasknameTarget.innerHTML}</span> ?`,
       showCancelButton: true,
-      confirmButtonText: "Yes, validate it!",
-      cancelButtonText: "Cancel"
+      buttons: {
+        cancel : "Cancel",
+        confirm : "Confirm",
+      },
+      confirmButtonText:'<i class="fa fa-thumbs-up fa-bounce"></i> Yes, validate it!',
+      confirmButtonColor: "#a2cdb0",
+      cancelButtonColor: "#8d5ba5",
+      cancelButtonText: '<i class="fa-solid fa-thumbs-down fa-beat"></i> No, cancel'
     })
     .then((result) => {
       if (result.isConfirmed) {
         this.sendTurboUpdate(event)
         // Continue with Turbo Stream update
         const url = this.element.querySelector("form").action
-        console.log(url)
+        // console.log(url)
         fetch(url, {
             method: "PATCH",
             headers: { "Accept": "text/plain" },
@@ -36,6 +41,7 @@ export default class extends Controller {
     })
   }
 
+
   sendTurboUpdate(event) {
     event.preventDefault()
 
@@ -44,8 +50,11 @@ export default class extends Controller {
     // Show success message using SweetAlert
     Swal.fire({
       title: "Points Validated!",
-      text: "Congrats, you just win points! Check your ranking!",
-      icon: "success"
+      showCloseButton: true,
+      html: `Congrats, you just win <span class="swal2-points">${this.pointsTarget.innerHTML.replace('+', '')}</span> points !`,
+      icon: "success",
+      confirmButtonText: '<a class="ranking-link" href="/ranking"> <i class="fa-solid fa-ranking-star fa-beat"></i> Check your ranking</a>',
+      confirmButtonColor: "#a2cdb0",
     });
 
     // Trigger the actual validation action
