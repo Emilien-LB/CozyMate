@@ -1,50 +1,103 @@
-<%# <div class="ranking-first">
-  <div class="ranking">
-    <%= render "ranking_card", user: @users.first %>
-    <%# <div class="trophy">
-      <i class="fa-solid fa-trophy" style="color: #ffcc69;"></i>
+<div id="ranking-page">
+  <div class="ranking-ellipse-yellow">
+    <svg xmlns="http://www.w3.org/2000/svg" width="229" height="236" viewBox="0 0 229 236" fill="none">
+      <g style="mix-blend-mode:darken">
+        <path d="M228.18 104.545C228.18 157.565 210.18 217.4 139.18 235.4C-10.82 235.4 0.179959 84.4192 0.179959 31.3999C0.179959 -21.6194 77.6083 8.54519 131.18 8.54519C184.752 8.54519 228.18 51.5259 228.18 104.545Z" fill="#FFCC69" fill-opacity="0.3"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="title-ranking">
+    <h1 class="yellow-title">Ranking</h1>
+    <span><i class="fa-regular fa-star" style="color: #FFCC69;"></i></span>
+  </div>
+  <p class="p-ranking">Who’s gonna win ?</p>
+
+  <div class="ranking-first">
+    <div class="ranking">
+      <%# <%= render "ranking_card", user: @users.first %>
+
+
+      <%# _______________ FIRST CARD ____________________ %>
+      <div class="picture-points">
+        <div class="first-inner-card inner-card">
+          <%= cl_image_tag @users.first.photo.key, height: 120, width: 120, crop: :fill, class:" rounded-circle" %>
+          <div class="stats-points">
+            <%= @users.first.total_points %> <i class="fa-regular fa-star" style="color: #000000;"></i>
+          </div>
+        </div>
+      </div>
+      <%# _______________ FIRST CARD ____________________ %>
+
     </div>
   </div>
-</div>
-<div class="ranking-second">
-  <div class="ranking">
-    <%= render "ranking_card", user: @users.second%>
-  <%# </div>
+  <div class="ranking-second">
+    <div class="ranking">
 
-  <div class="ranking">
-    <%= render "ranking_card", user: @users.last %>
-  <%# </div>
-</div> %>
-
-<h1 class="yellow-title">Ranking</h1>
-
-<h2 class="month-title"><%= @month ? @month.strftime("%B %Y") : "Mois non défini" %></h2>
-
-<div class="ranking-podium">
-  <% @users.each_with_index do |user, index| %>
-    <% if index < 3 %>
-      <div class="special-ranking <%= ['third-place', 'second-place', 'first-place'][index] %>">
-        <%= render "ranking_card", user: user %>
-        <% if index == 0 %>
-          <div class="trophy">
-            <i class="fa-solid fa-trophy bounce"></i>
+      <%# _______________ SECONDCARD ____________________ %>
+      <div class="picture-points">
+        <div class="second-inner-card inner-card">
+          <%= cl_image_tag @users.second.photo.key, height: 90, width: 90, crop: :fill, class:" rounded-circle" %>
+          <div class="stats-points">
+            <%= @users.second.total_points %> <i class="fa-regular fa-star" style="color: #000000;"></i>
           </div>
-        <% end %>
+        </div>
       </div>
-    <% else %>
-      <div class="standard-ranking">
-        <%= render "ranking_card", user: user %>
-      </div>
-    <% end %>
-  <% end %>
-</div>
+      <%# _______________ SECONDCARD ____________________ %>
 
-<div class="form-month">
-  <%= form_with(url: ranking_path, method: :get, local: true) do |form| %>
-    <%= form.label :month, "Sélectionnez un mois:" %>
-    <%= form.date_select :month, { discard_day: true, end_year: Date.today.year, start_year: Date.today.year - 1 }, { class: 'form-control' } %>
-    <div class="text-center">
-      <%= form.submit 'Filter', class: 'btn btn-info' %>
+        <div class="trophy">
+          <i class="fa-solid fa-trophy fa-bounce" style="color: #ffcc69;"></i>
+        </div>
+
+      <%# _______________ THIRDCARD ____________________ %>
+      <div class="picture-points">
+        <div class="third-inner-card inner-card">
+          <%= cl_image_tag @users.third.photo.key, height: 70, width: 70, crop: :fill, class:" rounded-circle" %>
+          <div class="stats-points">
+            <%= @users.third.total_points %> <i class="fa-regular fa-star" style="color: #000000;"></i>
+          </div>
+        </div>
       </div>
-  <% end %>
+      <%# _______________ THIRDCARD ____________________ %>
+
+    </div>
+  </div>
+
+    <%# _______________ FORM ____________________ %>
+  <div class="form-month">
+    <%= form_with(url: ranking_path, method: :get, local: true) do |form| %>
+      <div class="custom-form">
+          <%= form.label :month, "Select a month:" %>
+          <%= form.date_select :month, { discard_day: true, end_year: Date.today.year, start_year: Date.today.year - 1 }, { class: 'form-control' } %>
+      </div>
+      <div class="text-center">
+        <%= form.submit 'Filter', class: 'btn btn-info' %>
+        </div>
+    <% end %>
+  </div>
 </div>
+    <%# _______________ FORM ____________________ %>
+
+
+<%# <h1 class="yellow-title">Ranking</h1>
+
+< class="month-title"><%= @month ? @month.strftime("%B %Y") : "Mois non défini" %>
+
+<%# <div class="ranking-podium"> %>
+  <%# <% @users.each_with_index do |user, index| %>
+    <%# <% if index < 3 %>
+      <%# <div class="special-ranking <%= ['third-place', 'second-place', 'first-place'][index] %>
+        <%# <%= render "ranking_card", user: user %>
+        <%# <% if index == 0 %>
+          <%# <div class="trophy"> %>
+            <%# <i class="fa-solid fa-trophy bounce"></i> %>
+          <%# </div> %>
+        <%# <% end %>
+      <%# </div> %>
+    <%# <% else %>
+      <%# <div class="standard-ranking"> %>
+        <%# <%= render "ranking_card", user: user %>
+      <%# </div> %>
+    <%# <% end %>
+  <%# <% end %>
+<%# </div> %>
