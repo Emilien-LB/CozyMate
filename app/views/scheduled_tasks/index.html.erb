@@ -24,8 +24,10 @@
   <%# scheduled-tasks %>
   <div class="text-center scheduled-tasks-card">
     <h1 class="scheduled-tasks-title"> TO DO Today </h1>
+    <div class="scrolled-cards">
       <% @scheduled_tasks.each do |scheduled_task| %>
         <%= render "scheduled_task", scheduled_task: scheduled_task %>
       <% end %>
+    </div>
   </div>
 </div>

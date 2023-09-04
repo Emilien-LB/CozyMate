@@ -53,32 +53,49 @@
 
 .scheduled-tasks-title {
   color: $green;
-  margin: 20px;
+  padding: 15px;
+  position: fixed;
+  background-color: $blue;
+  height: 60px;
+  margin: 0 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px
 }
 
 .scheduled-tasks-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
   background-color: $blue;
-  margin: 0px 20px 0px 20px;
-  padding: 10px;
   border-radius: 20px;
   max-height: 55dvh;
+  width: -webkit-fill-available;
+  margin: 0 20px;
+  overflow: hidden;
+}
+
+.scrolled-cards {
   overflow: scroll;
+  margin-top: 60px;
+  width: 95%;
 }
 
 .checkbox-card{
   justify-content: center;
+  width: 100%
 }
 
 .scheduled-task-container {
   background-color: $beige;
-  margin-bottom: 10px;
-  padding: 10px 25px 10px 40px;
-  height:fit-content;
+  margin: 10px 0 ;
+  padding: 10px 25px 10px 25px;
+  height: fit-content;
   width: 100%;
   border-radius: 10px;
   border: 1px solid $olive;
   display: flex
-  }
+}
 
 .task-name-points {
   display: flex;
@@ -88,4 +105,9 @@
 }
 .scheduled-task-name {
   padding-left: 10px;
+}
+
+.btn-opacity {
+  background-color: $light-pink;
+  border-radius: 10px;
 }

@@ -2,7 +2,9 @@
 <div class="checkbox-card" data-controller="winning-points">
   <% if scheduled_task.to_be_done_date == Date.today && Task.find(scheduled_task.task_id).frequency_type == "daily" && scheduled_task.done == false %>
     <div class="scheduled-task-container">
-      <%= button_to "o", scheduled_task_path(scheduled_task), method: :patch, data: { action: "click->winning-points#alertPoints"}, class: "btn btn-warning text-warning" %>
+      <%= button_to scheduled_task_path(scheduled_task), method: :patch, data: { action: "click->winning-points#alertPoints"}, class: "btn btn-warning btn-opacity" do %>
+        <i class="fa-solid fa-thumbs-up fa-beat" style="color: #a2cdb0;"></i>
+      <%end%>
       <div class="task-name-points">
         <span class="scheduled-task-name"> <%= Task.find(scheduled_task.task_id).task_name %> </span>
         <div class="scheduled-task-points">
@@ -13,7 +15,9 @@
     </div>
   <% elsif scheduled_task.to_be_done_date.cweek == Date.today.cweek && Task.find(scheduled_task.task_id).frequency_type == "weekly" && scheduled_task.done == false %>
      <div class="scheduled-task-container">
-      <%= button_to "o", scheduled_task_path(scheduled_task), method: :patch, data: { action: "click->winning-points#alertPoints"}, class: "btn btn-warning text-warning" %>
+      <%= button_to scheduled_task_path(scheduled_task), method: :patch, data: { action: "click->winning-points#alertPoints"}, class: "btn btn-warning btn-opacity" do %>
+        <i class="fa-solid fa-thumbs-up fa-beat" style="color: #a2cdb0;"></i>
+      <%end%>
       <div class="task-name-points">
         <span class="scheduled-task-name"> <%= Task.find(scheduled_task.task_id).task_name %> </span>
         <div class="scheduled-task-points">
@@ -24,7 +28,9 @@
     </div>
   <% elsif scheduled_task.to_be_done_date.month == Date.today.month && Task.find(scheduled_task.task_id).frequency_type == "monthly" && scheduled_task.done == false %>
       <div class="scheduled-task-container">
-      <%= button_to "o", scheduled_task_path(scheduled_task), method: :patch, data: { action: "click->winning-points#alertPoints"}, class: "btn btn-warning text-warning" %>
+      <%= button_to scheduled_task_path(scheduled_task), method: :patch, data: { action: "click->winning-points#alertPoints"}, class: "btn btn-warning btn-opacity" do %>
+        <i class="fa-solid fa-thumbs-up fa-beat" style="color: #a2cdb0;"></i>
+      <%end%>
       <div class="task-name-points">
         <span class="scheduled-task-name"> <%= Task.find(scheduled_task.task_id).task_name %> </span>
         <div class="scheduled-task-points">
