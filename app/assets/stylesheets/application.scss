@@ -6,6 +6,7 @@
 // External libraries
 @import "bootstrap";
 @import "font-awesome";
+@import "simple_calendar";
 
 // Your CSS partials
 @import "components/index";
@@ -13,7 +14,8 @@
 @import "components/navbar";
 @import "components/searchbar";
 @import "components/form_edit_create";
-@import "components/logo_svg"
+@import "components/logo_svg";
+@import "pages/calendar";
 
 // body {
 //   scroll-behavior: smooth;
