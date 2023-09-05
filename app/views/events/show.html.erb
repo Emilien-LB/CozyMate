@@ -1,7 +1,9 @@
+<div data-controller="delete-event">
+
 <h1 class="text-center blue-title"><%= @event.title.titleize %></h1>
 
 <div class="show-event-card">
-  <h3 class="description-event"><%= @event.description %></h3>
+  <h3 class="description-event" data-delete-event-target="eventdescription"><%= @event.description %></h3>
     <h3 class="time-event">
         <%= @event.start_time.strftime('%d/%m - %H:%M') %>
         to
@@ -12,8 +14,8 @@
     </p>
 </div>
 
-<div class="buttons-event">
-    <%= link_to event_path(@event), class: "button-delete-event", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+<div class="buttons-event"  data-delete-event-target="togglableElement">
+    <%= link_to event_path(@event), class: "button-delete-event", data: {action: "click->delete-event#alerteDelete"} do %>
         Delete  <i class="fa-solid fa-trash-can icon-margin" style="color: #8d5ba5;"></i>
     <% end %>
     <%= link_to edit_event_path(@event), class: "button-edit-event" do %>
@@ -24,4 +26,5 @@
 
 <div class="button-back-calendar">
     <%= link_to "Back to calendar", events_path %>
+</div>
 </div>
