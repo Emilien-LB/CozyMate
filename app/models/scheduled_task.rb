@@ -10,19 +10,20 @@ class ScheduledTask < ApplicationRecord
     user.update(total_points: user.total_points)
   end
 
-  def self.generate_scheduled_tasks( task, frequency_type)
+  def self.generate_scheduled_tasks( task, frequency_type, frequency_day, frequency_day_of_month)
+
     today = Date.today()
-    nb_jour = 21
+    nb_jour = 80
     # if frenquency_typ eagl weeklky
     dates = if frequency_type == 'Weekly'
-        mondays = []
+        week_day = []
         nb = 0
         nb_jour.times do
-          new_day =  Date.today()+ nb
-          mondays << new_day if new_day.monday?
+          new_day = Date.today()+ nb
+          week_day << new_day if new_day.strftime("%A") == frequency_day
           nb += 1
         end
-        mondays
+        week_day
       elsif frequency_type == 'Daily'
         all_days =[]
         nb = 0
@@ -33,7 +34,14 @@ class ScheduledTask < ApplicationRecord
           end
           all_days
       else
-        [Date.today.next_week(:monday)]
+        month_day = []
+        nb = 0
+        nb_jour.times do
+          new_day =  Date.today()+ nb
+          month_day << new_day if new_day.day == frequency_day_of_month
+          nb += 1
+          end
+          month_day
       end
     # pour chacune de ces dates, on va creer les schedules tacks associe à la task
     p dates
