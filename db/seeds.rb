@@ -80,7 +80,7 @@ task4 = Task.create!(
   description: "Turn trash duty into a dance party! Crank up the tunes and move to the beat as you guide the garbage bags to their destination.",
   frequency_type: "Weekly",
   frequency_amount: 1,
-  frequency_day: "Monday",
+  frequency_day: "Thursday",
   points: 25
 )
 
@@ -89,7 +89,7 @@ task5 = Task.create!(
   description: "Wednesdays are your throne's time to shine! Give your toilet the royal treatment it deserves and keep it flush with pride.",
   frequency_type: "Weekly",
   frequency_amount: 1,
-  frequency_day: "Monday",
+  frequency_day: "Tuesday",
   points: 40
 )
 
@@ -109,7 +109,8 @@ task7 = Task.create!(
   description: "Engage in a Monthly Reflective Renewal. As you clean, think of it as a renewal ritual for your windows, inviting in positive energy and fresh perspectives.",
   frequency_type: "Monthly",
   frequency_amount: 1,
-  frequency_day_of_month: 15,
+  frequency_week_of_month: "First",
+  frequency_day_of_month: 7,
   points: 50
 )
 
@@ -118,7 +119,8 @@ task8 = Task.create!(
   description: "Time to party with the funky factures! Once a month, we gather 'round, give those bills a high-five, and send them on their merry way.",
   frequency_type: "Monthly",
   frequency_amount: 1,
-  frequency_day_of_month: 25,
+  frequency_week_of_month: "Second",
+  frequency_day_of_month: 6,
   points: 40
 )
 
@@ -127,6 +129,7 @@ task9 = Task.create!(
   description: "Embark on a journey through the produce wonderland! Choose the freshest fruits and veggies as if you're selecting ingredients for a royal feast.",
   frequency_type: "Monthly",
   frequency_amount: 1,
+  frequency_week_of_month: "Fourth",
   frequency_day_of_month: 5,
   points: 60
 )

@@ -29,7 +29,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.save
     if @task.save
-      ScheduledTask.generate_scheduled_tasks(@task, task_params[:frequency_type])
+      ScheduledTask.generate_scheduled_tasks(@task, task_params[:frequency_type], task_params[:frequency_day], task_params[:frequency_day_of_month])
       redirect_to tasks_path, notice: "Task was successfully created."
     else
       render :new, status: :unprocessable_entity
@@ -40,9 +40,11 @@ class TasksController < ApplicationController
   old_frequency = @task.frequency_type
   p old_frequency
   p task_params[:frequency_type]
-  if @task.frequency_type != task_params[:frequency_type]
+  if @task.frequency_type != task_params[:frequency_type] ||
+     (@task.frequency_type == "Weekly" && @task.frequency_day != task_params[:frequency_day]) ||
+     (@task.frequency_type == "Monthly" && @task.frequency_day_of_month != task_params[:frequency_day_of_month])
     ScheduledTask.where(task: @task, done: false).destroy_all
-    ScheduledTask.generate_scheduled_tasks(@task, task_params[:frequency_type])
+    ScheduledTask.generate_scheduled_tasks(@task, task_params[:frequency_type], task_params[:frequency_day], task_params[:frequency_day_of_month])
   end
     if @task.update(task_params)
       redirect_to tasks_path, notice: "Task was successfully updated.", status: :see_other
@@ -59,7 +61,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:task_name, :description, :frequency_type, :points, :frequency_day, :frequency_week_of_month)
+    params.require(:task).permit(:task_name, :description, :frequency_type, :points, :frequency_day, :frequency_day_of_month)
   end
 
   def set_task

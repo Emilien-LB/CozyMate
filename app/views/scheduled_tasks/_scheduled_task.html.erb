@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-  <% elsif scheduled_task.to_be_done_date.cweek == Date.today.cweek && Task.find(scheduled_task.task_id).frequency_type == "Weekly" && scheduled_task.done == false %>
+  <% elsif scheduled_task.done == false && Task.find(scheduled_task.task_id).frequency_day == Date.today.strftime("%A") && Task.find(scheduled_task.task_id).frequency_type == "Weekly" %>
      <div class="scheduled-task-container">
       <%= button_to scheduled_task_path(scheduled_task), method: :patch, data: { action: "click->winning-points#alertPoints"}, class: "btn btn-warning btn-opacity" do %>
         <i class="fa-solid fa-thumbs-up fa-beat" style="color: #a2cdb0;"></i>
@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-  <% elsif scheduled_task.to_be_done_date.month == Date.today.month && Task.find(scheduled_task.task_id).frequency_type == "Monthly" && scheduled_task.done == false %>
+  <% elsif Task.find(scheduled_task.task_id).frequency_day_of_month == Date.today.day && Task.find(scheduled_task.task_id).frequency_type == "Monthly" && scheduled_task.done == false %>
       <div class="scheduled-task-container">
       <%= button_to scheduled_task_path(scheduled_task), method: :patch, data: { action: "click->winning-points#alertPoints"}, class: "btn btn-warning btn-opacity" do %>
         <i class="fa-solid fa-thumbs-up fa-beat" style="color: #a2cdb0;"></i>

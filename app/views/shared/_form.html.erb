@@ -10,18 +10,19 @@
         input_html: { class: "tag-selector", data: {action: "change->form#frequencySelection", form_target: "radio"} }, multiple: false, legend: false %>
     </div>
 
-     <div id="day-selection" class="d-none" data-form-target="dayselection">
+
+     <div id="day-selection" class="<%= 'd-none' unless @task.frequency_type == 'Weekly' %>" data-form-target="dayselection">
         <%= f.input :frequency_day,
           as: :radio_buttons, collection: Task::WEEKDAYS,
           input_html: { class: "tag-selector"}, multiple: false, legend: false,
           label: 'Select the day of the week' %>
     </div>
 
-     <div id="month-day-selection" class="d-none" data-form-target="monthselection">
-        <%= f.input :frequency_week_of_month,
-          as: :radio_buttons, collection: Task::FREQUENCYMONTH,
-          input_html: { class: "tag-selector", data: {action: "change->form#frequencySelection", form_target: "radio"} }, multiple: false, legend: false,
-          label: 'Select the week of the month' %>
+     <div id="month-day-selection"class="<%= 'd-none' unless @task.frequency_type == 'Monthly' %>" data-form-target="monthselection">
+        <%= f.input :frequency_day_of_month,
+          as: :select, collection: Task::MONTHDAY,
+          data: {action: "change->form#frequencySelection", form_target: "radio"},
+          label: 'Select the day of the month' %>
     </div>
 
 
@@ -31,7 +32,7 @@
 
     <div class="d-flex justify-content-between">
       <%= link_to "Cancel", tasks_path, class: "button-cancel" %>
-      <%= f.submit 'Validates', class: "button-validates" %>
+      <%= f.submit 'Validate', class: "button-validates" %>
     </div>
   <% end %>
 </div>
