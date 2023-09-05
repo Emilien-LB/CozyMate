@@ -11,6 +11,7 @@
     <h1 class="yellow-title">Ranking</h1>
     <span><i class="fa-regular fa-star" style="color: #FFCC69;"></i></span>
   </div>
+
   <p class="p-ranking">Who’s gonna win ?</p>
 
   <div class="ranking-first">
@@ -30,6 +31,7 @@
 
     </div>
   </div>
+
   <div class="ranking-second">
     <div class="ranking">
 
@@ -62,46 +64,17 @@
     </div>
   </div>
 
-    <%# _______________ FORM ____________________ %>
-  <div class="form-month">
-    <%= form_with(url: ranking_path, method: :get, local: true) do |form| %>
-      <div class="custom-form">
-          <%= form.label :month, "Select a month:" %>
-          <%= form.date_select :month, { discard_day: true, end_year: Date.today.year, start_year: Date.today.year - 1, value: params["month(2i)"].to_i }, { class: 'form-control' } %>
-      </div>
-      <div class="text-center"></div>
-        <%= form.submit 'Filter', class: 'btn btn-info' %>
-        </div>
-    <% end %>
-  </div>
+  <%# _______________ FORM ____________________ %>
+  <% if params["month(1i)"].present? %>
+    <% date = Date.new(params["month(1i)"].to_i, params["month(2i)"].to_i, params["month(3i)"].to_i) %>
+  <% else %>
+    <% date = Date.current %>
+  <% end %>
+  <%= form_with(url: ranking_path, method: :get, local: true) do |form| %>
+    <div class="d-flex justify-content-between">
+      <%= form.date_select :month, { discard_day: true, end_year: Date.today.year, start_year: Date.today.year - 1,selected: date }, input_html: { class: 'form-control' } %>
+    </div>
+    <%= form.submit 'Filter', class: 'submit-filter' %>
+  <%end %>
 </div>
     <%# _______________ FORM ____________________ %>
-
-<%# <%= simple_form_for(ranking_path) do |f| %>
-  <%# <%= f.input :month, "Select a month" %> 
-  <%# <%= f.input :month, as: :date { discard_day: true, end_year: Date.today.year, start_year: Date.today.year - 1, value: params["month(2i)"].to_i }, { class: 'form-control' } %> %>
-  <%# <%= f.submit 'Filter', class: 'btn btn-info' %>
-<%# <% end %>
-
-<%# <h1 class="yellow-title">Ranking</h1>
-
-< class="month-title"><%= @month ? @month.strftime("%B %Y") : "Mois non défini" %>
-
-<%# <div class="ranking-podium"> %>
-  <%# <% @users.each_with_index do |user, index| %>
-    <%# <% if index < 3 %>
-      <%# <div class="special-ranking <%= ['third-place', 'second-place', 'first-place'][index] %>
-        <%# <%= render "ranking_card", user: user %>
-        <%# <% if index == 0 %>
-          <%# <div class="trophy"> %>
-            <%# <i class="fa-solid fa-trophy bounce"></i> %>
-          <%# </div> %>
-        <%# <% end %>
-      <%# </div> %>
-    <%# <% else %>
-      <%# <div class="standard-ranking"> %>
-        <%# <%= render "ranking_card", user: user %>
-      <%# </div> %>
-    <%# <% end %>
-  <%# <% end %>
-<%# </div> %>
