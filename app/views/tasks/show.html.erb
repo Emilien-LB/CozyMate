@@ -28,10 +28,14 @@
     Show Historic
   </button>
   <ul class="dropdown-menu justify-content-center align-items-center" aria-labelledby="historicDropdown">
-    <% @scheduled_tasks_done.each do |scheduled_task| %>
+    <% @scheduled_tasks_past.each do |scheduled_task| %>
       <li>
         <span class="dropdown-item">
-          Done by <%= scheduled_task.user.first_name %> the <%= scheduled_task.recorded_date %>
+          <% if scheduled_task.done == true %>
+            Done by <%= scheduled_task.user.first_name %> the <%= scheduled_task.recorded_date %>
+          <% else %>
+            Not done on the <%= scheduled_task.to_be_done_date %>
+          <%end%>
         </span>
       </li>
     <% end %>

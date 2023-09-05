@@ -57,7 +57,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:task_name, :description, :frequency_type, :points)
+    params.require(:task).permit(:task_name, :description, :frequency_type, :points, :frequency_day, :frequency_week_of_month)
   end
 
   def set_task

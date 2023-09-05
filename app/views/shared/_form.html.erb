@@ -1,14 +1,34 @@
-<div class="container-form">
+<div class="container-form" data-controller="form">
+
   <%= simple_form_for(@task) do |f|%>
-    <%= f.input :task_name, placeholder:'new task', input_html: { class: "custom-input" } %>
+    <%= f.input :task_name, placeholder:'Walk the dog', input_html: { class: "custom-input" } %>
     <%= f.label :frequency_type %>
+
     <div class="tag-item">
         <%= f.input :frequency_type,
         as: :radio_buttons, collection: ['Daily', 'Weekly', 'Monthly'],
-        input_html: { class: "tag-selector"}, multiple: false, legend: false %>
+        input_html: { class: "tag-selector", data: {action: "change->form#frequencySelection", form_target: "radio"} }, multiple: false, legend: false %>
     </div>
-    <%= f.input :points,placeholder:'points', input_html: { class: "custom-input" } %>
-    <%= f.input :description,placeholder:'task description', as: :text, input_html: { class: "custom-input_description" } %>
+
+     <div id="day-selection" class="d-none" data-form-target="dayselection">
+        <%= f.input :frequency_day,
+          as: :radio_buttons, collection: Task::WEEKDAYS,
+          input_html: { class: "tag-selector"}, multiple: false, legend: false,
+          label: 'Select the day of the week' %>
+    </div>
+
+     <div id="month-day-selection" class="d-none" data-form-target="monthselection">
+        <%= f.input :frequency_week_of_month,
+          as: :radio_buttons, collection: Task::FREQUENCYMONTH,
+          input_html: { class: "tag-selector", data: {action: "change->form#frequencySelection", form_target: "radio"} }, multiple: false, legend: false,
+          label: 'Select the week of the month' %>
+    </div>
+
+
+
+    <%= f.input :points,placeholder:'40', input_html: { class: "custom-input" } %>
+    <%= f.input :description,placeholder:"Walk the dog for 15 min at least and don't forger to take the poop bag and some treats", as: :text, input_html: { class: "custom-input_description" } %>
+
     <div class="d-flex justify-content-between">
       <%= link_to "Cancel", tasks_path, class: "button-cancel" %>
       <%= f.submit 'Validates', class: "button-validates" %>
