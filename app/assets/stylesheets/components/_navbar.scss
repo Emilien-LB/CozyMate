@@ -3,7 +3,6 @@ body {
   background: #FFF7EC;
   // height: 100vh;
   overflow: auto;
-  padding-bottom: 70px;
   scroll-behavior: smooth;
 }
 
@@ -34,27 +33,12 @@ body {
   // Active effect
 
   i {
-    font-size: 2.1em;
+    font-size: 1.6em;
     color: #FFF7EC;
 
     &.active {
-      // background-color: #a7c0d4;
-      // box-shadow: 0px 0px 5px #FFFFFF;
       color: $yellow;
       font-size: 2.2em;
     }
-  }
-}
-// Mobile-specific Styling
-@media only screen and (max-device-width: 480px) {
-  body {
-    padding-bottom: 60px;  // Ajouté pour compenser la hauteur de la navbar
-  }
-  .iconbar {
-    height: 56px;
-    width: 100%;
-  }
-  .icons i {
-    font-size: 1.6em;
   }
 }
