@@ -6,9 +6,9 @@ class EventsController < ApplicationController
     start_time = params.fetch(:start_time, Date.today).to_date
 
     if params[:view] == 'monthly'
-      @events = Event.where(start_time: start_time.beginning_of_month.beginning_of_week..start_time.end_of_month.end_of_week)
+      @events = Event.where(start_time: start_time.beginning_of_month.beginning_of_week..start_time.end_of_month.end_of_week).order(:start_time)
     else
-      @events = Event.where(start_time: start_time.beginning_of_week..start_time.end_of_week)
+      @events = Event.where(start_time: start_time.beginning_of_week..start_time.end_of_week).order(:start_time)
     end
   end
 
@@ -21,11 +21,11 @@ class EventsController < ApplicationController
 
   def create
     @event = current_user.events.build(event_params)
+
     if @event.save
       redirect_to events_path, notice: "Event added!"
     else
-      flash.now[:alert] = @event.errors.full_messages.join(", ")
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -34,7 +34,7 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
-      redirect_to event_path(@event), notice: "Event updated!"
+      redirect_to event_path(@event), notice: "Event updated!", status: :see_other
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    redirect_to events_path, notice: "Event deleted!"
+    redirect_to events_path, notice: "Event deleted!", status: :see_other
   end
 
   private
@@ -52,6 +52,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :start_time, :end_time)
+    params.require(:event).permit(:title, :description, :start_time, :end_time)
   end
 end

@@ -1,0 +1,117 @@
+// --------------------------
+// TITLE STYLES
+// --------------------------
+
+.blue-title {
+  color: rgba(138, 183, 221, 1);
+  font-size: 36px;
+  -webkit-text-stroke: 1px black;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 3.5rem;
+}
+
+// --------------------------
+// TASK CARD STYLES
+// --------------------------
+
+.show-event-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: auto;
+  margin: 20px auto;
+  padding: 3px;
+  border: 1px solid rgba(138, 183, 221, 0.80);
+  border-radius: 10px;
+  background-color: rgba(138, 184, 221, 0.3);
+
+  .description-event,
+  .time-event {
+    color: #484848;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .description-event {
+    font-size: 20px;
+  }
+
+  .time-event {
+    font-size: 15px;
+  }
+
+  p {
+    color: #484848;
+    display: inline-block;
+    font-size: 15px;
+  }
+}
+
+// --------------------------
+// BUTTON STYLES
+// --------------------------
+
+.buttons-event {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  margin: auto;
+
+  .button-delete-event,
+  .button-edit-event {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    height: 30px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: normal;
+    padding-block: 15px;
+    border-radius: 10px;
+    margin-top: 25px;
+  }
+
+  .button-delete-event {
+    background: rgba(141, 91, 165, 0.4);
+    color: rgb(255, 255, 255);
+  }
+
+  .button-edit-event {
+    background: rgba(138, 183, 221, 0.5);
+    color: rgb(255, 255, 255);
+  }
+
+  .icon-margin {
+    margin-left: 5px;
+  }
+}
+
+.button-back-calendar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 30px;
+  margin: 40px auto;
+  border-radius: 10px;
+  background: rgba(162, 205, 176, 1);
+  font-size: 15px;
+  font-weight: bold;
+  line-height: normal;
+  text-decoration: none;
+
+  a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+}

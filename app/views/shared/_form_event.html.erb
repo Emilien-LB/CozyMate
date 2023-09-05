@@ -1,0 +1,27 @@
+<div class="container-form">
+
+  <%= form_for @event, html: { class: 'form-group' } do |f| %>
+    <div class="form-group">
+      <%= f.label :title, "Name" %>
+      <%= f.text_field :title, placeholder: "Board games evening", maxlength:"12",  class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description, "Description" %>
+      <%= f.text_field :description, placeholder: "Cheaters are not invited", class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :start_time, "Start time" %>
+      <%= f.datetime_field :start_time,  placeholder: "18:30", class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :end_time, "End time" %>
+      <%= f.datetime_field :end_time, placeholder: "23:30", class: 'form-control' %>
+    </div>
+
+    <%= f.submit "Add", class: 'btn btn-primary' %>
+  <% end %>
+
+</div>

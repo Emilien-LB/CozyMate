@@ -1,7 +1,7 @@
 .typography {
   color: #FFF;
   text-align: center;
-  font-family: "Roboto Condensed"; // Correct the font name
+  font-family: "Roboto Condensed";
   font-size: 28px;
   font-weight: 500;
   line-height: normal;
@@ -13,11 +13,12 @@
   align-items: center;
   justify-content: space-between;
   height: 100vh;
-  overflow-y: hidden;  // Consider commenting this line if there's a scroll issue
+  overflow-y: hidden;
   position: relative;
+  padding-bottom: 0;
 
   .home-header {
-    margin-top: 17vh;
+    margin-top: 19vh;
     display: flex;
     align-items: flex-end;
   }
@@ -73,7 +74,7 @@
     text-align: center;
     font-size: 66px;
     font-style: italic;
-    font-weight: 500;
+    font-weight: 600;
     margin: 0;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     letter-spacing: 0.04em;
@@ -97,7 +98,6 @@
 
   img {
     width: 33vw;
-    background: url('home-logo-petit.png');
     background-size: cover;
     background-repeat: no-repeat;
     mix-blend-mode: darken;
