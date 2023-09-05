@@ -101,16 +101,44 @@
   left: -20px;
 }
 
-label {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 5px;
+#ranking-page .input,
+#ranking-page select,
+#ranking-page textarea {
+  border: none;
+  border-radius: 10px;
+  font-family: "Roboto Condensed";
+  background-color: white;
+  color: #8d5ba5;
+  width: 100%;
+  padding: 5px;
+  height: 35px;
 }
 
-.form-control {
-  display: flex;
+#ranking-page form {
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+
+  & > div {
+    gap: 10px;
+  }
 }
 
+.submit-filter {
+  background-color: #8d5ba5;
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  font-family: "Roboto Condensed";
+  padding: 5px;
+  height: 45px;
+}
+
+// .submit-filter:hover {
+//   background-color:#73746B;
+//   color: #f4f4f4;
+// }
 // .yellow-title {
 //   color: #FFCC69;
 // }
