@@ -71,8 +71,9 @@
     <% date = Date.current %>
   <% end %>
   <%= form_with(url: ranking_path, method: :get, local: true) do |form| %>
+    <%= params[:month] %>
     <div class="d-flex justify-content-between">
-      <%= form.date_select :month, { discard_day: true, end_year: Date.today.year, start_year: Date.today.year - 1,selected: date }, input_html: { class: 'form-control' } %>
+      <%= form.date_select :month, { discard_day: true, end_year: Date.today.year, start_year: Date.today.year - 1, selected: date }, input_html: { class: 'form-control' } %>
     </div>
     <%= form.submit 'Filter', class: 'submit-filter' %>
   <%end %>
