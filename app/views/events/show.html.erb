@@ -1,6 +1,27 @@
-<h1 class="text-center"><%= @event.title %></h1>
+<h1 class="text-center blue-title"><%= @event.title.titleize %></h1>
 
-<p><strong>Add by:</strong><%= @event.user.first_name %></p>
+<div class="show-event-card">
+  <h3 class="description-event"><%= @event.description %></h3>
+    <h3 class="time-event">
+        <%= @event.start_time.strftime('%d/%m - %H:%M') %>
+        to
+        <%= @event.end_time.strftime('%d/%m - %H:%M') %>
+    </h3>
+    <p><%= @event.user.first_name %>
+        <i class="fa-solid fa-sun fa-bounce" style="color: #ffcc69"></i>
+    </p>
+</div>
 
-<%= link_to "Delete", event_path(@event), method: :delete, data: { confirm: "Are you sure ?" } %>
-<%= link_to "Edit", edit_event_path(@event) %>
+<div class="buttons-event">
+    <%= link_to event_path(@event), class: "button-delete-event", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+        Delete  <i class="fa-solid fa-trash-can icon-margin" style="color: #8d5ba5;"></i>
+    <% end %>
+    <%= link_to edit_event_path(@event), class: "button-edit-event" do %>
+        Edit  <i class="fa-solid fa-paintbrush icon-margin" style="color: #8AB7DD;"></i>
+    <% end %>
+</div>
+
+
+<div class="button-back-calendar">
+    <%= link_to "Back to calendar", events_path %>
+</div>

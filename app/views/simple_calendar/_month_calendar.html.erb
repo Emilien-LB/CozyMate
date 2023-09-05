@@ -2,11 +2,13 @@
   <h1 class="calendar-title">Calendar</h1>
   <div class="calendar-button d-flex align-items-center justify-content-between">
     <div class="calendar-heading my-2">
-      <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view, class: 'btn btn-outline-primary' %>
+      <%= link_to t('simple_calendar.previous', default: '<<'), calendar.url_for_previous_view, class: 'btn btn-outline-primary' %>
       <span class="calendar-title btn btn-primary"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
-      <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view, class: 'btn btn-outline-primary' %>
+      <%= link_to t('simple_calendar.next', default: '>>'), calendar.url_for_next_view, class: 'btn btn-outline-primary' %>
     </div>
-    <%= link_to 'Create event', new_event_path, class: 'btn btn-outline-warning' %>
+    <%= link_to new_event_path, class: 'btn btn-success create-event-link' do %>
+      <i class="fas fa-plus"></i> Create event
+    <% end %>
   </div>
 
   <table class="table table-striped">
@@ -37,4 +39,10 @@
       <% end %>
     </tbody>
   </table>
+</div>
+
+<div class="calendar-ellipse-green">
+    <svg xmlns="http://www.w3.org/2000/svg" width="229" height="236" viewBox="0 0 229 236" fill="none">
+        <path d="M228.18 104.545C228.18 157.565 210.18 217.4 139.18 235.4C-10.82 235.4 0.179959 84.4192 0.179959 31.3999C0.179959 -21.6194 77.6083 8.54519 131.18 8.54519C184.752 8.54519 228.18 51.5259 228.18 104.545Z" fill="rgba(162, 205, 176, 0.3)"/>
+    </svg>
 </div>

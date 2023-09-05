@@ -1,0 +1,79 @@
+.event-blue-title {
+  display: flex;
+  justify-content: center;
+  color: #8AB7DD;
+  font-size: 36px;
+  -webkit-text-stroke: 1px black;
+  font-weight: bold;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.container-form {
+  padding-inline: 20px;
+  text-align: center;
+
+  .form-group {
+    margin-bottom: 1.5rem;
+
+    label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: #484848;
+      font-family: 'Barlow', sans-serif;
+    }
+
+    input.form-control,
+    textarea.form-control,
+    select.form-control {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #495057;
+      background-color: #fff;
+      border: 1px solid #ced4da;
+      border-radius: 0.25rem;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+      &:focus {
+        border-color: rgba(138, 183, 221, 1);
+        box-shadow: 0 0 0 0.2rem rgba(138, 183, 221, 0.25);
+      }
+    }
+
+    .btn-primary {
+      background-color: rgba(138, 183, 221, 1);
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 16px;
+      border-radius: 10px;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: rgba(138, 183, 221, 0.8);
+      }
+    }
+  }
+}
+
+.date-input::before {
+  content: "\f073"; /* Icône de calendrier de Font Awesome */
+  font-family: FontAwesome;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.time-input::before {
+  content: "\f017"; /* Icône d'horloge de Font Awesome */
+  font-family: FontAwesome;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}

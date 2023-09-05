@@ -1,0 +1,27 @@
+<div class="container-form">
+
+  <%= form_for @event, html: { class: 'form-group' } do |f| %>
+    <div class="form-group">
+      <%= f.label :title, "Name" %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description, "Description" %>
+      <%= f.text_field :description, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :start_time, "Start time" %>
+      <%= f.datetime_field :start_time, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :end_time, "End time" %>
+      <%= f.datetime_field :end_time, class: 'form-control' %>
+    </div>
+
+    <%= f.submit "Add", class: 'btn btn-primary' %>
+  <% end %>
+
+</div>
