@@ -1,14 +1,18 @@
 <div class="container-form">
+
   <%= simple_form_for(@task) do |f|%>
     <%= f.input :task_name, placeholder:'new task', input_html: { class: "custom-input" } %>
     <%= f.label :frequency_type %>
+
     <div class="tag-item">
         <%= f.input :frequency_type,
         as: :radio_buttons, collection: ['Daily', 'Weekly', 'Monthly'],
         input_html: { class: "tag-selector"}, multiple: false, legend: false %>
     </div>
+
     <%= f.input :points,placeholder:'points', input_html: { class: "custom-input" } %>
     <%= f.input :description,placeholder:'task description', as: :text, input_html: { class: "custom-input_description" } %>
+
     <div class="d-flex justify-content-between">
       <%= link_to "Cancel", tasks_path, class: "button-cancel" %>
       <%= f.submit 'Validates', class: "button-validates" %>
