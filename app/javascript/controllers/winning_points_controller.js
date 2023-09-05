@@ -11,7 +11,7 @@ export default class extends Controller {
     // Show a confirmation dialog using SweetAlert
     Swal.fire({
       title: "ARE YOU SURE ?",
-      html: `Do you want to validate <span class="swal2-task-name">${this.tasknameTarget.innerHTML}</span> ?`,
+      html: `Do you want to validate <span class="swal2-task-name"><br>${this.tasknameTarget.innerHTML}</span> ?`,
       showCancelButton: true,
       buttons: {
         cancel : "Cancel",
