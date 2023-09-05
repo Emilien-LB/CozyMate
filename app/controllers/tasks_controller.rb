@@ -14,7 +14,7 @@ class TasksController < ApplicationController
   def show
     @task = Task.find(params[:id])
     @scheduled_tasks_done = ScheduledTask.where(task_id: @task.id, done: true).includes(:user).order(updated_at: :desc)
-   end
+  end
 
   def new
     @task = Task.new
@@ -57,7 +57,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:task_name, :description, :frequency_type, :points)
+    params.require(:task).permit(:task_name, :description, :frequency_type, :points, :frequency_day, :frequency_week_of_month)
   end
 
   def set_task

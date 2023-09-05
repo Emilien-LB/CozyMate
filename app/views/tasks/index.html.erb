@@ -38,7 +38,7 @@
   <div class="container tasks-container">
     <div class="frequency-type ">
       <h2 class="frequency-title">Daily</h2>
-      <% @tasks.where(frequency_type: 'daily').each do |task| %>
+      <% @tasks.where(frequency_type: 'Daily').each do |task| %>
         <div class="task-details">
           <%= link_to task_path(task), class: 'task-link text-decoration-none' do %>
               <span><%= task.task_name %></span>
@@ -61,7 +61,7 @@
 
     <div class="frequency-type">
       <h2 class="frequency-title">Weekly</h2>
-      <% @tasks.where(frequency_type: 'weekly').each do |task| %>
+      <% @tasks.where(frequency_type: 'Weekly').each do |task| %>
         <div class="task-details">
           <%= link_to task_path(task), class: 'task-link text-decoration-none' do %>
               <span><%= task.task_name %></span>
@@ -84,7 +84,7 @@
 
     <div class="frequency-type">
       <h2 class="frequency-title">Monthly</h2>
-      <% @tasks.where(frequency_type: 'monthly').each do |task| %>
+      <% @tasks.where(frequency_type: 'Monthly').each do |task| %>
         <div class="task-details">
           <%= link_to task_path(task), class: 'task-link text-decoration-none' do %>
               <span><%= task.task_name %></span>
@@ -105,4 +105,3 @@
       <%end%>
     </div>
   </div>
-
