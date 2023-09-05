@@ -6,7 +6,7 @@
       <%= form_with url: tasks_path, method: :get, id: 'search-form' do %>
         <%= text_field_tag :query, params[:query], placeholder: "Search your task..." %>
         <button type="submit" class="search-button">
-          <i class="fas fa-search"></i>
+          <i class="fa fa-search" id="search-icon"></i>
         </button>
       <% end %>
     </div>

@@ -1,17 +1,17 @@
 .flexbox.search-bar {
   display: flex;
   align-items: center;
-  background-color: #FFF7EC; /* Fond très clair pour le rose */
-  border: 1px solid $olive; /* Stroke foncé */
-  border-radius: 20px; /* Coins arrondis */
-  padding: 8px 12px; /* Espacement interne */
-  margin: 0 20%; /* Espacement horizontal */
+  background-color: $beige;
+  border: 1px solid $olive;
+  border-radius: 20px;
+  padding: 8px 12px;
+  margin: 0 20%;
 }
 
 .flexbox.search-bar form {
   display: flex;
   align-items: center;
-  flex: auto; /* Prend la largeur nécessaire */
+  flex: auto;
 }
 
 .flexbox.search-bar input[type="text"] {
@@ -21,48 +21,25 @@
   border: none;
   outline: transparent;
   background-color: transparent;
-  color: #545454; /* Gris assorti */
+  color: #545454;
 }
 
 .flexbox.search-bar input[type="text"]:focus {
   outline: transparent;
 }
 
-/* Remplacer le texte "Search" par une icône de loupe */
 .flexbox.search-bar button[type="submit"] {
-  flex: none; /* Ne pas étendre */
+  flex: none;
   padding: 6px 10px;
   font-size: 14px;
-  color: #FFF7EC; /* Beige pour l'icône de loupe */
-  background-color: #a2cdb095; /* Vert clair */
+  color: $green;
+  background-color: $beige;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.flexbox.search-bar button[type="submit"]:hover {
-  background-color: #a1c4ab; /* Vert légèrement plus foncé au survol */
-}
-
 .flexbox.search-bar .fa-search {
   font-size: 14px;
-  color: #FFF7EC; /* Beige pour l'icône de loupe */
-}
-
-/* Mobile-specific Styling (ajustez les valeurs au besoin) */
-@media only screen and (max-device-width: 480px) {
-  .flexbox.search-bar {
-    padding: 6px 8px;
-  }
-
-  .flexbox.search-bar input[type="text"] {
-    padding: 4px;
-    font-size: 12px;
-  }
-
-  .flexbox.search-bar button[type="submit"] {
-    padding: 4px 8px;
-    font-size: 12px;
-  }
+  color: $green;
 }
