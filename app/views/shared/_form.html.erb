@@ -1,7 +1,10 @@
 <div class="container-form" data-controller="form">
 
   <%= simple_form_for(@task) do |f|%>
-    <%= f.input :task_name, placeholder:'Walk the dog', input_html: { class: "custom-input" } %>
+    <%= f.input :task_name, placeholder:'Walk the dog', input_html: { class: "custom-input", data: {action: "input->form#countingLetters"} } %>
+    <p class="text-left <%= 'd-none' unless @task.task_name.length != '' %>" data-form-target="divcounting">
+    </p>
+
     <%= f.label :frequency_type %>
 
     <div class="tag-item">

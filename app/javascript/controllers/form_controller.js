@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="form"
 export default class extends Controller {
-  static targets = ["dayselection", "monthselection", "radio"]
+  static targets = ["dayselection", "monthselection", "radio", "divcounting"]
   connect() {
     console.log("coucou")
   }
@@ -23,5 +23,15 @@ export default class extends Controller {
       this.monthselectionTarget.classList.add('d-none')
       }
     }
+  }
+
+  countingLetters(event) {
+    event.preventDefault()
+    const characters = event.currentTarget.value.length;
+    const grammar = characters > 1 ? 's' : '';
+    console.log(this.divcountingTarget)
+    console.log(event.currentTarget.value.length)
+    let countingBox = `${characters} character${grammar}`;
+    this.divcountingTarget.innerText = countingBox
   }
 }
