@@ -44,12 +44,12 @@ user3 = User.create!(
   user3.photo.attach(io: file, filename: "Milou.png", content_type: "image/png")
   user3.save
 
-puts "Creating daily tasks..."
+puts "Creating Daily tasks..."
 
 task1 = Task.create!(
   task_name: "Feed Riri",
   description: "Give 100g of croquettas buenas and no more even if Riri might be persuasive",
-  frequency_type: "daily",
+  frequency_type: "Daily",
   frequency_amount: 1,
   points: 10
 )
@@ -58,7 +58,7 @@ task1 = Task.create!(
 task2 = Task.create!(
   task_name: "Water the plants",
   description: "Take a moment to chat with your leafy roommates. They might not talk back, but they'll appreciate the care and the little pep talk. Otherwise, just give each plant a glass of water and pour well at the root",
-  frequency_type: "daily",
+  frequency_type: "Daily",
   frequency_amount: 1,
   points: 15
 )
@@ -66,19 +66,19 @@ task2 = Task.create!(
 task3 = Task.create!(
   task_name: "Clear the dishwasher",
   description: "Please note that 'clearing the dishwasher' does not mean to remove just one  plate from the dishwasher but all the dishes",
-  frequency_type: "daily",
+  frequency_type: "Daily",
   frequency_amount: 1,
   points: 20
 )
 
 
 
-puts "Creating weekly tasks..."
+puts "Creating Weekly tasks..."
 
 task4 = Task.create!(
   task_name: "Take out the bins",
   description: "Turn trash duty into a dance party! Crank up the tunes and move to the beat as you guide the garbage bags to their destination.",
-  frequency_type: "weekly",
+  frequency_type: "Weekly",
   frequency_amount: 1,
   frequency_day: "Monday",
   points: 25
@@ -87,7 +87,7 @@ task4 = Task.create!(
 task5 = Task.create!(
   task_name: "Toilets cleaning",
   description: "Wednesdays are your throne's time to shine! Give your toilet the royal treatment it deserves and keep it flush with pride.",
-  frequency_type: "weekly",
+  frequency_type: "Weekly",
   frequency_amount: 1,
   frequency_day: "Monday",
   points: 40
@@ -96,18 +96,18 @@ task5 = Task.create!(
 task6 = Task.create!(
   task_name: "Bathroom cleaning",
   description: "Start your week by showing your reflection some love. Wipe those mirrors till they're gleaming, and your smile shines brighter than ever!",
-  frequency_type: "weekly",
+  frequency_type: "Weekly",
   frequency_amount: 1,
   frequency_day: "Monday",
   points: 50
 )
 
-puts "Creating monthly tasks..."
+puts "Creating Monthly tasks..."
 
 task7 = Task.create!(
   task_name: "Windows cleaning",
-  description: "Engage in a monthly Reflective Renewal. As you clean, think of it as a renewal ritual for your windows, inviting in positive energy and fresh perspectives.",
-  frequency_type: "monthly",
+  description: "Engage in a Monthly Reflective Renewal. As you clean, think of it as a renewal ritual for your windows, inviting in positive energy and fresh perspectives.",
+  frequency_type: "Monthly",
   frequency_amount: 1,
   frequency_day_of_month: 15,
   points: 50
@@ -116,7 +116,7 @@ task7 = Task.create!(
 task8 = Task.create!(
   task_name: "Pay the bills",
   description: "Time to party with the funky factures! Once a month, we gather 'round, give those bills a high-five, and send them on their merry way.",
-  frequency_type: "monthly",
+  frequency_type: "Monthly",
   frequency_amount: 1,
   frequency_day_of_month: 25,
   points: 40
@@ -125,7 +125,7 @@ task8 = Task.create!(
 task9 = Task.create!(
   task_name: "Grocery shop",
   description: "Embark on a journey through the produce wonderland! Choose the freshest fruits and veggies as if you're selecting ingredients for a royal feast.",
-  frequency_type: "monthly",
+  frequency_type: "Monthly",
   frequency_amount: 1,
   frequency_day_of_month: 5,
   points: 60
