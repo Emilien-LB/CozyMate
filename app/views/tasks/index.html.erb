@@ -1,4 +1,4 @@
-<div class="tasks-wrapper">
+<div class="tasks-wrapper" data-controller="delete-task">
   <div class="tasks-index-banner">
     <h1 class="text-center tasks-title">TASKS</h1>
 
@@ -51,9 +51,12 @@
               <%= link_to edit_task_path(task), class: "text-decoration-none" do %>
                 <i class="fa-solid fa-paintbrush" style="color: #8AB7DD;"></i>
               <%end%>
-              <%= link_to task_path(task), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-decoration-none" do %>
+              <div data-delete-task-target="deleteTask">
+                <%= link_to task_path(task), data: {action: "click->delete-task#alerteDelete"}, class: "text-decoration-none" do %>
+              </div>
                 <i class="fa-solid fa-trash-can" style="color: #8d5ba5;"></i>
               <%end%>
+              <%= link_to "supprimer", task_path(task), class: "button-delete-task  d-none", data: { "delete-task-target": "deleteButton", turbo_method: :delete } %>
             </div>
         </div>
       <%end%>
@@ -105,3 +108,4 @@
       <%end%>
     </div>
   </div>
+</div>

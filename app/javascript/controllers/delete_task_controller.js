@@ -1,19 +1,19 @@
 import { Controller } from "@hotwired/stimulus"
 import Swal from "sweetalert2"
 
-// Connects to data-controller="delete-event"
+// Connects to data-controller="delete-task"
 export default class extends Controller {
-  static targets = ["deleteElement", "eventDescription", "deleteButton"]
   // connect() {
   //   console.log("coucou")
   // }
+  static targets = ["deleteTask", "deleteButton"]
 
   alerteDelete(event) {
     event.preventDefault()
-    // console.log("yessss")
+    console.log("yessss")
     Swal.fire({
       title: "ARE YOU SURE ?",
-      html: `If you validate, this will delete event </br><span class="swal2-task-name">${this.eventDescriptionTarget.innerHTML}</span>.`,
+      html: `If you validate, this will delete task </br><span class="swal2-task-name">${this.deleteTaskTarget.innerHTML}</span>`,
       showCancelButton: true,
       buttons: {
         cancel : "Cancel",
@@ -43,9 +43,9 @@ export default class extends Controller {
 
     // Show success message using SweetAlert
     Swal.fire({
-      title: "Event deleted !",
+      title: "Task deleted !",
       showCloseButton: true,
-      html: `The event has been successfully deleted.`,
+      html: `The task has been successfully deleted.`,
       icon: "success",
       confirmButtonText: '<a class="ranking-link" href="#"> <i class="fa fa-thumbs-up fa-bounce"></i></i>OK</a>',
       confirmButtonColor: "#a2cdb0",
