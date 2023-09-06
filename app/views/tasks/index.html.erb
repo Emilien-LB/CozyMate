@@ -6,19 +6,19 @@
   </svg>
 </div>
 
-<div class="tasks-wrapper" data-controller="delete-task">>
+<div class="tasks-wrapper">
 
   <div class="tasks-index-banner">
     <h1 class="text-center tasks-title">TASKS</h1>
 
-    <div class="flexbox search-bar">
+      <div class="flexbox search-bar">
       <%= form_with url: tasks_path, method: :get, id: 'search-form' do %>
         <%= text_field_tag :query, params[:query], placeholder: "Search your task..." %>
         <button type="submit" class="search-button">
           <i class="fa fa-search" id="search-icon"></i>
         </button>
       <% end %>
-    </div>
+      </div>
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -48,24 +48,24 @@
     <div class="frequency-type ">
       <h2 class="frequency-title">Daily</h2>
       <% @tasks.where(frequency_type: 'Daily').each do |task| %>
-        <div class="task-details">
+        <div class="task-details" data-controller="delete-task">
           <%= link_to task_path(task), class: 'task-link text-decoration-none' do %>
-              <span><%= task.task_name %></span>
+              <span data-delete-task-target="deleteTask" ><%= task.task_name %></span>
             <div class="stars-edit-delete">
               <div>
                 <span>+<%= task.points %></span>
                 <span><i class="fa-solid fa-star fa-bounce" style="color: #ffcc69;"></i></span>
           <%end%>
-              </div>
+            </div>
               <%= link_to edit_task_path(task), class: "text-decoration-none" do %>
                 <i class="fa-solid fa-paintbrush" style="color: #8AB7DD;"></i>
               <%end%>
-              <div data-delete-task-target="deleteTask">
+              <div>
                 <%= link_to task_path(task), data: {action: "click->delete-task#alerteDelete"}, class: "text-decoration-none" do %>
-              </div>
                 <i class="fa-solid fa-trash-can" style="color: #8d5ba5;"></i>
+              </div>
               <%end%>
-              <%= link_to "supprimer", task_path(task), class: "button-delete-task  d-none", data: { "delete-task-target": "deleteButton", turbo_method: :delete } %>
+              <%= link_to "supprimer", task_path(task), class: "button-delete-task  d-none", data: { delete_task_target: "deleteButton", turbo_method: :delete } %>
             </div>
         </div>
       <%end%>
@@ -74,22 +74,25 @@
     <div class="frequency-type">
       <h2 class="frequency-title">Weekly</h2>
       <% @tasks.where(frequency_type: 'Weekly').each do |task| %>
-        <div class="task-details">
+        <div class="task-details" data-controller="delete-task">
           <%= link_to task_path(task), class: 'task-link text-decoration-none' do %>
-              <span><%= task.task_name %></span>
-            <div class= "stars-edit-delete">
+              <span data-delete-task-target="deleteTask" ><%= task.task_name %></span>
+            <div class="stars-edit-delete">
               <div>
                 <span>+<%= task.points %></span>
                 <span><i class="fa-solid fa-star fa-bounce" style="color: #ffcc69;"></i></span>
-              </div>
+          <%end%>
+            </div>
               <%= link_to edit_task_path(task), class: "text-decoration-none" do %>
                 <i class="fa-solid fa-paintbrush" style="color: #8AB7DD;"></i>
               <%end%>
-              <%= link_to task_path(task), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-decoration-none" do %>
+              <div>
+                <%= link_to task_path(task), data: {action: "click->delete-task#alerteDelete"}, class: "text-decoration-none" do %>
                 <i class="fa-solid fa-trash-can" style="color: #8d5ba5;"></i>
+              </div>
               <%end%>
+              <%= link_to "supprimer", task_path(task), class: "button-delete-task  d-none", data: { delete_task_target: "deleteButton", turbo_method: :delete } %>
             </div>
-          <%end%>
         </div>
       <%end%>
     </div>
@@ -97,24 +100,28 @@
     <div class="frequency-type">
       <h2 class="frequency-title">Monthly</h2>
       <% @tasks.where(frequency_type: 'Monthly').each do |task| %>
-        <div class="task-details">
+        <div class="task-details" data-controller="delete-task">
           <%= link_to task_path(task), class: 'task-link text-decoration-none' do %>
-              <span><%= task.task_name %></span>
-            <div class= "stars-edit-delete">
+              <span data-delete-task-target="deleteTask" ><%= task.task_name %></span>
+            <div class="stars-edit-delete">
               <div>
                 <span>+<%= task.points %></span>
                 <span><i class="fa-solid fa-star fa-bounce" style="color: #ffcc69;"></i></span>
-              </div>
+          <%end%>
+            </div>
               <%= link_to edit_task_path(task), class: "text-decoration-none" do %>
                 <i class="fa-solid fa-paintbrush" style="color: #8AB7DD;"></i>
               <%end%>
-              <%= link_to task_path(task), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-decoration-none" do %>
+              <div>
+                <%= link_to task_path(task), data: {action: "click->delete-task#alerteDelete"}, class: "text-decoration-none" do %>
                 <i class="fa-solid fa-trash-can" style="color: #8d5ba5;"></i>
+              </div>
               <%end%>
+              <%= link_to "supprimer", task_path(task), class: "button-delete-task  d-none", data: { delete_task_target: "deleteButton", turbo_method: :delete } %>
             </div>
-          <%end%>
         </div>
       <%end%>
     </div>
+
   </div>
 </div>
