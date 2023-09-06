@@ -41,8 +41,9 @@ class TasksController < ApplicationController
   p old_frequency
   p task_params[:frequency_type]
   if @task.frequency_type != task_params[:frequency_type] ||
-     (@task.frequency_type == "Weekly" && @task.frequency_day != task_params[:frequency_day]) ||
-     (@task.frequency_type == "Monthly" && @task.frequency_day_of_month != task_params[:frequency_day_of_month])
+    (@task.frequency_type == "Monthly" && @task.frequency_day_of_month != task_params[:frequency_day_of_month]) ||
+    (@task.frequency_type == "Weekly" && @task.frequency_day != task_params[:frequency_day]) 
+
     ScheduledTask.where(task: @task, done: false).destroy_all
     ScheduledTask.generate_scheduled_tasks(@task, task_params[:frequency_type], task_params[:frequency_day], task_params[:frequency_day_of_month])
   end
@@ -61,7 +62,12 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:task_name, :description, :frequency_type, :points, :frequency_day, :frequency_day_of_month)
+    params.require(:task).permit(:task_name,
+                                :description,
+                                :frequency_type,
+                                :points,
+                                :frequency_day,
+                                :frequency_day_of_month)
   end
 
   def set_task
