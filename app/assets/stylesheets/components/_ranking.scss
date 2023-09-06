@@ -1,8 +1,14 @@
 #ranking-page {
   overflow: hidden;
+  margin-bottom: 70px;
 }
-.yellow-title {
+.yellow-ranking-title {
   color: #FFCC69;
+  font-size: 36px;
+  -webkit-text-stroke: 1px black;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .ranking-ellipse-yellow {
@@ -12,9 +18,20 @@
   fill: rgba(255, 204, 105, 0.30);
   mix-blend-mode: darken;
   position: fixed;
-  top: -16px;
-  left: 182px;
+  top: -10px;
+  left: 0px;
   transform: rotate(-0.482deg);
+}
+
+.ranking-ellipse-violet {
+  fill: rgba(141, 91, 165, 0.30);
+  mix-blend-mode: darken;
+  width: 283.391px;
+  height: 192px;
+  position: fixed;
+  bottom: -10px;
+  right: 0px;
+  transform: rotate(180deg);
 }
 
 .fa-star::before {

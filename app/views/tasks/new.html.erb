@@ -1,3 +1,14 @@
-<h1 class="edit-create-title">New task</h1>
+<div class="new-task-ellipse-violet">
+  <svg xmlns="http://www.w3.org/2000/svg" width="352" height="225" viewBox="0 0 252 125" fill="none">
+    <g style="mix-blend-mode:darken">
+      <path d="M202 38C141 90 100 125 65.1713 125C11.5997 125 -31.8287 82.0193 -31.8287 29C-31.8287 -24.0193 11.5997 -67 65.1713 -67C118.743 -67 352 -47 202 38Z" fill="#8D5BA5" fill-opacity="0.3"/>
+    </g>
+  </svg>
+</div>
 
-<%= render "shared/form", task: @task %>
+<div class="tasks-new-wrapper">
+  <div class="tasks-new-banner">
+    <h1 class="text-center edit-create-title">New task</h1>
+  </div>
+    <%= render "shared/form", task: @task %>
+</div>

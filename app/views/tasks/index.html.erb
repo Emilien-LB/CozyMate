@@ -1,4 +1,13 @@
-<div class="tasks-wrapper" data-controller="delete-task">
+<div class="pink-ellipse-tasks-index">
+  <svg xmlns="http://www.w3.org/2000/svg" width="342" height="237" viewBox="0 0 242 137" fill="none">
+    <g style="mix-blend-mode:darken">
+      <path d="M220.255 38.9841C242.146 87.2732 267.385 82.3981 247.141 132.2C198.349 154.319 25.3918 91.1103 3.50079 42.8212C-18.3902 -5.46789 68.3501 -28.2994 117.142 -50.4184C165.934 -72.5374 198.364 -9.30499 220.255 38.9841Z" fill="#FFD1CC" fill-opacity="0.3"/>
+    </g>
+  </svg>
+</div>
+
+<div class="tasks-wrapper" data-controller="delete-task">>
+
   <div class="tasks-index-banner">
     <h1 class="text-center tasks-title">TASKS</h1>
 
@@ -6,7 +15,7 @@
       <%= form_with url: tasks_path, method: :get, id: 'search-form' do %>
         <%= text_field_tag :query, params[:query], placeholder: "Search your task..." %>
         <button type="submit" class="search-button">
-          <i class="fas fa-search"></i>
+          <i class="fa fa-search" id="search-icon"></i>
         </button>
       <% end %>
     </div>

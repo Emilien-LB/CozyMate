@@ -1,15 +1,19 @@
+.tasks-new-wrapper {
+  margin-bottom: 70px;
+}
+
 .container-form {
   padding-inline: 20px;
-  text-align: center;
+  text-align: center
 }
 
 .edit-create-title {
-  text-align: center;
-  -webkit-text-stroke: 1.5px black;
   color: #8D5BA5;
-  font-family:  'Roboto Condensed', 'sans-serif';
   font-size: 36px;
-  margin-bottom: 20px;
+  -webkit-text-stroke: 1px black;
+  font-weight: bold;
+  margin-top: 2.5rem;
+  margin-bottom: 3.5rem;
 }
 
   .form-control::placeholder {
@@ -19,10 +23,32 @@
 .custom-input {
   display: flex;
   text-align: center;
+  width: 100%;
   height: 33px;
   border-radius: 10px;
   background: rgba(255, 209, 204, 0.20);
   border: 1px solid $pink;
+}
+.counting-characters-box {
+  width: fit-content;
+  color: #888;
+  font-style: italic;
+  margin: 0px;
+}
+
+.form-label {
+  margin: 10px !important;
+}
+
+.task_description {
+  margin-bottom: 0px !important;
+}
+.frequency-type-label {
+  margin: 10px !important;
+}
+
+.task_task_name {
+  margin-bottom: 0px !important;
 }
 
 .custom-input_description {
