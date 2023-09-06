@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
+Event.destroy_all
 ScheduledTask.destroy_all
 Task.destroy_all
 User.destroy_all
@@ -862,5 +862,29 @@ puts "old monthly scheduled tasks for task 18"
   )
 end
 
+puts "Events creation - September"
+
+event1 = Event.create!(
+  title: "Demo Day 🚀",
+  start_time: Time.strptime('09/08/2023 18:00', '%m/%d/%Y %H:%M'),
+  end_time: Time.strptime('09/08/2023 23:00', '%m/%d/%Y %H:%M'),
+  user_id: user1.id,
+  description: "Final step of the Bootcamp guys 🏎 🏁! Let's nailed it !"
+)
+
+event2 = Event.create!(
+  title: "BBQ night 🔥",
+  start_time: Time.strptime('09/07/2023 20:00', '%m/%d/%Y %H:%M'),
+  end_time: Time.strptime('09/07/2023 23:00', '%m/%d/%Y %H:%M'),
+  user_id: user2.id,
+  description: "Don't forget to bring your hallumi ! I invited some friends, we should be less than 10"
+)
+event3 = Event.create!(
+  title: "Anaïs' Birthday 🐆",
+  start_time: Time.strptime('09/30/2023 20:00', '%m/%d/%Y %H:%M'),
+  end_time: Time.strptime('09/30/2023 23:00', '%m/%d/%Y %H:%M'),
+  user_id: user2.id,
+  description: "Don't forget to bring your smile (and gifts please). The leopard is the theme of the evening, so let's unleash our inner felines !"
+)
 
 puts "Congrats, seeds done !"

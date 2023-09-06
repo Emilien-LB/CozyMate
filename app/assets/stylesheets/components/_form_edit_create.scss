@@ -81,11 +81,16 @@
   background: rgba(141, 91, 165, .5);
 }
 
+.form-check-label {
+  color: #888 !important;
+  height: fit-content;
+  font-size: 15px !important;
+}
+
 .tag-item {
   .task_frequency_type {
     display: flex;
     justify-content: space-between;
-
   }
 
 
@@ -95,11 +100,6 @@
   legend {
     display: none;
   }
-
-  .form-check-label {
-    color: #888 !important;
-  }
-
 
 }
 
@@ -111,21 +111,17 @@
 .tag-selector + label {
   cursor: pointer;
   display: inline-block;
-  font-size: 0.7rem;
   border-radius: 50rem;
   padding: 0.1rem 0.5rem;
-  background-color: rgba(255, 209, 204, 0.20);
-  color: #888 !important;
   border: 1px solid $pink;
   margin-bottom: 0.4rem;
   min-width: 75px;
-  height: 22px;
   text-align: center;
 }
 
 .tag-selector:checked + label {
   background-color: rgba(255, 209, 204, 1);
-  color: white;
+  color: black !important
 }
 input, select, textarea{
   color: #ffF;

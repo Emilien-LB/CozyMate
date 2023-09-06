@@ -8,7 +8,7 @@ class Task < ApplicationRecord
 
   validates :frequency_type, inclusion: { in: %w(Daily Weekly Monthly), allow_blank: true }
   validates :task_name, :frequency_type, :description, :points, presence: true
-  validates :points, numericality: { only_integer: true }
+  validates :points, numericality: { only_integer: true, greater_than_or_equal_to: 1 }
   validates_length_of :task_name, :maximum => 30
   validates_length_of :description, :maximum => 220
 

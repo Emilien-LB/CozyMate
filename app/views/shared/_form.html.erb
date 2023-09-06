@@ -15,10 +15,10 @@
     </div>
 
 
-     <div id="day-selection" class="<%= 'd-none' unless @task.frequency_type == 'Weekly' %>" data-form-target="dayselection">
+     <div class="<%= 'd-none' unless @task.frequency_type == 'Weekly' %>" data-form-target="dayselection">
         <%= f.input :frequency_day,
           as: :radio_buttons, collection: Task::WEEKDAYS,
-          input_html: { class: "tag-selector"}, multiple: false, legend: false,
+          input_html: { class: "tag-selector day-selection"}, multiple: false, legend: false,
           label: 'Select the day of the week' %>
     </div>
 
