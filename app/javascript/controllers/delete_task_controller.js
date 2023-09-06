@@ -10,10 +10,10 @@ export default class extends Controller {
 
   alerteDelete(event) {
     event.preventDefault()
-    console.log("yessss")
+    console.log(this.deleteTaskTarget)
     Swal.fire({
       title: "ARE YOU SURE ?",
-      html: `If you validate, this will delete task </br><span class="swal2-task-name">${this.deleteTaskTarget.innerHTML}</span>`,
+      html: `If you validate, this will delete task </br><span class="swal2-task-name">${this.deleteTaskTarget.innerText}</span>`,
       showCancelButton: true,
       buttons: {
         cancel : "Cancel",
@@ -27,7 +27,8 @@ export default class extends Controller {
     .then((result) => {
       if (result.isConfirmed) {
         this.sendTurboUpdate(event)
-        console.log(this.element)
+        console.log(this.deleteTaskTarget)
+        console.log(this.deleteButtonTarget)
         setTimeout(() => {
           this.deleteButtonTarget.click()
         }, 2000);
