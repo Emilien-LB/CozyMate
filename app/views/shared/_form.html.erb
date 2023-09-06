@@ -1,8 +1,12 @@
 <div class="container-form" data-controller="form">
-
+<div class="d-flex flex-column">
   <%= simple_form_for(@task) do |f|%>
-    <%= f.input :task_name, placeholder:'Walk the dog', input_html: { class: "custom-input" } %>
-    <%= f.label :frequency_type %>
+    <%= f.input :task_name, placeholder:'Walk the dog', maxlength:"30", input_html: { class: "custom-input", data: {action: "input->form#countingLettersTaskName"} } %>
+    <p class="counting-characters-box" data-form-target="divCountingTaskName">
+    </p>
+</div>
+
+    <%= f.label :frequency_type, class: "frequency-type-label" %>
 
     <div class="tag-item">
         <%= f.input :frequency_type,
@@ -28,9 +32,13 @@
 
 
     <%= f.input :points,placeholder:'40', input_html: { class: "custom-input" } %>
-    <%= f.input :description, placeholder:"Walk the dog for 15 min at least and don't forger to take the poop bag and some treats", as: :text, input_html: { class: "custom-input_description" } %>
+    <div>
+    <%= f.input :description, placeholder:"Walk the dog for 15 min at least and don't forget to take the poop bag and some treats", maxlength:"220", as: :text, input_html: { class: "custom-input_description", data: {action: "input->form#countingLettersDescription"}} %>
+     <p class="counting-characters-box" data-form-target="divCountingDescription">
+    </p>
+    </div>
 
-    <div class="d-flex justify-content-between">
+    <div class="d-flex justify-content-between mt-3">
       <%= link_to "Cancel", tasks_path, class: "button-cancel" %>
       <%= f.submit 'Validate', class: "button-validates" %>
     </div>

@@ -23,10 +23,32 @@
 .custom-input {
   display: flex;
   text-align: center;
+  width: 100%;
   height: 33px;
   border-radius: 10px;
   background: rgba(255, 209, 204, 0.20);
   border: 1px solid $pink;
+}
+.counting-characters-box {
+  width: fit-content;
+  color: #888;
+  font-style: italic;
+  margin: 0px;
+}
+
+.form-label {
+  margin: 10px !important;
+}
+
+.task_description {
+  margin-bottom: 0px !important;
+}
+.frequency-type-label {
+  margin: 10px !important;
+}
+
+.task_task_name {
+  margin-bottom: 0px !important;
 }
 
 .custom-input_description {
