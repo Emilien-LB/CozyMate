@@ -1,4 +1,4 @@
-
+// Wrapper
 .tasks-wrapper {
   width: -webkit-fill-available;
   display: flex;
@@ -7,13 +7,16 @@
   margin-bottom: 70px;
 }
 
+// Banner
 .tasks-index-banner {
   padding-bottom: 3px;
   position: fixed;
   background-color: $beige;
   width: 100%;
-  z-index: 2
+  z-index: 2;
 }
+
+// Titles
 .tasks-title {
   margin-top: 20px;
   font-size: 36px;
@@ -21,48 +24,70 @@
   -webkit-text-stroke: 1px black;
   font-weight: bold;
 }
-.frequency-type {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+
 .frequency-title {
   font-size: 25px;
   color: $pink;
   -webkit-text-stroke: 1px black;
   font-weight: bold;
-  margin-top: 20px
+  margin-top: 20px;
 }
 
+// Frequency
+.frequency-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+// Task Details
 .task-details {
   display: flex;
   justify-content: space-between;
   background-color: $light-green;
   margin: 5px;
   padding: 10px 25px 10px 40px;
-  height:fit-content;
+  height: fit-content;
   width: auto;
   border-radius: 20px;
   border: 1px solid $olive;
 }
 
+// Stars Edit Delete
 .stars-edit-delete {
   width: 40%;
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
 }
 
+// Generic span styling
 span {
   color: black;
-  font-size: 16px
+  font-size: 16px;
 }
 
+// Tasks Container
 .tasks-container {
   text-align: center;
   margin-top: 130px;
   margin-bottom: 30px;
 }
 
+// Ellipse
+.pink-ellipse-tasks-index {
+  fill: rgba(255, 209, 204, 0.30);
+  mix-blend-mode: darken;
+  width: 206.89px;
+  height: 221.964px;
+  transform: rotate(0deg);
+  position: fixed;
+  z-index: 3;
+  top: -33px;
+  left: 82px;
+  pointer-events: none;
+}
+
+// Commented Out Styles
 // .add-icon {
 //   background-color: $beige;
 //   -webkit-text-stroke: 1px black;
@@ -73,5 +98,5 @@ span {
 //   padding-bottom: 60px;
 //   width: 100%;
 //   text-align: right;
-//   z-index: 2
+//   z-index: 2;
 // }
