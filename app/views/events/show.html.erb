@@ -10,6 +10,7 @@
           <%= @event.end_time.strftime('%d/%m - %H:%M') %>
       </h3>
       <p><%= @event.user.first_name %>
+          <%# <%= cl_image_tag user.photo.key, height: 100, width: 100, crop: :fill, class:" rounded-5" %>
           <i class="fa-solid fa-sun fa-bounce" style="color: #ffcc69"></i>
       </p>
   </div>
