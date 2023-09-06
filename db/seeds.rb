@@ -23,9 +23,9 @@ user1 = User.create!(
   user1.save
 
 user2 = User.create!(
-  first_name: 'Anais',
+  first_name: 'Anaïs',
   last_name: 'Brd',
-  birth_date: '30/06/2000',
+  birth_date: '30/06/1992',
   email: 'ana@gmail.com',
   password: 'secret')
 

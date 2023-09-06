@@ -1,3 +1,4 @@
+// Wrapper
 .scheduled-tasks-wrapper {
   height: 100dvh;
   justify-content: center;
@@ -6,50 +7,48 @@
   margin-bottom: 70px;
 }
 
+// Logo
 .logo-scheduled-tasks {
   display: flex;
-  width: 100%
+  width: 100%;
 }
 
-.banner-container {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  margin: 20px;
-  height: 10dvh
-}
-
-.logo{
+.logo {
   width: 62;
   height: 68px;
   background-image: none;
 }
 
+// Banner
+.banner-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 20px;
+  height: 10dvh;
+}
+
 .hello {
   align-self: end;
   font-style: italic;
+  font-size: 24px;
 }
 
 .current-user-picture {
   align-self: end;
   position: absolute;
   right: 0;
-  top: 0
+  top: 0;
 }
+
+// Titles & Headers
 .welcome {
   font-family: $headers-font;
   font-style: italic;
   font-size: 30px;
   font-weight: bold;
   margin-top: 30px;
-  height: 5dvh
-}
-
-.roommates {
-  align-items: end;
-  text-align: right;
-  margin: 20px;
-  height: 5dvh
+  height: 5dvh;
 }
 
 .scheduled-tasks-title {
@@ -61,9 +60,17 @@
   margin: 0 20px;
   -webkit-text-stroke: 1px black;
   border-top-left-radius: 20px;
-  border-top-right-radius: 20px
+  border-top-right-radius: 20px;
 }
 
+.roommates {
+  align-items: end;
+  text-align: right;
+  margin: 20px;
+  height: 5dvh;
+}
+
+// Task Card
 .scheduled-tasks-card {
   display: flex;
   flex-direction: column;
@@ -83,28 +90,29 @@
   width: 95%;
 }
 
-.checkbox-card{
-  justify-content: center;
-  width: 100%
-}
-
 .scheduled-task-container {
   background-color: $beige;
-  margin: 10px 0 ;
-  padding: 10px 25px 10px 25px;
+  margin: 10px 0;
+  padding: 10px 25px;
   height: fit-content;
   width: 100%;
   border-radius: 10px;
   border: 1px solid $olive;
-  display: flex
+  display: flex;
+}
+
+.checkbox-card {
+  justify-content: center;
+  width: 100%;
 }
 
 .task-name-points {
   display: flex;
   align-self: center;
   width: 100%;
-  justify-content: space-between
+  justify-content: space-between;
 }
+
 .scheduled-task-name {
   padding-left: 10px;
 }
@@ -112,4 +120,28 @@
 .btn-opacity {
   background-color: $light-pink;
   border-radius: 10px;
+}
+
+// Ellipses
+.blue-ellipse-scheduled {
+  fill: rgba(138, 183, 221, 0.30);
+  width: 218.707px;
+  height: 201px;
+  flex-shrink: 0;
+  mix-blend-mode: darken;
+  position: fixed;
+  top: -10px;
+  left: 0px;
+  transform: rotate(-0.482deg);
+}
+
+.green-ellipse-scheduled {
+  fill: rgba(162, 205, 176, 0.30);
+  width: 259.629px;
+  height: 189.19px;
+  mix-blend-mode: darken;
+  position: fixed;
+  bottom: 0px;
+  left: 192px;
+  transform: rotate(180.00deg);
 }

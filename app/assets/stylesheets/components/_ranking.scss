@@ -23,6 +23,17 @@
   transform: rotate(-0.482deg);
 }
 
+.ranking-ellipse-violet {
+  fill: rgba(141, 91, 165, 0.30);
+  mix-blend-mode: darken;
+  width: 283.391px;
+  height: 192px;
+  position: fixed;
+  bottom: -10px;
+  right: 0px;
+  transform: rotate(180deg);
+}
+
 .fa-star::before {
   color: #ffcc69;
 }
