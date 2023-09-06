@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="form"
 export default class extends Controller {
-  static targets = ["dayselection", "monthselection", "radio", "divcounting"]
+  static targets = ["dayselection", "monthselection", "radio", "divCountingTaskName", "divCountingDescription"]
   connect() {
     console.log("coucou")
   }
@@ -25,13 +25,19 @@ export default class extends Controller {
     }
   }
 
-  countingLetters(event) {
+  countingLettersTaskName(event) {
     event.preventDefault()
     const characters = event.currentTarget.value.length;
     const grammar = characters > 1 ? 's' : '';
-    console.log(this.divcountingTarget)
-    console.log(event.currentTarget.value.length)
-    let countingBox = `${characters} character${grammar}`;
-    this.divcountingTarget.innerText = countingBox
+    let countingBox = `${characters}/30 character${grammar}`;
+    this.divCountingTaskNameTarget.innerText = countingBox
   }
+
+  countingLettersDescription(event) {
+    event.preventDefault()
+    const characters = event.currentTarget.value.length;
+    const grammar = characters > 1 ? 's' : '';
+    let countingBox = `${characters}/220 character${grammar}`;
+    this.divCountingDescriptionTarget.innerText = countingBox
+  } 
 }
