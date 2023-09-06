@@ -63,22 +63,24 @@
 
 .button-validates,
 .button-cancel {
-  min-width: 130px;
-  height: 27px;
+  min-width: 120px;
+  height: 44px;
   text-decoration: none;
   border: none;
   display: flex;
   align-items: center;
-  font-size: 15px;
+  font-size: 18px;
   line-height: normal;
   justify-content: center;
+  text-align: center;
   padding-block: 4px;
-  background: rgba(141, 91, 165, 1);
+  background: #a2cdb0;
   color: white;
   border-radius: 10px;
+  font-weight: bold
 }
 .button-cancel {
-  background: rgba(141, 91, 165, .5);
+  background: #8d5ba5;
 }
 
 .form-check-label {

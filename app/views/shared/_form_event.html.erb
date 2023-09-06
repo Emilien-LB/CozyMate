@@ -10,8 +10,8 @@
 
     <div class="form-group">
       <%= f.label :description, "Description" %>
-      <%= f.text_field :description, placeholder: "Cheaters are not invited", maxlength:"150", class: 'form-control', data: {action: "keyup->form-event#countingLettersEventDescription"} %>
-       <div class="counting-characters-box" data-form-event-target="divCountingEventDescription">
+      <%= f.text_area :description, placeholder: "Cheaters are not invited", maxlength:"150", class: 'form-control', data: {action: "keyup->form-event#countingLettersEventDescription"} %>
+        <div class="counting-characters-box" data-form-event-target="divCountingEventDescription">
       </div>
     </div>
 
@@ -24,8 +24,11 @@
       <%= f.label :end_time, "End time" %>
       <%= f.datetime_field :end_time, placeholder: "23:30", class: 'form-control' %>
     </div>
-
-    <%= f.submit "Add", class: 'btn btn-primary' %>
+    <div class="container d-flex justify-content-center">
+      <button type="submit" class="button-validates">
+        <i class="fa fa-thumbs-up"></i>Validate
+      </button>
+    </div>
   <% end %>
 
 </div>

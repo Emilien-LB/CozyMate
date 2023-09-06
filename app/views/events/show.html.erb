@@ -10,14 +10,14 @@
           <%= @event.end_time.strftime('%d/%m - %H:%M') %>
       </h3>
       <p><%= @event.user.first_name %>
-          <%# <%= cl_image_tag user.photo.key, height: 100, width: 100, crop: :fill, class:" rounded-5" %>
+      
           <i class="fa-solid fa-sun fa-bounce" style="color: #ffcc69"></i>
       </p>
   </div>
 
   <div class="buttons-event"  data-delete-event-target="deleteElement">
       <%= link_to event_path(@event), class: "button-delete-event", data: {action: "click->delete-event#alerteDelete"} do %>
-          Delete  <i class="fa-solid fa-trash-can icon-margin" style="color: #8d5ba5;"></i>
+          Delete  <i class="fa-solid fa-trash-can icon-margin" style="color: white;"></i>
       <% end %>
       <%= link_to edit_event_path(@event), class: "button-edit-event" do %>
           Edit  <i class="fa-solid fa-paintbrush icon-margin" style="color: #8AB7DD;"></i>

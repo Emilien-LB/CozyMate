@@ -31,12 +31,14 @@
   }
 
   .calendar-heading {
-    display: flex;
     justify-content: space-between;
   }
 
   .create-event-link {
-    color: rgb(53, 53, 53);
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 18px;
   }
 
   td {
@@ -70,4 +72,12 @@
   left: 9px;
   transform: rotate(-6deg);
   z-index: -1;
+}
+
+.month-title {
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 18px;
+
 }

@@ -34,8 +34,12 @@
     </div>
 
     <div class="d-flex justify-content-between mt-3">
-      <%= link_to "Cancel", tasks_path, class: "button-cancel" %>
-      <%= f.submit 'Validate', class: "button-validates" %>
+      <%= link_to tasks_path, class: "button-cancel" do %>
+      <i class="fa-solid fa-thumbs-down"></i> Cancel
+      <% end %>
+      <button type="submit" class="button-validates">
+      <i class="fa fa-thumbs-up"></i>  Validate
+      </button>
     </div>
   <% end %>
 </div>

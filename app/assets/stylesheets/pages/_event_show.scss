@@ -70,10 +70,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 35%;
-    height: 30px;
+    width: 120px;
+    height: 44px;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
     line-height: normal;
     padding-block: 15px;
@@ -82,7 +82,7 @@
   }
 
   .button-delete-event {
-    background: rgba(141, 91, 165, 0.4);
+    background: #8d5ba5;
     color: rgb(255, 255, 255);
   }
 
@@ -115,4 +115,3 @@
     text-decoration: none;
   }
 }
-
