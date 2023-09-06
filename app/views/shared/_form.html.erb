@@ -1,40 +1,35 @@
 <div class="container-form" data-controller="form">
-<div class="d-flex flex-column">
   <%= simple_form_for(@task) do |f|%>
-    <%= f.input :task_name, placeholder:'Walk the dog', maxlength:"30", input_html: { class: "custom-input", data: {action: "input->form#countingLettersTaskName"} } %>
-    <p class="counting-characters-box" data-form-target="divCountingTaskName">
-    </p>
-</div>
+    <div class="d-flex flex-column">
+      <%= f.input :task_name, placeholder:'Walk the dog', maxlength:"30", input_html: { class: "custom-input", data: {action: "input->form#countingLettersTaskName"} } %>
+      <p class="counting-characters-box" data-form-target="divCountingTaskName">
+      </p>
+    </div>
 
     <%= f.label :frequency_type, class: "frequency-type-label" %>
-
     <div class="tag-item">
         <%= f.input :frequency_type,
         as: :radio_buttons, collection: ['Daily', 'Weekly', 'Monthly'],
         input_html: { class: "tag-selector", data: {action: "change->form#frequencySelection", form_target: "radio"} }, multiple: false, legend: false %>
     </div>
-
-
-     <div class="<%= 'd-none' unless @task.frequency_type == 'Weekly' %>" data-form-target="dayselection">
+    <div class="<%= 'd-none' unless @task.frequency_type == 'Weekly' %>" data-form-target="dayselection">
         <%= f.input :frequency_day,
           as: :radio_buttons, collection: Task::WEEKDAYS,
           input_html: { class: "tag-selector day-selection"}, multiple: false, legend: false,
           label: 'Select the day of the week' %>
     </div>
 
-     <div id="month-day-selection"class="<%= 'd-none' unless @task.frequency_type == 'Monthly' %>" data-form-target="monthselection">
+    <div id="month-day-selection"class="<%= 'd-none' unless @task.frequency_type == 'Monthly' %>" data-form-target="monthselection">
         <%= f.input :frequency_day_of_month,
           as: :select, collection: Task::MONTHDAY,
           data: {action: "change->form#frequencySelection", form_target: "radio"},
           label: 'Select the day of the month' %>
     </div>
 
-
-
     <%= f.input :points,placeholder:'40', input_html: { class: "custom-input" } %>
     <div>
     <%= f.input :description, placeholder:"Walk the dog for 15 min at least and don't forget to take the poop bag and some treats", maxlength:"220", as: :text, input_html: { class: "custom-input_description", data: {action: "input->form#countingLettersDescription"}} %>
-     <p class="counting-characters-box" data-form-target="divCountingDescription">
+    <p class="counting-characters-box" data-form-target="divCountingDescription">
     </p>
     </div>
 
