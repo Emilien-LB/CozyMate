@@ -47,8 +47,8 @@ user3 = User.create!(
 puts "Creating Daily tasks..."
 
 task1 = Task.create!(
-  task_name: "Feed Riri",
-  description: "Give 100g of croquettas buenas and no more even if Riri might be persuasive",
+  task_name: "Nourrir Riri",
+  description: "Donner 100g de buenas croquettas et pas plus même si Riri peut être très persuasive !",
   frequency_type: "Daily",
   frequency_amount: 1,
   points: 10
@@ -56,40 +56,40 @@ task1 = Task.create!(
 
 
 task2 = Task.create!(
-  task_name: "Water the plants",
-  description: "Take a moment to chat with your leafy roommates. They might not talk back, but they'll appreciate the care and the little pep talk. Otherwise, just give each plant a glass of water and pour well at the root",
+  task_name: "Arroser les plantes",
+  description: "Prenez un moment pour discuter avec vos colocataires à feuilles. Ils ne répondront peut-être pas, mais ils apprécieront les soins et le petit discours d'encouragement. Sinon, un verre d'eau et arrosez bien à la racine.",
   frequency_type: "Daily",
   frequency_amount: 1,
   points: 15
 )
 
 task3 = Task.create!(
-  task_name: "Clear the dishwasher",
-  description: "Please note that 'clearing the dishwasher' does not mean to remove just one  plate from the dishwasher but all the dishes",
+  task_name: "Vider le lave-vaisselle",
+  description: "Veuillez noter que 'vider le lave-vaisselle' ne signifie pas simplement retirer une seule assiette du lave-vaisselle, mais bien tous les plats.",
   frequency_type: "Daily",
   frequency_amount: 1,
   points: 20
 )
 
 task10 = Task.create!(
-  task_name: "Clear the cat's litter box",
-  description: "Embarking on the brave mission of 'Riri's litter liberation,' where each scoop is a heroic quest for a fresher feline realm !",
+  task_name: "Nettoyer la litière du chat",
+  description: "Embarquez dans la courageuse mission de 'la libération de la litière de Riri', où chaque pelletée est une quête héroïque pour un royaume félin plus frais !",
   frequency_type: "Daily",
   frequency_amount: 1,
   points: 25
 )
 
 task11 = Task.create!(
-  task_name: "Walk the dog",
-  description: "Strutting the streets with Georges the Beagle, where every tree is a potential 'sniff-et' and every mailbox, a surprise delivery spot !",
+  task_name: "Balade du chien",
+  description: "Parcourir les rues avec Georges le Beagle, où chaque arbre est un potentiel 'sniff-et' et chaque porte un colis surprise !",
   frequency_type: "Daily",
   frequency_amount: 1,
   points: 25
 )
 
 task12 = Task.create!(
-  task_name: "Feed the dog",
-  description: "Mastering the culinary art of 'Georges' gourmet dinners, where every mealtime is a tail-wagging Michelin star experience !",
+  task_name: "Nourrir le chien",
+  description: "Maîtriser l'art culinaire des dîners gastronomiques de 'Georges', où chaque repas est une expérience étoilée Michelin qui fait remuer la queue !",
   frequency_type: "Daily",
   frequency_amount: 1,
   points: 10
@@ -99,8 +99,8 @@ task12 = Task.create!(
 puts "Creating Weekly tasks..."
 
 task4 = Task.create!(
-  task_name: "Take out the blue bin",
-  description: "Turn trash duty into a dance party! Crank up the tunes and move to the beat as you guide the garbage bags to their destination.",
+  task_name: "Sortir la poubelle bleue",
+  description: "Transformez la corvée de poubelle en une soirée dansante ! Montez le son et bougez au rythme tout en guidant les sacs poubelle vers leur destination.",
   frequency_type: "Weekly",
   frequency_amount: 1,
   frequency_day: "Thursday",
@@ -108,8 +108,8 @@ task4 = Task.create!(
 )
 
 task5 = Task.create!(
-  task_name: "Toilets cleaning",
-  description: "Wednesdays are your throne's time to shine! Give your toilet the royal treatment it deserves and keep it flush with pride.",
+  task_name: "Nettoyer les WC",
+  description: "Les mercredis sont les jours de gloire de votre trône ! Donnez à votre toilette le traitement royal qu'elle mérite et gardez-la étincelante de fierté.",
   frequency_type: "Weekly",
   frequency_amount: 1,
   frequency_day: "Sunday",
@@ -117,8 +117,8 @@ task5 = Task.create!(
 )
 
 task6 = Task.create!(
-  task_name: "Bathroom cleaning",
-  description: "Start your week by showing your reflection some love. Wipe those mirrors till they're gleaming, and your smile shines brighter than ever !",
+  task_name: "Nettoyage salle de bains",
+  description: "Commencez votre semaine en montrant un peu d'amour à votre reflet. Essuyez ces miroirs jusqu'à ce qu'ils brillent, et votre sourire sera plus éclatant que jamais !",
   frequency_type: "Weekly",
   frequency_amount: 1,
   frequency_day: "Sunday",
@@ -126,8 +126,8 @@ task6 = Task.create!(
 )
 
 task13 = Task.create!(
-  task_name: "Water the cactus",
-  description: "Bestowing liquid love upon the desert's most resilient resident, a solemn ceremony in the life of 'Cactus Quencher Extraordinaire' !",
+  task_name: "Arroser le cactus",
+  description: "Offrir un amour liquide au résident le plus résilient du désert, une cérémonie solennelle dans la vie du 'Spécialiste de l'Arrosage de Cactus' !",
   frequency_type: "Weekly",
   frequency_amount: 1,
   frequency_day: "Friday",
@@ -135,8 +135,8 @@ task13 = Task.create!(
 )
 
 task14 = Task.create!(
-  task_name: "Kitchen cleaning",
-  description: "Venturing into the wild territory of 'Kitchen Crusader,' where chaos is conquered one dish at a time, armed with a sponge and superhero cape !",
+  task_name: "Nettoyage de la cuisine",
+  description: "S'aventurer sur le territoire sauvage du 'Croisé de la Cuisine', où le chaos est conquis un plat à la fois, armé d'une éponge et d'une cape de super-héros !",
   frequency_type: "Weekly",
   frequency_amount: 1,
   frequency_day: "Sunday",
@@ -144,8 +144,8 @@ task14 = Task.create!(
 )
 
 task15 = Task.create!(
-  task_name: "Take out the yellow bin",
-  description: "Unleashing the mighty 'Yellow Bin Wrangler,' where the bins of recycling embark on a grand adventure to their curbside destiny !",
+  task_name: "Sortir la poubelle jaune",
+  description: "Libérez le puissant 'Dompteur de Poubelle Jaune', où les bacs de recyclage entament une grande aventure vers leur destin sur le trottoir !",
   frequency_type: "Weekly",
   frequency_amount: 1,
   frequency_day: "Friday",
@@ -155,8 +155,8 @@ task15 = Task.create!(
 puts "Creating Monthly tasks..."
 
 task7 = Task.create!(
-  task_name: "Windows cleaning",
-  description: "Engage in a Monthly Reflective Renewal. As you clean, think of it as a renewal ritual for your windows, inviting in positive energy and fresh perspectives.",
+  task_name: "Nettoyage des fenêtres",
+  description: "Participez à un renouvellement réflectif mensuel. En nettoyant, considérez cela comme un rituel de renouvellement pour vos fenêtres, invitant une énergie positive et de nouvelles perspectives.",
   frequency_type: "Monthly",
   frequency_amount: 1,
   frequency_week_of_month: "First",
@@ -165,8 +165,8 @@ task7 = Task.create!(
 )
 
 task8 = Task.create!(
-  task_name: "Pay the bills",
-  description: "Time to party with the funky factures! Once a month, we gather 'round, give those bills a high-five, and send them on their merry way.",
+  task_name: "Payer les factures",
+  description: "C'est l'heure de faire la fête avec les factures funky ! Une fois par mois, nous nous rassemblons, donnons une tape dans la main à ces factures et les payons en pleurant.",
   frequency_type: "Monthly",
   frequency_amount: 1,
   frequency_week_of_month: "Second",
@@ -175,8 +175,8 @@ task8 = Task.create!(
 )
 
 task9 = Task.create!(
-  task_name: "Grocery shop",
-  description: "Embark on a journey through the produce wonderland! Choose the freshest fruits and veggies as if you're selecting ingredients for a royal feast.",
+  task_name: "Courses alimentaires",
+  description: "Embarquez dans un voyage à travers le merveilleux monde des produits frais ! Choisissez les fruits et légumes les plus frais comme si vous sélectionniez des ingrédients pour un festin royal.",
   frequency_type: "Monthly",
   frequency_amount: 1,
   frequency_week_of_month: "Fourth",
@@ -185,8 +185,8 @@ task9 = Task.create!(
 )
 
 task16 = Task.create!(
-  task_name: "Game night organisation",
-  description: "Becoming the grand conductor of 'Game Night Extravaganza,' where strategy, laughter, and snacks collide in a symphony of fun !",
+  task_name: "Organisation soirée jeux",
+  description: "Devenez le grand chef d'orchestre du 'Spectacle de Soirée Jeux', où stratégie, rires et en-cas se rencontrent dans une symphonie de plaisir !",
   frequency_type: "Monthly",
   frequency_amount: 1,
   frequency_week_of_month: "Fourth",
@@ -195,8 +195,8 @@ task16 = Task.create!(
 )
 
 task17 = Task.create!(
-  task_name: "Microwave cleaning",
-  description: "Venturing into the depths of 'Microwave Marvel,' where culinary explosions meet their match in a squeaky clean showdown !",
+  task_name: "Nettoyage micro-ondes",
+  description: "Plongez dans les profondeurs du 'Merveilleux Micro-ondes', où les explosions culinaires trouvent leur adversaire dans un duel impeccablement propre !",
   frequency_type: "Monthly",
   frequency_amount: 1,
   frequency_week_of_month: "Fourth",
@@ -205,8 +205,8 @@ task17 = Task.create!(
 )
 
 task18 = Task.create!(
-  task_name: "Oven cleaning",
-  description: "Conquering the fiery battlefield of 'Oven Odyssey,' where grease and grime face the heat of our epic cleaning quest !",
+  task_name: "Nettoyage du four",
+  description: "Conquérir le champ de bataille enflammé de l''Odyssée du Four', où la graisse et la saleté affrontent la chaleur de notre quête épique de nettoyage !",
   frequency_type: "Monthly",
   frequency_amount: 1,
   frequency_week_of_month: "Fourth",
@@ -869,7 +869,7 @@ event1 = Event.create!(
   start_time: Time.strptime('09/08/2023 18:00', '%m/%d/%Y %H:%M'),
   end_time: Time.strptime('09/08/2023 23:00', '%m/%d/%Y %H:%M'),
   user_id: user1.id,
-  description: "Final step of the Bootcamp guys 🏎 🏁! Let's nailed it !"
+  description: "Dernière étape du Bootcamp 🏎 🏁! Let's nailed it !"
 )
 
 event2 = Event.create!(
@@ -877,14 +877,14 @@ event2 = Event.create!(
   start_time: Time.strptime('09/07/2023 20:00', '%m/%d/%Y %H:%M'),
   end_time: Time.strptime('09/07/2023 23:00', '%m/%d/%Y %H:%M'),
   user_id: user2.id,
-  description: "Don't forget to bring your hallumi ! I invited some friends, we should be less than 10"
+  description: "Ne pas oublier l'halloumi ! J'ai invité qqs ami.es, on sera moins de 10"
 )
 event3 = Event.create!(
   title: "Anaïs' Birthday 🐆",
   start_time: Time.strptime('09/30/2023 20:00', '%m/%d/%Y %H:%M'),
   end_time: Time.strptime('09/30/2023 23:00', '%m/%d/%Y %H:%M'),
   user_id: user2.id,
-  description: "Don't forget to bring your smile (and gifts please). The leopard is the theme of the evening, so let's unleash our inner felines !"
+  description: "N'oubliez pas d'apporter votre sourire (et des cadeaux s'il vous plaît). Le léopard est le thème de la soirée, alors libérons notre félin intérieur !",
 )
 
 puts "Congrats, seeds done !"
