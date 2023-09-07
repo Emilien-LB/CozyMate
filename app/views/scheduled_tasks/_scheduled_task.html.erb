@@ -1,5 +1,6 @@
 
 <div class="checkbox-card" data-controller="winning-points">
+
   <% if scheduled_task.to_be_done_date == Date.today && Task.find(scheduled_task.task_id).frequency_type == "Daily" && scheduled_task.done == false %>
     <div class="scheduled-task-container">
       <%= button_to scheduled_task_path(scheduled_task), method: :patch, data: {action: "click->winning-points#alertPoints"}, class: "btn btn-warning btn-opacity" do %>

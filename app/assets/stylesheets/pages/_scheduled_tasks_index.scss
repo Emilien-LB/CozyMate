@@ -31,7 +31,7 @@
 .hello {
   align-self: end;
   font-style: italic;
-  font-size: 24px;  
+  font-size: 24px;
 }
 
 .current-user-picture {
@@ -39,6 +39,9 @@
   position: absolute;
   right: 0;
   top: 0;
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
 }
 
 // Titles & Headers
@@ -68,6 +71,12 @@
   text-align: right;
   margin: 20px;
   height: 5dvh;
+}
+
+.roommates img {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
 }
 
 // Task Card
