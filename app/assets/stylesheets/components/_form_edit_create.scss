@@ -1,10 +1,24 @@
 .tasks-new-wrapper {
   margin-bottom: 70px;
+  width: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tasks-new-banner {
+  padding-bottom: 3px;
+  background-color: $beige;
+  width: 100%;
+  // margin-top: 50px;
+  position: fixed;
+  z-index: 2;
 }
 
 .container-form {
   padding-inline: 20px;
-  text-align: center
+  text-align: center;
+  margin-top: 150px
 }
 
 .edit-create-title {

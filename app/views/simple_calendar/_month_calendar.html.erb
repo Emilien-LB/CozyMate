@@ -1,17 +1,17 @@
 <div class="simple-calendar">
   <div class="calendar-index-banner">
     <h1 class="text-center calendar-title">CALENDAR</h1>
-  </div>
 
-  <div class="calendar-button d-flex align-items-center justify-content-between">
-    <div class="calendar-heading my-2">
-      <%= link_to raw('<i class="fa-solid fa-arrow-left" style="color: #89b7dc;"></i>'), calendar.url_for_previous_view, class: 'btn btn-outline-primary rounded-circle' %>
-      <span class="month-title btn btn-primary"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
-      <%= link_to raw('<i class="fa-solid fa-arrow-right fa-flip-vertical" style="color: #89b7dc;"></i>'), calendar.url_for_next_view, class: 'btn btn-outline-primary rounded-circle' %>
+    <div class="calendar-button d-flex align-items-center justify-content-between">
+      <div class="calendar-heading my-2">
+        <%= link_to raw('<i class="fa-solid fa-arrow-left" style="color: #89b7dc;"></i>'), calendar.url_for_previous_view, class: 'btn btn-outline-primary rounded-circle' %>
+        <span class="month-title btn btn-primary"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
+        <%= link_to raw('<i class="fa-solid fa-arrow-right fa-flip-vertical" style="color: #89b7dc;"></i>'), calendar.url_for_next_view, class: 'btn btn-outline-primary rounded-circle' %>
+      </div>
+      <%= link_to new_event_path, class: 'btn btn-success create-event-link rounded-circle' do %>
+        <i class="fas fa-plus"></i>
+      <% end %>
     </div>
-    <%= link_to new_event_path, class: 'btn btn-success create-event-link rounded-circle' do %>
-      <i class="fas fa-plus"></i>
-    <% end %>
   </div>
 
   <table class="table table-striped">

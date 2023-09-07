@@ -1,34 +1,31 @@
 <div class="container-form" data-controller="form-event">
-
   <%= form_for @event, html: { class: 'form-group' } do |f| %>
-    <div class="form-group">
-      <%= f.label :title, "Name" %>
-      <%= f.text_field :title, placeholder: "Board games evening", maxlength:"20",  class: 'form-control', data: {action: "keyup->form-event#countingLettersName"} %>
-      <p class="counting-characters-box" data-form-event-target="divCountingName">
-      </p>
+    <div class="d-flex flex-column">
+      <%= f.label :title, "Name", class: "frequency-type-label" %>
+      <%= f.text_field :title, placeholder: "Board games evening", maxlength:"20",  class: 'form-control custom-input', data: {action: "keyup->form-event#countingLettersName"} %>
+      <p class="counting-characters-box" data-form-event-target="divCountingName"></p>
     </div>
 
-    <div class="form-group">
-      <%= f.label :description, "Description" %>
-      <%= f.text_area :description, placeholder: "Cheaters are not invited", maxlength:"150", class: 'form-control', data: {action: "keyup->form-event#countingLettersEventDescription"} %>
-        <div class="counting-characters-box" data-form-event-target="divCountingEventDescription">
-      </div>
+    <div class="d-flex flex-column">
+      <%= f.label :description, "Description", class: "frequency-type-label" %>
+      <%= f.text_area :description, placeholder: "Cheaters are not invited", maxlength:"150", class: 'form-control custom-input_description', data: {action: "keyup->form-event#countingLettersEventDescription"} %>
+      <p class="counting-characters-box" data-form-event-target="divCountingEventDescription"></p>
     </div>
 
-    <div class="form-group">
-      <%= f.label :start_time, "Start time" %>
-      <%= f.datetime_field :start_time,  placeholder: "18:30", class: 'form-control' %>
+    <div class="d-flex flex-column">
+      <%= f.label :start_time, "Start time", class: "frequency-type-label" %>
+      <%= f.datetime_field :start_time, placeholder: "18:30", class: 'form-control custom-input date-input' %>
     </div>
 
-    <div class="form-group">
-      <%= f.label :end_time, "End time" %>
-      <%= f.datetime_field :end_time, placeholder: "23:30", class: 'form-control' %>
+    <div class="d-flex flex-column">
+      <%= f.label :end_time, "End time", class: "frequency-type-label" %>
+      <%= f.datetime_field :end_time, placeholder: "23:30", class: 'form-control custom-input time-input' %>
     </div>
-    <div class="container d-flex justify-content-center">
+
+    <div class="d-flex justify-content-center mt-3">
       <button type="submit" class="button-validates">
-        <i class="fa fa-thumbs-up"></i>Validate
+        <i class="fa fa-thumbs-up"></i> Validate
       </button>
     </div>
   <% end %>
-
 </div>
