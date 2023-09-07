@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-  <% elsif scheduled_task.done == false && scheduled_task.to_be_done_date.strftime('%Y-%m-%d') == Date.today.strftime('%Y-%m-%d') && Task.find(scheduled_task.task_id).frequency_type == "Monthly" %>
+  <% elsif scheduled_task.done == false && scheduled_task.to_be_done_date == Date.today && Task.find(scheduled_task.task_id).frequency_type == "Monthly" %>
       <div class="scheduled-task-container">
       <%= button_to scheduled_task_path(scheduled_task), method: :patch, data: { action: "click->winning-points#alertPoints"}, class: "btn btn-warning btn-opacity" do %>
         <i class="fa-solid fa-thumbs-up" style="color: #a2cdb0;"></i>
