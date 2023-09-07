@@ -21,13 +21,13 @@
         <div class="hello">
           <p><strong><%= link_to 'Hello', root_path, style: "text-decoration: none; color: inherit;" %> <%= current_user.first_name %>,</strong></p>
         </div>
-        <%= cl_image_tag current_user.photo.key, height: 80, width: 80, crop: :fill, class:" rounded-circle current-user-picture"  %>
+        <%= cl_image_tag current_user.photo.key, class:" rounded-circle current-user-picture"  %>
     </div>
     <p class="welcome text-center"> Welcome at Tropicooloc !</p>
     <div class="roommates">
       <% @users.each do |user| %>
         <% if user.id != current_user.id %>
-          <%= cl_image_tag user.photo.key, height: 40, width: 40, crop: :fill, class:" rounded-circle" %>
+          <%= cl_image_tag user.photo.key, class: "rounded-circle" %>
         <% end %>
       <%end%>
     </div>
