@@ -13,8 +13,8 @@ class User < ApplicationRecord
   # validates :phone_number, format: { with: /\A(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}\z/ }
   validates :gender, inclusion: { in: %w(male female non-binary), allow_blank: true }
 
-  def total_points(month = Date.current.month.to_i)
-    self.scheduled_tasks.joins(:task).where(done: true).where('EXTRACT(MONTH FROM recorded_date) = ?', month).sum('tasks.points')
+  def total_points(month = Date.current.month.to_i, year = Date.current.year.to_i )
+    self.scheduled_tasks.joins(:task).where(done: true).where('EXTRACT(MONTH FROM recorded_date) = ?', month).where('EXTRACT(YEAR FROM recorded_date) = ?', year).sum('tasks.points')
   end
 
   def change

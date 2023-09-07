@@ -11,7 +11,7 @@ class PagesController < ApplicationController
 
 
   def ranking
-    @month = params["month(2i)"] ? Date.new(params["month(1i)"].to_i, params["month(2i)"].to_i, params["month(3i)"].to_i) : Date.today.beginning_of_month
-    @users = User.all.sort {|a,b| b.total_points(@month.month) <=> a.total_points(@month.month)}[0..3]
+    @date = params["month(2i)"] ? Date.new(params["month(1i)"].to_i, params["month(2i)"].to_i, params["month(3i)"].to_i) : Date.today.beginning_of_month
+    @users = User.all.sort {|a,b| b.total_points(@date.month, @date.year) <=> a.total_points(@date.month, @date.year)}[0..3]
   end
 end
