@@ -37,7 +37,7 @@ export default class extends Controller {
     event.preventDefault()
     const characters = event.currentTarget.value.length;
     const grammar = characters > 1 ? 's' : '';
-    let countingBox = `${characters}/220 character${grammar}`;
+    let countingBox = `${characters}/100 character${grammar}`;
     this.divCountingDescriptionTarget.innerText = countingBox
-  } 
+  }
 }

@@ -48,7 +48,7 @@ puts "Creating Daily tasks..."
 
 task1 = Task.create!(
   task_name: "Nourrir Riri",
-  description: "Donner 100g de buenas croquettas et pas plus même si Riri peut être très persuasive !",
+  description: "Donner 100g de croquettas buenas à Riri et surtout résistez à sa force de persuasion !",
   frequency_type: "Daily",
   frequency_amount: 1,
   points: 10
@@ -57,7 +57,7 @@ task1 = Task.create!(
 
 task2 = Task.create!(
   task_name: "Arroser les plantes",
-  description: "Prenez un moment pour discuter avec vos colocataires à feuilles. Ils ne répondront peut-être pas, mais ils apprécieront les soins et le petit discours d'encouragement. Sinon, un verre d'eau et arrosez bien à la racine.",
+  description: "Un verre d'eau pour chaque plante à verser au niveau de la racine et le tour est joué !",
   frequency_type: "Daily",
   frequency_amount: 1,
   points: 15
@@ -65,7 +65,7 @@ task2 = Task.create!(
 
 task3 = Task.create!(
   task_name: "Vider le lave-vaisselle",
-  description: "Veuillez noter que 'vider le lave-vaisselle' ne signifie pas simplement retirer une seule assiette du lave-vaisselle, mais bien tous les plats.",
+  description: "Il faut bien ranger tous plats, retirer une seule assiette du lave-vaisselle ne compte pas.",
   frequency_type: "Daily",
   frequency_amount: 1,
   points: 20
@@ -73,7 +73,7 @@ task3 = Task.create!(
 
 task10 = Task.create!(
   task_name: "Nettoyer la litière du chat",
-  description: "Embarquez dans la courageuse mission de 'la libération de la litière de Riri', où chaque pelletée est une quête héroïque pour un royaume félin plus frais !",
+  description: "Votre mission, à supposer que vous l'acceptiez, consiste à déminer la litière de Riri.",
   frequency_type: "Daily",
   frequency_amount: 1,
   points: 25
@@ -81,7 +81,7 @@ task10 = Task.create!(
 
 task11 = Task.create!(
   task_name: "Balade du chien",
-  description: "Parcourir les rues avec Georges le Beagle, où chaque arbre est un potentiel 'sniff-et' et chaque porte un colis surprise !",
+  description: "Attention: la mission est de promener Georges le Beagle et non pas de se faire promener !",
   frequency_type: "Daily",
   frequency_amount: 1,
   points: 25
@@ -89,7 +89,7 @@ task11 = Task.create!(
 
 task12 = Task.create!(
   task_name: "Nourrir le chien",
-  description: "Maîtriser l'art culinaire des dîners gastronomiques de 'Georges', où chaque repas est une expérience étoilée Michelin qui fait remuer la queue !",
+  description: "Si Georges remue la queue, c'est que le repas est délicieux. Surtout ne pas donner de sucrerie.",
   frequency_type: "Daily",
   frequency_amount: 1,
   points: 10
@@ -100,7 +100,7 @@ puts "Creating Weekly tasks..."
 
 task4 = Task.create!(
   task_name: "Sortir la poubelle bleue",
-  description: "Transformez la corvée de poubelle en une soirée dansante ! Montez le son et bougez au rythme tout en guidant les sacs poubelle vers leur destination.",
+  description: "Elu(e) Mister/Miss Poubelle de la Bin week ! Prépare ta meilleure catwalk vers le local à poubelle.",
   frequency_type: "Weekly",
   frequency_amount: 1,
   frequency_day: "Thursday",
@@ -109,7 +109,7 @@ task4 = Task.create!(
 
 task5 = Task.create!(
   task_name: "Nettoyer les WC",
-  description: "Les mercredis sont les jours de gloire de votre trône ! Donnez à votre toilette le traitement royal qu'elle mérite et gardez-la étincelante de fierté.",
+  description: "Redonnez aux toilette le traitement royal qu'elles méritent et gardez-les étincelante de fierté.",
   frequency_type: "Weekly",
   frequency_amount: 1,
   frequency_day: "Sunday",
@@ -117,8 +117,8 @@ task5 = Task.create!(
 )
 
 task6 = Task.create!(
-  task_name: "Nettoyage salle de bains",
-  description: "Commencez votre semaine en montrant un peu d'amour à votre reflet. Essuyez ces miroirs jusqu'à ce qu'ils brillent, et votre sourire sera plus éclatant que jamais !",
+  task_name: "Nettoyage salle de bain",
+  description: "Nettoyez ces miroirs pour que vous puissiez admirer votre plus beau reflet ! Un peu de self-love",
   frequency_type: "Weekly",
   frequency_amount: 1,
   frequency_day: "Sunday",
@@ -127,7 +127,7 @@ task6 = Task.create!(
 
 task13 = Task.create!(
   task_name: "Arroser le cactus",
-  description: "Offrir un amour liquide au résident le plus résilient du désert, une cérémonie solennelle dans la vie du 'Spécialiste de l'Arrosage de Cactus' !",
+  description: "Et un verre pour Brutus le Cactus, notre résident le plus résilient du désert !",
   frequency_type: "Weekly",
   frequency_amount: 1,
   frequency_day: "Friday",
@@ -136,7 +136,7 @@ task13 = Task.create!(
 
 task14 = Task.create!(
   task_name: "Nettoyage de la cuisine",
-  description: "S'aventurer sur le territoire sauvage du 'Croisé de la Cuisine', où le chaos est conquis un plat à la fois, armé d'une éponge et d'une cape de super-héros !",
+  description: "Nettoyer, balayer, astiquer... La cuisine est toujours propre ! Faites-le en chantant !",
   frequency_type: "Weekly",
   frequency_amount: 1,
   frequency_day: "Sunday",
@@ -145,7 +145,7 @@ task14 = Task.create!(
 
 task15 = Task.create!(
   task_name: "Sortir la poubelle jaune",
-  description: "Libérez le puissant 'Dompteur de Poubelle Jaune', où les bacs de recyclage entament une grande aventure vers leur destin sur le trottoir !",
+  description: "Elu(e) Mister/Miss Poubelle de la Bin week ! Prépare ta meilleure catwalk vers le local à poubelle.",
   frequency_type: "Weekly",
   frequency_amount: 1,
   frequency_day: "Friday",
@@ -156,7 +156,7 @@ puts "Creating Monthly tasks..."
 
 task7 = Task.create!(
   task_name: "Nettoyage des fenêtres",
-  description: "Participez à un renouvellement réflectif mensuel. En nettoyant, considérez cela comme un rituel de renouvellement pour vos fenêtres, invitant une énergie positive et de nouvelles perspectives.",
+  description: "Nettoyées, elles vous permettront enfin de voir si le voisin porte un slip en peau de léopard !",
   frequency_type: "Monthly",
   frequency_amount: 1,
   frequency_week_of_month: "First",
@@ -166,7 +166,7 @@ task7 = Task.create!(
 
 task8 = Task.create!(
   task_name: "Payer les factures",
-  description: "C'est l'heure de faire la fête avec les factures funky ! Une fois par mois, nous nous rassemblons, donnons une tape dans la main à ces factures et les payons en pleurant.",
+  description: "C'est l'heure des factures et donc d'un énième drame financier, préparez les mouchoirs...",
   frequency_type: "Monthly",
   frequency_amount: 1,
   frequency_week_of_month: "Second",
@@ -176,7 +176,7 @@ task8 = Task.create!(
 
 task9 = Task.create!(
   task_name: "Courses alimentaires",
-  description: "Embarquez dans un voyage à travers le merveilleux monde des produits frais ! Choisissez les fruits et légumes les plus frais comme si vous sélectionniez des ingrédients pour un festin royal.",
+  description: "Embarquez dans un voyage fascinant à travers le monde des supermarchés ! N'oubliez pas la liste...",
   frequency_type: "Monthly",
   frequency_amount: 1,
   frequency_week_of_month: "Fourth",
@@ -186,7 +186,7 @@ task9 = Task.create!(
 
 task16 = Task.create!(
   task_name: "Organisation soirée jeux",
-  description: "Devenez le grand chef d'orchestre du 'Spectacle de Soirée Jeux', où stratégie, rires et en-cas se rencontrent dans une symphonie de plaisir !",
+  description: " Soirées où stratégie, rires et apéro se rencontrent autour de vos jeux préférés !",
   frequency_type: "Monthly",
   frequency_amount: 1,
   frequency_week_of_month: "Fourth",
@@ -196,7 +196,7 @@ task16 = Task.create!(
 
 task17 = Task.create!(
   task_name: "Nettoyage micro-ondes",
-  description: "Plongez dans les profondeurs du 'Merveilleux Micro-ondes', où les explosions culinaires trouvent leur adversaire dans un duel impeccablement propre !",
+  description: "Eh oui mon Jojo ! Tu en serais pas là si tu avais bien mis le couvercle avant de réchauffer!",
   frequency_type: "Monthly",
   frequency_amount: 1,
   frequency_week_of_month: "Fourth",
@@ -206,7 +206,7 @@ task17 = Task.create!(
 
 task18 = Task.create!(
   task_name: "Nettoyage du four",
-  description: "Conquérir le champ de bataille enflammé de l''Odyssée du Four', où la graisse et la saleté affrontent la chaleur de notre quête épique de nettoyage !",
+  description: "L''Odyssée du Four', où la graisse et la saleté s'affrontent dans notre quête épique de nettoyage !",
   frequency_type: "Monthly",
   frequency_amount: 1,
   frequency_week_of_month: "Fourth",

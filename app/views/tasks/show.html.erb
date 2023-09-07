@@ -3,48 +3,55 @@
       <path d="M202 38C141 90 100 125 65.1713 125C11.5997 125 -31.8287 82.0193 -31.8287 29C-31.8287 -24.0193 11.5997 -67 65.1713 -67C118.743 -67 352 -47 202 38Z" fill="#A2CDB0" fill-opacity="0.3"/>
   </svg>
 </div>
+    <div class="button-back d-flex justify-content-end align-items-center">
+        <%= link_to tasks_path, class: "button-back-link" do %>
+          <span class="button-text"><i class="fa-solid fa-backward"></i> Back to tasks</span>
+        <%end%>
+    </div>
 
 <div class="show-task-wrapper">
-  <div class="task-show-banner">
+  <%# <div class="task-show-banner "> %>
     <h1 class="text-center green-title"><%= @task.task_name %></h1>
-  </div>
-
-  <div class="show-task-card">
-    <ul class="typography-card">
-      <li>"<%= @task.description %>"</li>
-      <li class="meta-container">
-        <span class="frequency"><%= @task.frequency_type.titleize %></span>
-        <span class="points"><%= @task.points %></span>
-        <i class="fa-solid fa-star fa-bounce" style="color: #ffcc69"></i>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<div class="d-flex justify-content-center align-items-center">
-    <%= link_to "Back to tasks", tasks_path, class: "button-back-link" %>
-</div>
-
-<h2 class="historic-title">Historic</h2>
-<div class="dropdown-center task-historic-dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="historicDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-    Show Historic
-  </button>
-  <ul class="dropdown-menu justify-content-center align-items-center" aria-labelledby="historicDropdown">
-  <%# <div class="test"> %>
-    <% @scheduled_tasks_past.each do |scheduled_task| %>
-      <li>
-        <% if scheduled_task.done == true %>
-          <span class="dropdown-item-done">
-            <i class="fa-solid fa-check" style="color: #a2cdb0"></i> Done by <%= scheduled_task.user.first_name%> the <%=scheduled_task.recorded_date.day.ordinalize %> of <%=Date.parse(scheduled_task.recorded_date.to_s).strftime("%b %y") %>
+    <div class="show-task-card">
+      <ul class="typography-card">
+        <li><%= @task.description %></li>
+        <li class="meta-container">
+          <% if @task.frequency_type == "Daily" %>
+            <span class="frequency"><%= @task.frequency_type.titleize %></span>
+          <% elsif @task.frequency_type == "Weekly" %>
+            <span class="frequency"><%= @task.frequency_type.titleize%> <i class="small">on <%= @task.frequency_day%>s</i></span>
+          <% elsif @task.frequency_type == "Monthly" %>
+            <span class="frequency"><%= @task.frequency_type.titleize%><i class="small"> on the <%= @task.frequency_day_of_month.to_i.ordinalize %></i></span>
+          <%end%>
+          <span class="div-points">
+            <span class="points"><%= @task.points %></span>
+            <i class="fa-solid fa-star fa-bounce" style="color: #ffcc69"></i>
           </span>
-        <% else %>
-          <span class="dropdown-item-not-done">
-            <i class="fa-solid fa-xmark"></i> Not done on the <%=scheduled_task.to_be_done_date.day.ordinalize %> of <%=Date.parse(scheduled_task.to_be_done_date.to_s).strftime("%b %y") %>
-          </span>
-        <% end %>
-      </li>
-    <% end %>
-    <%# </div> %>
-  </ul>
+        </li>
+      </ul>
+    </div>
+<%# </div> %>
+    <h2 class="historic-title">Historic</h2>
+      <div class="dropdown-center task-historic-dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="historicDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          Show Historic
+        </button>
+        <ul class="dropdown-menu justify-content-center align-items-center" aria-labelledby="historicDropdown">
+            <%# <div class="test"> %>
+          <% @scheduled_tasks_past.each do |scheduled_task| %>
+            <li>
+              <% if scheduled_task.done == true %>
+                <span class="dropdown-item-done">
+                  <i class="fa-solid fa-check" style="color: #a2cdb0"></i> Done by <%= scheduled_task.user.first_name%> the <%=scheduled_task.recorded_date.day.ordinalize %> of <%=Date.parse(scheduled_task.recorded_date.to_s).strftime("%b %y") %>
+                </span>
+              <% else %>
+                <span class="dropdown-item-not-done">
+                  <i class="fa-solid fa-xmark"></i> Not done on the <%=scheduled_task.to_be_done_date.day.ordinalize %> of <%=Date.parse(scheduled_task.to_be_done_date.to_s).strftime("%b %y") %>
+                </span>
+              <% end %>
+            </li>
+          <% end %>
+          <%# </div> %>
+        </ul>
+      </div>
 </div>
