@@ -115,15 +115,28 @@
 .first-inner-card {
   top: 10px;
 }
-
+.first-inner-card img {
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+}
 .second-inner-card {
   top: -40px;
   left: 20px;
 }
-
+.second-inner-card img {
+  height: 90px;
+  width: 90px;
+  object-fit: cover;
+}
 .third-inner-card {
   top: 2px;
   left: -20px;
+}
+.third-inner-card img {
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
 }
 
 #ranking-page .input,
@@ -159,135 +172,3 @@
   padding: 5px;
   height: 45px;
 }
-
-// .submit-filter:hover {
-//   background-color:#73746B;
-//   color: #f4f4f4;
-// }
-// .yellow-title {
-//   color: #FFCC69;
-// }
-
-// .ranking-podium {
-//   display: flex;
-//   justify-content: center;
-//   align-items: flex-end;
-//   margin-top: 50px;
-//   width: 100%;
-//   height: 300px;
-// }
-
-// .first-place, .second-place, .third-place {
-//   width: 150px;
-//   height: auto;
-//   text-align: center;
-//   margin: 0 20px;
-// }
-
-// .first-place {
-//   align-self: flex-end;
-// }
-
-// .second-place {
-//   align-self: flex-end;
-//   margin-bottom: 20px;
-// }
-
-// .third-place {
-//   align-self: flex-end;
-//   margin-bottom: 40px;
-// }
-
-// .special-ranking, .standard-ranking {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
-// .special-ranking .trophy,
-// .standard-ranking .trophy {
-//   margin-top: 15px;
-//   font-size: 30px;
-// }
-
-// .stats-points {
-//   display: flex;
-//   gap: 5px;
-//   align-items: center;
-//   width: 61px;
-//   height: 31px;
-//   justify-content: center;
-//   border-radius: 10px;
-//   border: 1px solid rgba(0, 0, 0, 0.25);
-//   background: rgba(255, 204, 105, 0.30);
-// }
-
-// // .yellow-title {
-// //   color: #FFCC69;
-// //   margin-bottom: 50px;
-// //   margin-top: 10px;
-// // }
-
-// // .month-title{
-// //   color: #000;
-// //   font-family: "Barlow";
-// //   font-size: 25px;
-// //   font-style: italic;
-// //   font-weight: 400;
-// //   text-align: center;
-// // }
-
-// // .form-month {
-// //   background-color: rgba(255, 204, 105, 0.2);
-// //   padding: 20px;
-// //   border-radius: 10px;
-// //   width: 300px;
-// //   margin: auto;
-// //   margin-top: 85px;
-// // }
-
-// // .ranking-podium {
-// //   display: flex;
-// //   justify-content: center;
-// //   align-items: flex-end;
-// //   height: 335px;
-// // }
-
-// // .first-place, .second-place, .third-place {
-// //   text-align: center;
-// //   flex-grow: 1;
-// // }
-
-// // .first-place {
-// //   order: 2;
-// // }
-
-// // .second-place {
-// //   order: 1;
-// // }
-
-// // .third-place {
-// //   order: 3;
-// // }
-
-// // .trophy {
-// //   font-size: 60px;
-// //   color: gold;
-// //   margin-top: 15px;
-// // }
-
-// // .bounce {
-// //   animation: bounce 2s infinite;
-// // }
-
-// // @keyframes bounce {
-// //   0%, 20%, 50%, 80%, 100% {
-// //     transform: translateY(0);
-// //   }
-// //   40% {
-// //     transform: translateY(-30px);
-// //   }
-// //   60% {
-// //     transform: translateY(-15px);
-// //   }
-// // }

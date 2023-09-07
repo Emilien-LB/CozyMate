@@ -16,33 +16,41 @@ user1 = User.create!(
   last_name: 'Krm',
   birth_date: '19/01/1996',
   email: 'vic@gmail.com',
-  password: 'secret')
-
-  file = File.open("app/assets/images/pictures/Vicky.jpg")
-  user1.photo.attach(io: file, filename: "Vicky.png", content_type: "image/png")
-  user1.save
+  password: 'secret',
+  approved: true,
+  admin: true
+)
+file = File.open("app/assets/images/pictures/Vicky.jpg")
+user1.photo.attach(io: file, filename: "Vicky.png", content_type: "image/png")
+user1.save
 
 user2 = User.create!(
   first_name: 'Anaïs',
   last_name: 'Brd',
   birth_date: '30/06/1992',
   email: 'ana@gmail.com',
-  password: 'secret')
+  password: 'secret',
+  approved: true,
+  admin: true
+)
+file = File.open("app/assets/images/pictures/Nanus.jpg")
+user2.photo.attach(io: file, filename: "Nanus.png", content_type: "image/png")
+user2.save
 
-  file = File.open("app/assets/images/pictures/Nanus.jpg")
-  user2.photo.attach(io: file, filename: "Nanus.png", content_type: "image/png")
-  user2.save
+  user3 = User.create!(
+    first_name: 'Milou',
+    last_name: 'Lbg',
+    birth_date: '27/07/2002',
+    email: 'milou@gmail.com',
+    password: 'secret',
+    approved: true,
+    admin: true
+  )
 
-user3 = User.create!(
-  first_name: 'Milou',
-  last_name: 'Lbg',
-  birth_date: '27/07/2002',
-  email: 'milou@gmail.com',
-  password: 'secret')
+file = File.open("app/assets/images/pictures/Milou.jpg")
+user3.photo.attach(io: file, filename: "Milou.png", content_type: "image/png")
+user3.save
 
-  file = File.open("app/assets/images/pictures/Milou.jpg")
-  user3.photo.attach(io: file, filename: "Milou.png", content_type: "image/png")
-  user3.save
 
 puts "Creating Daily tasks..."
 

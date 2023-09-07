@@ -30,7 +30,7 @@
       <%# _______________ FIRST CARD ____________________ %>
       <div class="picture-points">
         <div class="first-inner-card inner-card">
-          <%= cl_image_tag @users.first.photo.key, height: 120, width: 120, crop: :fill, class:" rounded-circle" %>
+          <%= cl_image_tag @users.first.photo.key, class:" rounded-circle" %>
           <div class="stats-points">
             <%= @users.first.total_points(@date.month, @date.year) %>
             <i class="fa-solid fa-star" style="color: #ffcc68;"></i>
@@ -48,7 +48,7 @@
       <%# _______________ SECONDCARD ____________________ %>
       <div class="picture-points">
         <div class="second-inner-card inner-card">
-          <%= cl_image_tag @users.second.photo.key, height: 90, width: 90, crop: :fill, class:" rounded-circle" %>
+          <%= cl_image_tag @users.second.photo.key, class:" rounded-circle" %>
           <div class="stats-points">
             <%= @users.second.total_points(@date.month, @date.year) %>
             <i class="fa-solid fa-star" style="color: #ffcc68;"></i>
@@ -64,7 +64,7 @@
       <%# _______________ THIRDCARD ____________________ %>
       <div class="picture-points">
         <div class="third-inner-card inner-card">
-          <%= cl_image_tag @users.third.photo.key, height: 70, width: 70, crop: :fill, class:" rounded-circle" %>
+          <%= cl_image_tag @users.third.photo.key, class:" rounded-circle" %>
           <div class="stats-points">
             <%= @users.third.total_points(@date.month, @date.year) %>
             <i class="fa-solid fa-star" style="color: #ffcc68;"></i>

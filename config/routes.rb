@@ -10,4 +10,12 @@ Rails.application.routes.draw do
   resources :tasks
   resources :scheduled_tasks, only: [:index, :update, :edit]
   resources :events
+
+  namespace :admin do
+    resources :users, only: [:index] do
+      member do
+        patch :approve
+      end
+    end
+  end
 end
