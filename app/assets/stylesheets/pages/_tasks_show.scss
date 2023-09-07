@@ -13,6 +13,7 @@
   background-color: $beige;
   width: 100%;
   margin-top: 50px;
+  position: fixed;
 }
 
 .green-title {
@@ -58,6 +59,7 @@
   padding: 3px;
   border: 1px solid rgba(138, 183, 221, 0.80);
   width: 80%;
+  margin-top: 200px;
 
   .typography-card {
     color: #484848;
