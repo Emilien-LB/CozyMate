@@ -28,7 +28,7 @@
 
     <%= f.input :points,placeholder:'40', input_html: { class: "custom-input" } %>
     <div>
-    <%= f.input :description, placeholder:"Walk the dog for 15 min at least and don't forget to take the poop bag and some treats", maxlength:"220", as: :text, input_html: { class: "custom-input_description", data: {action: "input->form#countingLettersDescription"}} %>
+    <%= f.input :description, placeholder:"Walk the dog for 15 min at least and don't forget to take the poop bag and some treats", maxlength:"100", as: :text, input_html: { class: "custom-input_description", data: {action: "input->form#countingLettersDescription"}} %>
     <p class="counting-characters-box" data-form-target="divCountingDescription">
     </p>
     </div>
