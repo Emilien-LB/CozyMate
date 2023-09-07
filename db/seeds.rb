@@ -95,7 +95,7 @@ task12 = Task.create!(
   points: 10
 )
 
-
+## WEEKLY ##
 puts "Creating Weekly tasks..."
 
 task4 = Task.create!(
@@ -103,7 +103,7 @@ task4 = Task.create!(
   description: "Elu(e) Mister/Miss Poubelle de la Bin week ! Prépare ta meilleure catwalk vers le local à poubelle.",
   frequency_type: "Weekly",
   frequency_amount: 1,
-  frequency_day: "Thursday",
+  frequency_day: "Tuesday",
   points: 15
 )
 
@@ -139,7 +139,7 @@ task14 = Task.create!(
   description: "Nettoyer, balayer, astiquer... La cuisine est toujours propre ! Faites-le en chantant !",
   frequency_type: "Weekly",
   frequency_amount: 1,
-  frequency_day: "Sunday",
+  frequency_day: "Thursday",
   points: 50
 )
 
@@ -152,6 +152,7 @@ task15 = Task.create!(
   points: 15
 )
 
+## MONTHLY ##
 puts "Creating Monthly tasks..."
 
 task7 = Task.create!(
@@ -190,7 +191,7 @@ task16 = Task.create!(
   frequency_type: "Monthly",
   frequency_amount: 1,
   frequency_week_of_month: "Fourth",
-  frequency_day_of_month: 8,
+  frequency_day_of_month: 7,
   points: 20
 )
 
@@ -429,55 +430,133 @@ puts "old daily scheduled tasks for task 12"
   )
 end
 
-# puts "Creating Weekly Scheduled Tasks..."
-
-
-3.times do |i|
-  @date = Date.today + (i * 7).days
-  ScheduledTask.create!(
-    task_id: task4.id,
-    to_be_done_date: @date
-  )
+# # puts "Creating Weekly Scheduled Tasks..."
+def number_week_day(day)
+  number_week_days = {
+    "Monday" => 1,
+    "Tuesday" => 2,
+    "Wednesday" => 3,
+    "Thursday" => 4,
+    "Friday" => 5,
+    "Saturday" => 6,
+    "Sunday" => 0  # Le Dimanche est 0 dans la notation .wday de Ruby
+  }
+  return number_week_days[day]
 end
 
-3.times do |i|
-  @date = Date.today + (i * 7).days
-  ScheduledTask.create!(
-    task_id: task5.id,
-    to_be_done_date: @date
-  )
+frequency_day = number_week_day(task4.frequency_day)
+@current_day = Date.current.wday
+@current_date = Date.current()
+
+if frequency_day >= @current_day
+  3.times do |i|
+    ScheduledTask.create!(
+      task_id: task4.id,
+      to_be_done_date: @current_date + ((frequency_day - @current_day) + (i * 7)).days
+    )
+  end
+else
+  3.times do |i|
+    ScheduledTask.create!(
+      task_id: task4.id,
+      to_be_done_date: @current_date + ( 7 - (@current_day - frequency_day) + (i * 7)).days
+    )
+  end
 end
 
-3.times do |i|
-  @date = Date.today + (i * 7).days
-  ScheduledTask.create!(
-    task_id: task6.id,
-    to_be_done_date: @date
-  )
+frequency_day = number_week_day(task5.frequency_day)
+
+if frequency_day >= @current_day
+  3.times do |i|
+    ScheduledTask.create!(
+      task_id: task5.id,
+      to_be_done_date: @current_date + ((frequency_day - @current_day) + (i * 7)).days
+    )
+  end
+else
+  3.times do |i|
+    ScheduledTask.create!(
+      task_id: task5.id,
+      to_be_done_date: @current_date + ( 7 - (@current_day - frequency_day) + (i * 7)).days
+    )
+  end
 end
 
-3.times do |i|
-  @date = Date.today + (i * 7).days
-  ScheduledTask.create!(
-    task_id: task13.id,
-    to_be_done_date: @date
-  )
+
+
+frequency_day = number_week_day(task6.frequency_day)
+
+if frequency_day >= @current_day
+  3.times do |i|
+    ScheduledTask.create!(
+      task_id: task6.id,
+      to_be_done_date: @current_date + ((frequency_day - @current_day) + (i * 7)).days
+    )
+  end
+else
+  3.times do |i|
+    ScheduledTask.create!(
+      task_id: task6.id,
+      to_be_done_date: @current_date + ( 7 - (@current_day - frequency_day) + (i * 7)).days
+    )
+  end
 end
 
-3.times do |i|
-  @date = Date.today + (i * 7).days
-  ScheduledTask.create!(
-    task_id: task14.id,
-    to_be_done_date: @date
-  )
+
+frequency_day = number_week_day(task13.frequency_day)
+
+if frequency_day >= @current_day
+  3.times do |i|
+    ScheduledTask.create!(
+      task_id: task13.id,
+      to_be_done_date: @current_date + ((frequency_day - @current_day) + (i * 7)).days
+    )
+  end
+else
+  3.times do |i|
+    ScheduledTask.create!(
+      task_id: task13.id,
+      to_be_done_date: @current_date + ( 7 - (@current_day - frequency_day) + (i * 7)).days
+    )
+  end
 end
 
-3.times do |i|
-  @date = Date.today + (i * 7).days
-  ScheduledTask.create!(
-    task_id: task15.id,
-    to_be_done_date: @date
-  )
+
+frequency_day = number_week_day(task14.frequency_day)
+
+if frequency_day >= @current_day
+  3.times do |i|
+    ScheduledTask.create!(
+      task_id: task14.id,
+      to_be_done_date: @current_date + ((frequency_day - @current_day) + (i * 7)).days
+    )
+  end
+else
+  3.times do |i|
+    ScheduledTask.create!(
+      task_id: task14.id,
+      to_be_done_date: @current_date + ( 7 - (@current_day - frequency_day) + (i * 7)).days
+    )
+  end
+end
+
+
+frequency_day = number_week_day(task5.frequency_day)
+
+if frequency_day >= @current_day
+  3.times do |i|
+    ScheduledTask.create!(
+      task_id: task15.id,
+      to_be_done_date: @current_date + ((frequency_day - @current_day) + (i * 7)).days
+    )
+  end
+else
+  3.times do |i|
+    ScheduledTask.create!(
+      task_id: task15.id,
+      to_be_done_date: @current_date + ( 7 - (@current_day - frequency_day) + (i * 7)).days
+    )
+  end
 end
 
 # puts "Creating old Weekly Scheduled Tasks that are done..."
@@ -692,54 +771,130 @@ end
 
 puts "Creating Monthly Scheduled Tasks..."
 
+# Get the current date
+current_date = Date.current()
 
-3.times do |i|
-  @date = Date.today + i.month
-  ScheduledTask.create!(
-    task_id: task7.id,
-    to_be_done_date: @date
-  )
+frequency_day_of_month = task7.frequency_day_of_month.to_i
+date_current_month = Date.new(current_date.year, current_date.month, frequency_day_of_month)
+date_next_month = Date.new(current_date.year, current_date.month, frequency_day_of_month) + 1.month
+
+if Date.today() > date_current_month
+  3.times do |i|
+    ScheduledTask.create!(
+        task_id: task7.id,
+        to_be_done_date: date_next_month + i.month
+      )
+    end
+  else
+    3.times do |i|
+      ScheduledTask.create!(
+        task_id: task7.id,
+        to_be_done_date: date_current_month + i.month
+      )
+    end
 end
 
-3.times do |i|
-  @date = Date.today + i.month
-  ScheduledTask.create!(
-    task_id: task8.id,
-    to_be_done_date: @date
-  )
+
+frequency_day_of_month = task8.frequency_day_of_month.to_i
+date_current_month = Date.new(current_date.year, current_date.month, frequency_day_of_month)
+date_next_month = Date.new(current_date.year, current_date.month, frequency_day_of_month) + 1.month
+
+if Date.today() > date_current_month
+  3.times do |i|
+    ScheduledTask.create!(
+        task_id: task8.id,
+        to_be_done_date: date_next_month + i.month
+      )
+    end
+  else
+    3.times do |i|
+      ScheduledTask.create!(
+        task_id: task8.id,
+        to_be_done_date: date_current_month + i.month
+      )
+    end
 end
 
-3.times do |i|
-  @date = Date.today + i.month
-  ScheduledTask.create!(
-    task_id: task9.id,
-    to_be_done_date: @date
-  )
+frequency_day_of_month = task9.frequency_day_of_month.to_i
+date_current_month = Date.new(current_date.year, current_date.month, frequency_day_of_month)
+date_next_month = Date.new(current_date.year, current_date.month, frequency_day_of_month) + 1.month
+
+if Date.today() > date_current_month
+  3.times do |i|
+    ScheduledTask.create!(
+        task_id: task9.id,
+        to_be_done_date: date_next_month + i.month
+      )
+    end
+  else
+    3.times do |i|
+      ScheduledTask.create!(
+        task_id: task9.id,
+        to_be_done_date: date_current_month + i.month
+      )
+    end
 end
 
-3.times do |i|
-  @date = Date.today + i.month
-  ScheduledTask.create!(
-    task_id: task16.id,
-    to_be_done_date: @date
-  )
+frequency_day_of_month = task16.frequency_day_of_month.to_i
+date_current_month = Date.new(current_date.year, current_date.month, frequency_day_of_month)
+date_next_month = Date.new(current_date.year, current_date.month, frequency_day_of_month) + 1.month
+
+if Date.today() > date_current_month
+  3.times do |i|
+    ScheduledTask.create!(
+        task_id: task16.id,
+        to_be_done_date: date_next_month + i.month
+      )
+    end
+  else
+    3.times do |i|
+      ScheduledTask.create!(
+        task_id: task16.id,
+        to_be_done_date: date_current_month + i.month
+      )
+    end
 end
 
-3.times do |i|
-  @date = Date.today + i.month
-  ScheduledTask.create!(
-    task_id: task17.id,
-    to_be_done_date: @date
-  )
+frequency_day_of_month = task17.frequency_day_of_month.to_i
+date_current_month = Date.new(current_date.year, current_date.month, frequency_day_of_month)
+date_next_month = Date.new(current_date.year, current_date.month, frequency_day_of_month) + 1.month
+
+if Date.today() > date_current_month
+  3.times do |i|
+    ScheduledTask.create!(
+        task_id: task17.id,
+        to_be_done_date: date_next_month + i.month
+      )
+    end
+  else
+    3.times do |i|
+      ScheduledTask.create!(
+        task_id: task17.id,
+        to_be_done_date: date_current_month + i.month
+      )
+    end
 end
 
-3.times do |i|
-  @date = Date.today + i.month
-  ScheduledTask.create!(
-    task_id: task18.id,
-    to_be_done_date: @date
-  )
+frequency_day_of_month = task18.frequency_day_of_month.to_i
+date_current_month = Date.new(current_date.year, current_date.month, frequency_day_of_month)
+date_next_month = Date.new(current_date.year, current_date.month, frequency_day_of_month) + 1.month
+
+if Date.today() > date_current_month
+  3.times do |i|
+    ScheduledTask.create!(
+        task_id: task18.id,
+        to_be_done_date: date_next_month + i.month
+      )
+    end
+  else
+    3.times do |i|
+      ScheduledTask.create!(
+        task_id: task18.id,
+        to_be_done_date: date_current_month + i.month
+      )
+    end
 end
+
 puts "Creating old Monthly Scheduled Tasks that are done..."
 
 puts "old monthly scheduled tasks for task 7"

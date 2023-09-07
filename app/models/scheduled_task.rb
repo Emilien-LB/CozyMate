@@ -46,9 +46,12 @@ class ScheduledTask < ApplicationRecord
       end
     # pour chacune de ces dates, on va creer les schedules tacks associe à la task
     p dates
+    scheduled_task_created = []
     dates.each do |date|
-      ScheduledTask.create!(task: task, to_be_done_date: date.strftime('%Y-%m-%d'))
+      scheduled_task_created << ScheduledTask.create!(task: task, to_be_done_date: date.strftime('%Y-%m-%d'))
+      scheduled_task_created
     end
+    # raise
   end
 end
 # validation sur les valeurs
