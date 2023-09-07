@@ -24,4 +24,12 @@ class User < ApplicationRecord
   def self.top_ranked_users(limit = 3)
     order(total_points: :desc).limit(limit)
   end
+
+  def active_for_authentication?
+    super && approved?
+  end
+
+  def inactive_message
+    approved? ? super : :not_approved
+  end
 end

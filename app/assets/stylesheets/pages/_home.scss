@@ -16,6 +16,8 @@
   overflow-y: hidden;
   position: relative;
   padding-bottom: 0;
+  margin: 0;
+  padding: 0;
 
   .home-header {
     margin-top: 19vh;
@@ -66,8 +68,8 @@
 
   .btn-success {
     margin-left: auto;
-    width: 150px;
-    height: 44px;
+    width: 175px;
+    height: 50px;
     border-radius: 10px;
   }
 }
@@ -100,7 +102,7 @@
   margin: 10px 0 0 5px;
 
   img {
-    width: 33vw;
+    width: 31vw;
     background-size: cover;
     background-repeat: no-repeat;
     mix-blend-mode: darken;

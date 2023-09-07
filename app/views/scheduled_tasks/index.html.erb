@@ -19,7 +19,7 @@
   <div class="top-screen-elements">
     <div class="banner-container">
         <div class="hello">
-          <p><strong><%= link_to 'Hello', root_path, style: "text-decoration: none; color: inherit;" %></strong> <%= current_user.first_name %>,</p>
+          <p><strong><%= link_to 'Hello', root_path, style: "text-decoration: none; color: inherit;" %> <%= current_user.first_name %>,</strong></p>
         </div>
         <%= cl_image_tag current_user.photo.key, height: 80, width: 80, crop: :fill, class:" rounded-circle current-user-picture"  %>
     </div>
