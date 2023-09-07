@@ -4,21 +4,22 @@
   </svg>
 </div>
 
-<div class="task-show-banner">
-  <h1 class="text-center green-title"><%= @task.task_name %></h1>
-</div>
+<div class="show-task-wrapper">
+  <div class="task-show-banner">
+    <h1 class="text-center green-title"><%= @task.task_name %></h1>
+  </div>
 
-<div class="show-task-card">
-  <ul class="typography-card">
-    <li>"<%= @task.description %>"</li>
-    <li class="meta-container">
-      <span class="frequency"><%= @task.frequency_type.titleize %></span>
-      <span class="points"><%= @task.points %></span>
-      <i class="fa-solid fa-star fa-bounce" style="color: #ffcc69"></i>
-    </li>
-  </ul>
+  <div class="show-task-card">
+    <ul class="typography-card">
+      <li>"<%= @task.description %>"</li>
+      <li class="meta-container">
+        <span class="frequency"><%= @task.frequency_type.titleize %></span>
+        <span class="points"><%= @task.points %></span>
+        <i class="fa-solid fa-star fa-bounce" style="color: #ffcc69"></i>
+      </li>
+    </ul>
+  </div>
 </div>
-
 
 <div class="d-flex justify-content-center align-items-center">
     <%= link_to "Back to tasks", tasks_path, class: "button-back-link" %>

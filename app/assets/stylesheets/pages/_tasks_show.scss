@@ -1,5 +1,9 @@
 // General Styles
-.body {
+.show-task-wrapper {
+  width: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 70px;
 }
 
@@ -8,6 +12,7 @@
   padding-bottom: 3px;
   background-color: $beige;
   width: 100%;
+  margin-top: 50px;
 }
 
 .green-title {
