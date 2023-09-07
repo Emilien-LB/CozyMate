@@ -1,4 +1,4 @@
-<div class="container-form" data-controller="form">
+<div class="container-form-event" data-controller="form">
   <%= simple_form_for(@task) do |f|%>
     <div class="d-flex flex-column">
       <%= f.input :task_name, placeholder:'Walk the dog', maxlength:"30", input_html: { class: "custom-input", data: {action: "input->form#countingLettersTaskName"} } %>

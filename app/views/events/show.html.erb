@@ -21,7 +21,7 @@
         Delete  <i class="fa-solid fa-trash-can icon-margin" style="color: white;"></i>
       <% end %>
       <%= link_to edit_event_path(@event), class: "button-edit-event" do %>
-        Edit  <i class="fa-solid fa-paintbrush icon-margin" style="color: #8AB7DD;"></i>
+        Edit  <i class="fa-solid fa-paintbrush icon-margin" style="color: white;"></i>
       <% end %>
       <%= link_to "supprimer", event_path(@event), class: "button-delete-event d-none", data: { "delete-event-target": "deleteButton", turbo_method: :delete } %>
     </div>
