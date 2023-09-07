@@ -1,14 +1,28 @@
+.show-event-wrapper {
+  width: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+.event-show-banner {
+  background-color: $beige;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  padding-bottom: 3px;
+}
+
 // --------------------------
 // TITLE STYLES
 // --------------------------
-
 .blue-title {
   color: rgba(138, 183, 221, 1);
   font-size: 36px;
   -webkit-text-stroke: 1px black;
   font-weight: bold;
-  margin-top: 1rem;
-  margin-bottom: 3.5rem;
+  margin: 2.5rem 0 2.5rem;
 }
 
 // --------------------------
@@ -22,11 +36,12 @@
   justify-content: center;
   width: 80%;
   height: auto;
-  margin: 20px auto;
+  margin: auto;
   padding: 3px;
   border: 1px solid rgba(138, 183, 221, 0.80);
   border-radius: 10px;
   background-color: rgba(138, 184, 221, 0.3);
+  margin-top: 50%;
 
   .description-event,
   .time-event {
@@ -114,4 +129,29 @@
     color: rgb(255, 255, 255);
     text-decoration: none;
   }
+}
+
+.new-edit-event-ellipse-blue{
+  position: fixed;
+  bottom: -10px;
+  left: -45px;
+  transform: rotate(270deg);
+  z-index: 3;
+  fill: rgba(138, 183, 221, 0.3);
+  mix-blend-mode: darken;
+  width: 218.707px;
+  height: 201px;
+}
+
+.pink-ellipse-tasks-index {
+  fill: rgba(255, 209, 204, 0.30);
+  mix-blend-mode: darken;
+  width: 206.89px;
+  height: 221.964px;
+  transform: rotate(0deg);
+  position: fixed;
+  z-index: 3;
+  top: -33px;
+  left: 82px;
+  pointer-events: none;
 }

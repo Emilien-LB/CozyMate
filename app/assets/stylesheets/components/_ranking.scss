@@ -2,6 +2,13 @@
   overflow: hidden;
   margin-bottom: 70px;
 }
+
+.ranking-index-banner {
+  background-color: $beige;
+  width: 100%;
+  position: fixed;
+}
+
 .yellow-ranking-title {
   color: #FFCC69;
   font-size: 36px;
@@ -14,10 +21,10 @@
 .ranking-ellipse-yellow {
   width: 228.18px;
   height: 235.4px;
-  flex-shrink: 0;
   fill: rgba(255, 204, 105, 0.30);
   mix-blend-mode: darken;
   position: fixed;
+  z-index: 2;
   top: -10px;
   left: 0px;
   transform: rotate(-0.482deg);
@@ -78,12 +85,13 @@
 .ranking-first {
   display: flex;
   justify-content: center;
-  margin: 20px
+  margin: 20px;
+  margin-top: 50%;
 }
 
 .ranking-second {
   justify-content: space-around;
-  margin: 20px
+  margin: 20px;
 }
 
 .trophy {
